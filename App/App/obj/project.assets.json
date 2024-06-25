@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\App\\App\\App.csproj",
+      "projectUniqueName": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\App\\App\\App.csproj",
+      "projectPath": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\App\\App.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\source\\repos\\App\\App\\obj\\",
+      "outputPath": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
