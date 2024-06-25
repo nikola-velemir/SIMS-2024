@@ -1,0 +1,159 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\App\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\domain\\muzickiurednik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\domain\\muzickiurednik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\domain\\izvodjac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\domain\\izvodjac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\domain\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\domain\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\domain\\nalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\domain\\nalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\domain\\tipnaloga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\domain\\tipnaloga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\domain\\polovi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\domain\\polovi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|c:\\users\\administrator\\source\\repos\\app\\app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B88060-F091-4515-8A9D-F88AA906E982}|App\\App.csproj|solutionrelative:app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MuzickiUrednik.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\MuzickiUrednik.cs",
+              "RelativeDocumentMoniker": "App\\Domain\\MuzickiUrednik.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\MuzickiUrednik.cs",
+              "RelativeToolTip": "App\\Domain\\MuzickiUrednik.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T13:03:50.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Izvodjac.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Izvodjac.cs",
+              "RelativeDocumentMoniker": "App\\Domain\\Izvodjac.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Izvodjac.cs",
+              "RelativeToolTip": "App\\Domain\\Izvodjac.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T13:00:54.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TipNaloga.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\TipNaloga.cs",
+              "RelativeDocumentMoniker": "App\\Domain\\TipNaloga.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\TipNaloga.cs",
+              "RelativeToolTip": "App\\Domain\\TipNaloga.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T12:52:39.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Nalog.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Nalog.cs",
+              "RelativeDocumentMoniker": "App\\Domain\\Nalog.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Nalog.cs",
+              "RelativeToolTip": "App\\Domain\\Nalog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T12:51:15.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Polovi.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Polovi.cs",
+              "RelativeDocumentMoniker": "App\\Domain\\Polovi.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Polovi.cs",
+              "RelativeToolTip": "App\\Domain\\Polovi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T12:48:57.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Osoba.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Osoba.cs",
+              "RelativeDocumentMoniker": "App\\Domain\\Osoba.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\Domain\\Osoba.cs",
+              "RelativeToolTip": "App\\Domain\\Osoba.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T12:45:26.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "App\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\MainWindow.xaml",
+              "RelativeToolTip": "App\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-25T12:43:47.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\App\\App\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "App\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\App\\App\\MainWindow.xaml.cs",
+              "RelativeToolTip": "App\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T12:43:45.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
