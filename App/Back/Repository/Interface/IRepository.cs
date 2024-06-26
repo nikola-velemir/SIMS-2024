@@ -1,4 +1,4 @@
-﻿namespace App.Repository.Interface
+﻿namespace App.Back.Repository.Interface
 {
     public interface IRepository<Z>
     {

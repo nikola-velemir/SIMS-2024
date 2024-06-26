@@ -1,8 +1,8 @@
-using App.Serialization.Interface;
-using App.Serialization.Strategy;
+using App.Back.Serialization.Interface;
+using App.Back.Serialization.Strategy;
 using System.IO;
 
-namespace App.Serialization
+namespace App.Back.Serialization
 {
     public class Serializer
     {
@@ -17,7 +17,8 @@ namespace App.Serialization
         {
             if (!File.Exists(path))
             {
-                File.Create(path);
+                var stream = File.Create(path);
+                stream.Close();
             }
         }
         public G? FromFile<G>(string fileName)

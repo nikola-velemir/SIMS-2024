@@ -1,7 +1,7 @@
-﻿using App.Serialization.Interface;
+﻿using App.Back.Serialization.Interface;
 using Newtonsoft.Json;
 
-namespace App.Serialization.Strategy
+namespace App.Back.Serialization.Strategy
 {
     public class JSONSerialization : ISerialization
     {

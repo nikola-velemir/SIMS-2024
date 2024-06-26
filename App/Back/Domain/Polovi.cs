@@ -1,4 +1,4 @@
-﻿namespace App.Domain
+﻿namespace App.Back.Domain
 {
     public enum Polovi
     {
