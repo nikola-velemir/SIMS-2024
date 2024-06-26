@@ -2,6 +2,7 @@
 {
     public class Izvodjac : Osoba
     {
+        public Izvodjac() : base() { }
         public Izvodjac(int id, string ime, string prezime, string jmbg, DateOnly datumRodjenja, Polovi pol) : base(id, ime, prezime, jmbg, datumRodjenja, pol)
         {
         }

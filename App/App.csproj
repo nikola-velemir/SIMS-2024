@@ -9,7 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <None Remove="Data\placeholder.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Data\placeholder.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repository\Base\" />
+    <Folder Include="Serialization\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

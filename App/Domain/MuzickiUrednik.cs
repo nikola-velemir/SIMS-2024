@@ -14,6 +14,8 @@
             IdNaloga = other.IdNaloga;
         }
 
-        public void dodajMuzickoDelo(MuzickoDelo delo) { 
+        public void dodajMuzickoDelo(MuzickoDelo delo)
+        {
+        }
     }
 }
