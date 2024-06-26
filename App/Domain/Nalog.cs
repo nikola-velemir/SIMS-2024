@@ -8,16 +8,16 @@
         public bool Aktivan { get; set; }
         public TipNaloga Tip { get; set; }
 
-        public string JMBGOsobe { get; set; }
+        public int IdOsobe { get; set; }
 
-        public Nalog(int id, string lozinka, string korisnickoIme, bool aktivan, TipNaloga tip, string jMBGOsobe)
+        public Nalog(int id, string lozinka, string korisnickoIme, bool aktivan, TipNaloga tip, int idOsobe)
         {
             Id = id;
             Lozinka = lozinka;
             KorisnickoIme = korisnickoIme;
             Aktivan = aktivan;
             Tip = tip;
-            JMBGOsobe = jMBGOsobe;
+            IdOsobe = idOsobe;
         }
         public Nalog(Nalog other)
         {
@@ -26,7 +26,7 @@
             Lozinka = other.Lozinka;
             Aktivan = other.Aktivan;
             KorisnickoIme = other.KorisnickoIme;
-            JMBGOsobe = other.JMBGOsobe;
+            IdOsobe = other.IdOsobe;
         }
         public override bool Equals(object? obj)
         {
