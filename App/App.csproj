@@ -9,16 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\placeholder.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Data\placeholder.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repository\Base\" />
-    <Folder Include="Serialization\" />
+    <Folder Include="Back\Data\" />
+    <Folder Include="Back\Serialization\" />
+    <Folder Include="Front\" />
   </ItemGroup>
 
   <ItemGroup>

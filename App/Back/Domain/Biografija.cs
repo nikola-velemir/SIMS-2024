@@ -1,4 +1,4 @@
-﻿namespace App.Domain
+﻿namespace App.Back.Domain
 {
     public class Biografija
     {
@@ -9,13 +9,13 @@
         public Biografija(int id, string tekst, List<Slika> slike)
         {
             Tekst = tekst;
-            
+
             Id = id;
             AddSlikeId(slike);
         }
         private void AddSlikeId(List<Slika> slike)
         {
-            foreach(Slika slika in slike)
+            foreach (Slika slika in slike)
             {
                 if (Slike != null && Slike.Count != 0 && Slike.Contains(slika.Id)) { continue; }
                 Slike.Add(slika.Id);

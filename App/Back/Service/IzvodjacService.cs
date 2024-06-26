@@ -1,7 +1,7 @@
-﻿using App.Domain;
-using App.Repository;
+﻿using App.Back.Domain;
+using App.Back.Repository;
 
-namespace App.Service
+namespace App.Back.Service
 {
     public class IzvodjacService
     {

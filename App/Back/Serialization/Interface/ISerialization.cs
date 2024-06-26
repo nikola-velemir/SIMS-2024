@@ -1,4 +1,4 @@
-﻿namespace App.Serialization.Interface
+﻿namespace App.Back.Serialization.Interface
 {
     public interface ISerialization
     {

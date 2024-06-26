@@ -1,8 +1,8 @@
-﻿using App.Domain;
-using App.Repository.Base;
-using App.Repository.Interface;
+﻿using App.Back.Domain;
+using App.Back.Repository.Base;
+using App.Back.Repository.Interface;
 
-namespace App.Repository
+namespace App.Back.Repository
 {
     public class IzvodjacRepository : Repository<Izvodjac>, IRepository<Izvodjac>
     {

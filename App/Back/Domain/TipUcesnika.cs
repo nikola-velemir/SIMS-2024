@@ -1,8 +1,8 @@
-﻿namespace App.Domain
+﻿namespace App.Back.Domain
 {
     public class TipUcesnika
     {
-        public string Tip { get; set; } 
+        public string Tip { get; set; }
         public int Id { get; set; }
         public TipUcesnika(string tip, int id)
         {

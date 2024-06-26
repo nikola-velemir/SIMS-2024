@@ -1,4 +1,4 @@
-﻿namespace App.Domain
+﻿namespace App.Back.Domain
 {
     public class Osoba
     {
@@ -10,7 +10,8 @@
         public Polovi Pol { get; set; }
         public int? IdNaloga { get; set; }
 
-        public Osoba() {
+        public Osoba()
+        {
             Ime = string.Empty;
             Prezime = string.Empty;
             JMBG = string.Empty;

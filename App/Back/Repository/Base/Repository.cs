@@ -1,10 +1,10 @@
-﻿using App.Serialization;
+﻿using App.Back.Serialization;
 
-namespace App.Repository.Base
+namespace App.Back.Repository.Base
 {
     public class Repository<Z> where Z : new()
     {
-        protected string _fileName = @"../../../../App/Data/{0}";
+        protected string _fileName = @"../../../../App/Back/Data/{0}";
         protected readonly Serializer _serializer = new();
         protected List<Z> _instances;
 
