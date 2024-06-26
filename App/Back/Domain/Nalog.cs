@@ -9,7 +9,11 @@
         public TipNaloga Tip { get; set; }
 
         public int IdOsobe { get; set; }
-
+        public Nalog()
+        {
+            Lozinka = string.Empty;
+            KorisnickoIme = string.Empty;
+        }
         public Nalog(int id, string lozinka, string korisnickoIme, bool aktivan, TipNaloga tip, int idOsobe)
         {
             Id = id;
@@ -28,14 +32,6 @@
             KorisnickoIme = other.KorisnickoIme;
             IdOsobe = other.IdOsobe;
         }
-        public override bool Equals(object? obj)
-        {
-            if (obj == null) return false;
-            return GetHashCode() == obj.GetHashCode();
-        }
-        //public override int GetHashCode()
-        //{
-
-        //}
+        
     }
 }

@@ -6,7 +6,7 @@ namespace App.Back.Repository.Base
     {
         protected string _fileName = @"../../../../App/Back/Data/{0}";
         protected readonly Serializer _serializer = new();
-        protected List<Z> _instances;
+        protected List<Z> _instances = new List<Z>();
 
         protected void SetFileName(string fileName)
         {
