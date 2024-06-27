@@ -6,22 +6,21 @@ namespace App.Back.Repository.Base
     {
         protected string _fileName = @"../../../../App/Back/Data/{0}";
         protected readonly Serializer _serializer = new();
-        protected List<Z> _instances = new List<Z>();
 
         protected void SetFileName(string fileName)
         {
             _fileName = string.Format(_fileName, fileName);
 
         }
-        protected void Load()
+        protected List<Z> Load()
         {
-            _instances = _serializer.FromFile<List<Z>>(_fileName)
+            return _serializer.FromFile<List<Z>>(_fileName)
                 ?? new List<Z>();
 
         }
-        protected void Save()
+        protected void Save(List<Z> instances)
         {
-            _serializer.ToFile(_instances, _fileName);
+            _serializer.ToFile(instances, _fileName);
         }
     }
 }
