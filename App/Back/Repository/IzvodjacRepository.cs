@@ -6,13 +6,11 @@ namespace App.Back.Repository
 {
     public class IzvodjacRepository : Repository<Izvodjac>, IRepository<Izvodjac>
     {
-        private List<Izvodjac> _izvodjaci { get; set; }
+
+
         public IzvodjacRepository()
         {
             SetFileName("IzvodjacData.json");
-            Load();
-            _izvodjaci = _instances;
-
         }
         public Izvodjac? Create(Izvodjac instance)
         {
@@ -20,8 +18,9 @@ namespace App.Back.Repository
 
             if (fetchedInstance != null) { return null; }
 
-            _instances.Add(instance);
-            Save();
+            var instances = Load();
+            instances.Add(instance);
+            Save(instances);
 
             return instance;
         }
@@ -31,16 +30,17 @@ namespace App.Back.Repository
             var fetchedInstance = Get(instance);
 
             if (fetchedInstance == null) { return null; }
-
-            _instances.Remove(instance);
-            Save();
-
+            
+            var instances = Load();
+            instances.Remove(instance);
+            Save(instances);
+            
             return instance;
         }
 
         public Izvodjac? Get(Izvodjac instance)
         {
-            foreach (var izvodjac in _izvodjaci)
+            foreach (var izvodjac in GetAll())
             {
                 if (izvodjac.Id == instance.Id)
                 {
@@ -56,16 +56,17 @@ namespace App.Back.Repository
 
             if (fetchedInstance == null) { return null; }
 
-            _instances.Remove(fetchedInstance);
-            _instances.Add(instance);
-            Save();
+            var instances = Load();
+            instances.Remove(fetchedInstance);
+            instances.Add(instance);
+            Save(instances);
 
             return instance;
         }
 
         public List<Izvodjac> GetAll()
         {
-            return _instances;
+            return Load();
         }
     }
 }

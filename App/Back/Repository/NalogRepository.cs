@@ -6,12 +6,9 @@ namespace App.Back.Repository
 {
     public class NalogRepository : Repository<Nalog>, IRepository<Nalog>
     {
-        private List<Nalog> _nalozi;
         public NalogRepository()
         {
             SetFileName("NalogData.json");
-            Load();
-            _nalozi = _instances;
         }
         public Nalog? Create(Nalog instance)
         {
@@ -19,8 +16,9 @@ namespace App.Back.Repository
 
             if (fetchedInstance != null) { return null; }
 
-            _instances.Add(instance);
-            Save();
+            var instances = Load();
+            instances.Add(instance);
+            Save(instances);
 
             return instance;
         }
@@ -31,15 +29,16 @@ namespace App.Back.Repository
 
             if (fetchedInstance == null) { return null; }
 
-            _instances.Remove(instance);
-            Save();
+            var instances = Load();
+            instances.Remove(instance);
+            Save(instances);
 
             return instance;
         }
 
         public Nalog? Get(Nalog instance)
         {
-            foreach (var nalog in _nalozi)
+            foreach (var nalog in GetAll())
             {
                 if (nalog.Id == instance.Id)
                 {
@@ -51,7 +50,7 @@ namespace App.Back.Repository
 
         public List<Nalog> GetAll()
         {
-            return _nalozi;
+            return Load();
         }
 
         public Nalog? Update(Nalog instance)
@@ -60,9 +59,11 @@ namespace App.Back.Repository
 
             if (fetchedInstance == null) { return null; }
 
-            _instances.Remove(fetchedInstance);
-            _instances.Add(instance);
-            Save();
+
+            var instances = Load();
+            instances.Remove(fetchedInstance);
+            instances.Add(instance);
+            Save(instances);
 
             return instance;
         }
