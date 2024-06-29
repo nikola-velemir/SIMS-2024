@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Back.Utilities
 {
-    public class Utils
+    public static class Utils
     {
-       
+        public static int GenerateId()
+        {
+            return new Random().Next(1, 100000);
+        }
     }
 }

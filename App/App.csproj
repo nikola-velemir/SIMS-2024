@@ -11,7 +11,6 @@
   <ItemGroup>
     <Folder Include="Back\Data\" />
     <Folder Include="Back\Serialization\" />
-    <Folder Include="Front\" />
   </ItemGroup>
 
   <ItemGroup>

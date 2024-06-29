@@ -4,15 +4,13 @@ using App.Back.Repository.Interface;
 
 namespace App.Back.Repository
 {
-    public class IzvodjacRepository : Repository<Izvodjac>, IRepository<Izvodjac>
+    public class OsobaRepository : Repository<Osoba>, IRepository<Osoba>
     {
-
-
-        public IzvodjacRepository()
+        public OsobaRepository()
         {
-            SetFileName("IzvodjacData.json");
+            SetFileName("OsobaData.json");
         }
-        public Izvodjac? Create(Izvodjac instance)
+        public Osoba? Create(Osoba instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -25,22 +23,22 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public Izvodjac? Delete(Izvodjac instance)
+        public Osoba? Delete(Osoba instance)
         {
             var fetchedInstance = Get(instance);
 
             if (fetchedInstance == null) { return null; }
-            
+
             var instances = Load();
             instances.Remove(instance);
             Save(instances);
-            
+
             return instance;
         }
 
-        public Izvodjac? Get(Izvodjac instance)
+        public Osoba? Get(Osoba instance)
         {
-            foreach (var izvodjac in GetAll())
+            foreach (var izvodjac in _osobe)
             {
                 if (izvodjac.Id == instance.Id)
                 {
@@ -50,7 +48,7 @@ namespace App.Back.Repository
             return null;
         }
 
-        public Izvodjac? Update(Izvodjac instance)
+        public Osoba? Update(Osoba instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -64,7 +62,7 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public List<Izvodjac> GetAll()
+        public List<Osoba> GetAll()
         {
             return Load();
         }

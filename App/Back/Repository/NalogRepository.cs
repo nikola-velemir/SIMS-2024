@@ -4,15 +4,13 @@ using App.Back.Repository.Interface;
 
 namespace App.Back.Repository
 {
-    public class IzvodjacRepository : Repository<Izvodjac>, IRepository<Izvodjac>
+    public class NalogRepository : Repository<Nalog>, IRepository<Nalog>
     {
-
-
-        public IzvodjacRepository()
+        public NalogRepository()
         {
-            SetFileName("IzvodjacData.json");
+            SetFileName("NalogData.json");
         }
-        public Izvodjac? Create(Izvodjac instance)
+        public Nalog? Create(Nalog instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -25,36 +23,42 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public Izvodjac? Delete(Izvodjac instance)
+        public Nalog? Delete(Nalog instance)
         {
             var fetchedInstance = Get(instance);
 
             if (fetchedInstance == null) { return null; }
-            
+
             var instances = Load();
             instances.Remove(instance);
             Save(instances);
-            
+
             return instance;
         }
 
-        public Izvodjac? Get(Izvodjac instance)
+        public Nalog? Get(Nalog instance)
         {
-            foreach (var izvodjac in GetAll())
+            foreach (var nalog in GetAll())
             {
-                if (izvodjac.Id == instance.Id)
+                if (nalog.Id == instance.Id)
                 {
-                    return izvodjac;
+                    return nalog;
                 }
             }
             return null;
         }
 
-        public Izvodjac? Update(Izvodjac instance)
+        public List<Nalog> GetAll()
+        {
+            return Load();
+        }
+
+        public Nalog? Update(Nalog instance)
         {
             var fetchedInstance = Get(instance);
 
             if (fetchedInstance == null) { return null; }
+
 
             var instances = Load();
             instances.Remove(fetchedInstance);
@@ -62,11 +66,6 @@ namespace App.Back.Repository
             Save(instances);
 
             return instance;
-        }
-
-        public List<Izvodjac> GetAll()
-        {
-            return Load();
         }
     }
 }

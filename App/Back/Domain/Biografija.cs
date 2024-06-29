@@ -9,7 +9,7 @@
         public Biografija(int id, string tekst, List<Slika> slike)
         {
             Tekst = tekst;
-
+            Slike = new List<int>(id);
             Id = id;
             AddSlikeId(slike);
         }
@@ -17,7 +17,7 @@
         {
             foreach (Slika slika in slike)
             {
-                if (Slike != null && Slike.Count != 0 && Slike.Contains(slika.Id)) { continue; }
+                if (Slike.Count != 0 && Slike.Contains(slika.Id)) { continue; }
                 Slike.Add(slika.Id);
             }
         }
