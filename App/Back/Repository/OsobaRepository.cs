@@ -16,7 +16,7 @@ namespace App.Back.Repository
 
             if (fetchedInstance != null) { return null; }
 
-            var instances = Load();
+            var instances = GetAll();
             instances.Add(instance);
             Save(instances);
 
@@ -38,7 +38,7 @@ namespace App.Back.Repository
 
         public Osoba? Get(Osoba instance)
         {
-            foreach (var izvodjac in _osobe)
+            foreach (var izvodjac in GetAll())
             {
                 if (izvodjac.Id == instance.Id)
                 {
