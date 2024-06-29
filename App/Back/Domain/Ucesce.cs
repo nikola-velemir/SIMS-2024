@@ -4,17 +4,28 @@ namespace App.Back.Domain
 {
     public class Ucesce
     {
-        public MuzickoDelo Delo { get; set; }
-        public Izvodjac Izvodjac { get; set; }
-        public Ucesce(MuzickoDelo delo, Izvodjac izvodjac)
+        public int IdDela { get; set; }
+        public int IdIzvodjaca { get; set; }
+        public int IdTipaUcesnika { get; set; }
+       
+        public Ucesce() { }
+        public Ucesce(MuzickoDelo delo, Izvodjac izvodjac, TipUcesnika tipUcesnika)
         {
-            Delo = delo;
-            Izvodjac = izvodjac;
+            IdDela = delo.Id;
+            IdTipaUcesnika = tipUcesnika.Id;
+            IdIzvodjaca = izvodjac.Id;
+        }
+        public Ucesce(int idDela, int idIzvodjaca, int idTipaUcesnika)
+        {
+            IdDela = idDela;
+            IdIzvodjaca = idIzvodjaca;
+            IdTipaUcesnika = IdTipaUcesnika;
         }
         public Ucesce(Ucesce other)
         {
-            Delo = other.Delo;
-            Izvodjac = other.Izvodjac;
+            IdDela = other.IdDela;
+            IdIzvodjaca = other.IdIzvodjaca;
+            IdTipaUcesnika = other.IdTipaUcesnika;
         }
     }
 }

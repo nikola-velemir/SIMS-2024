@@ -1,17 +1,17 @@
-﻿using App.Back.Domain.Osobe;
+﻿using App.Back.Domain;
 using App.Back.Repository.Base;
 using App.Back.Repository.Interface;
 using App.Back.Utilities;
 
 namespace App.Back.Repository
 {
-    public class OsobaRepository : Repository<Osoba>, IRepository<Osoba>
+    public class TipUcesnikaRepository : Repository<TipUcesnika>, IRepository<TipUcesnika>
     {
-        public OsobaRepository()
+        public TipUcesnikaRepository()
         {
-            SetFileName("OsobaData.json");
+            SetFileName("TipUcesnika.json");
         }
-        public Osoba? Create(Osoba instance)
+        public TipUcesnika? Create(TipUcesnika instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -25,7 +25,7 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public Osoba? Delete(Osoba instance)
+        public TipUcesnika? Delete(TipUcesnika instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -38,7 +38,7 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public Osoba? Get(Osoba instance)
+        public TipUcesnika? Get(TipUcesnika instance)
         {
             foreach (var izvodjac in GetAll())
             {
@@ -50,7 +50,12 @@ namespace App.Back.Repository
             return null;
         }
 
-        public Osoba? Update(Osoba instance)
+        public List<TipUcesnika> GetAll()
+        {
+            return Load();
+        }
+
+        public TipUcesnika? Update(TipUcesnika instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -62,11 +67,6 @@ namespace App.Back.Repository
             Save(instances);
 
             return instance;
-        }
-
-        public List<Osoba> GetAll()
-        {
-            return Load();
         }
     }
 }

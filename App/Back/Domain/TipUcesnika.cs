@@ -4,6 +4,10 @@
     {
         public string Tip { get; set; }
         public int Id { get; set; }
+        public TipUcesnika()
+        {
+            Tip = string.Empty;
+        }
         public TipUcesnika(string tip, int id)
         {
             Tip = tip;

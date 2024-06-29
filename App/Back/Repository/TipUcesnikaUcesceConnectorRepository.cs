@@ -1,31 +1,31 @@
-﻿using App.Back.Domain.Osobe;
+﻿using App.Back.Domain;
+using App.Back.Domain.Connectors;
 using App.Back.Repository.Base;
 using App.Back.Repository.Interface;
 using App.Back.Utilities;
 
 namespace App.Back.Repository
 {
-    public class OsobaRepository : Repository<Osoba>, IRepository<Osoba>
+    public class TipUcesnikaUcesceConnectorRepository : Repository<TipUcesnikaUcesceConnector>, IRepository<TipUcesnikaUcesceConnector>
     {
-        public OsobaRepository()
+        public TipUcesnikaUcesceConnectorRepository()
         {
-            SetFileName("OsobaData.json");
+            SetFileName("TipUcesnikaUcesceConnectors.json");
         }
-        public Osoba? Create(Osoba instance)
+        public TipUcesnikaUcesceConnector? Create(TipUcesnikaUcesceConnector instance)
         {
             var fetchedInstance = Get(instance);
 
             if (fetchedInstance != null) { return null; }
 
             var instances = GetAll();
-            instance.Id = Utils.GenerateId();
             instances.Add(instance);
             Save(instances);
 
             return instance;
         }
 
-        public Osoba? Delete(Osoba instance)
+        public TipUcesnikaUcesceConnector? Delete(TipUcesnikaUcesceConnector instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -38,11 +38,12 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public Osoba? Get(Osoba instance)
+        public TipUcesnikaUcesceConnector? Get(TipUcesnikaUcesceConnector instance)
         {
             foreach (var izvodjac in GetAll())
             {
-                if (izvodjac.Id == instance.Id)
+                if (izvodjac.IdTipUcesnika == instance.IdTipUcesnika &&
+                    izvodjac.IdUcesce == instance.IdUcesce)
                 {
                     return izvodjac;
                 }
@@ -50,7 +51,12 @@ namespace App.Back.Repository
             return null;
         }
 
-        public Osoba? Update(Osoba instance)
+        public List<TipUcesnikaUcesceConnector> GetAll()
+        {
+            return Load();
+        }
+
+        public TipUcesnikaUcesceConnector? Update(TipUcesnikaUcesceConnector instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -62,11 +68,6 @@ namespace App.Back.Repository
             Save(instances);
 
             return instance;
-        }
-
-        public List<Osoba> GetAll()
-        {
-            return Load();
         }
     }
 }
