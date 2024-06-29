@@ -7,5 +7,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="Login" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Width="75"/>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="kreiraj izvodjaca" Click="KreiraIzvodjacaClick"></Button>
     </Grid>
 </Window>

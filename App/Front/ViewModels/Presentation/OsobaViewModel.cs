@@ -1,13 +1,7 @@
-﻿using System;
+﻿using App.Back.Domain;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
-public enum Polovi
-{
-    Muski,
-    Zenski,
-    Drugi
-}
 
 public class OsobaViewModel : INotifyPropertyChanged
 {
@@ -15,7 +9,7 @@ public class OsobaViewModel : INotifyPropertyChanged
     private string ime;
     private string prezime;
     private string jmbg;
-    private DateOnly datumRodjenja;
+    private DateTime datumRodjenja;
     private Polovi pol;
     private int? idNaloga;
 
@@ -71,7 +65,7 @@ public class OsobaViewModel : INotifyPropertyChanged
         }
     }
 
-    public DateOnly DatumRodjenja
+    public DateTime DatumRodjenja
     {
         get => datumRodjenja;
         set
@@ -123,7 +117,7 @@ public class OsobaViewModel : INotifyPropertyChanged
         Ime = ime;
         Prezime = prezime;
         JMBG = jmbg;
-        DatumRodjenja = datumRodjenja;
+        DatumRodjenja = new DateTime(datumRodjenja, new TimeOnly(0, 0, 0));
         Pol = pol;
         IdNaloga = null;
     }
@@ -134,7 +128,7 @@ public class OsobaViewModel : INotifyPropertyChanged
         Ime = ime;
         Prezime = prezime;
         JMBG = jmbg;
-        DatumRodjenja = datumRodjenja;
+        DatumRodjenja = new DateTime(datumRodjenja, new TimeOnly(0, 0, 0));
         Pol = pol;
         IdNaloga = idNaloga;
     }

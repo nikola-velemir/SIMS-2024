@@ -1,4 +1,4 @@
-﻿namespace App.Back.Domain
+﻿namespace App.Back.Domain.Osobe
 {
     public class Izvodjac : Osoba
     {

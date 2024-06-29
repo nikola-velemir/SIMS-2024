@@ -1,4 +1,4 @@
-﻿namespace App.Back.Domain
+﻿namespace App.Back.Domain.Osobe
 {
     public class Osoba
     {
@@ -27,7 +27,7 @@
             IdNaloga = null;
             Uloga = uloga;
         }
-        public Osoba(int id, string ime, string prezime, string jmbg, DateOnly datumRodjenja, Polovi pol, int idNaloga,Uloga uloga)
+        public Osoba(int id, string ime, string prezime, string jmbg, DateOnly datumRodjenja, Polovi pol, int idNaloga, Uloga uloga)
         {
             Id = id;
             Ime = ime;

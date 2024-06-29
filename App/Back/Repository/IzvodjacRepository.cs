@@ -1,6 +1,7 @@
 ﻿using App.Back.Domain.Osobe;
 using App.Back.Repository.Base;
 using App.Back.Repository.Interface;
+using App.Back.Utilities;
 
 namespace App.Back.Repository
 {
@@ -19,6 +20,7 @@ namespace App.Back.Repository
             if (fetchedInstance != null) { return null; }
 
             var instances = Load();
+            instance.Id = Utils.GenerateId();
             instances.Add(instance);
             Save(instances);
 
