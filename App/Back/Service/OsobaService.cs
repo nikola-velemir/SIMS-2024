@@ -1,4 +1,4 @@
-﻿using App.Back.Domain;
+﻿using App.Back.Domain.Osobe;
 using App.Back.Repository;
 
 namespace App.Back.Service

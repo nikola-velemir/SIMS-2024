@@ -1,4 +1,6 @@
-﻿namespace App.Back.Domain
+﻿using App.Back.Domain.Osobe;
+
+namespace App.Back.Domain
 {
     public class Izvodjenje : MuzickiPojam
     {
