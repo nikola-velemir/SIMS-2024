@@ -12,6 +12,7 @@
     <None Remove="Back\Data\Pictures\album.png" />
     <None Remove="Back\Data\Pictures\band.png" />
     <None Remove="Back\Data\Pictures\performance.jpg" />
+    <None Remove="Back\Data\Pictures\playlist.png" />
     <None Remove="Back\Data\Pictures\song.png" />
   </ItemGroup>
 
@@ -27,6 +28,7 @@
     <Resource Include="Back\Data\Pictures\album.png" />
     <Resource Include="Back\Data\Pictures\band.png" />
     <Resource Include="Back\Data\Pictures\performance.jpg" />
+    <Resource Include="Back\Data\Pictures\playlist.png" />
     <Resource Include="Back\Data\Pictures\song.png" />
   </ItemGroup>
 
