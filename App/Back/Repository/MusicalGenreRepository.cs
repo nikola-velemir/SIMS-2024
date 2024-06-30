@@ -2,11 +2,6 @@
 using App.Back.Repository.Base;
 using App.Back.Repository.Interface;
 using App.Back.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Back.Repository
 {
@@ -28,12 +23,27 @@ namespace App.Back.Repository
 
         public MusicalGenre? Delete(MusicalGenre instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(instance);
+            Save(instances);
+
+            return instance;
         }
 
         public MusicalGenre? Get(MusicalGenre instance)
         {
-            throw new NotImplementedException();
+            foreach (var izvodjac in GetAll())
+            {
+                if (izvodjac.Id == instance.Id)
+                {
+                    return izvodjac;
+                }
+            }
+            return null;
         }
 
         public List<MusicalGenre> GetAll()
@@ -43,7 +53,16 @@ namespace App.Back.Repository
 
         public MusicalGenre? Update(MusicalGenre instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(fetchedInstance);
+            instances.Add(instance);
+            Save(instances);
+
+            return instance;
         }
     }
 }

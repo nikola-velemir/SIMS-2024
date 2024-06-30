@@ -1,22 +1,22 @@
 [
   {
-    "Id": 20830,
-    "Name": "Hip hop"
-  },
-  {
-    "Id": 67264,
-    "Name": "Pop"
-  },
-  {
-    "Id": 81042,
+    "Id": 1,
     "Name": "Rock"
   },
   {
-    "Id": 86020,
-    "Name": "Funk"
+    "Id": 2,
+    "Name": "Pop"
   },
   {
-    "Id": 28741,
-    "Name": "Disco"
+    "Id": 3,
+    "Name": "Jazz"
+  },
+  {
+    "Id": 4,
+    "Name": "Classical"
+  },
+  {
+    "Id": 5,
+    "Name": "Electronic"
   }
 ]

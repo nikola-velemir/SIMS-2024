@@ -5,16 +5,16 @@ namespace App.Back.Domain.State.Komentari
     public class DraftKomentar : StanjeKomentara
     {
         public DraftKomentar() {
-            _stanje = Enums.StateKomentara.Draft;
+            _state = Enums.StateComment.Draft;
         }
-        public override void PromeniStanje(Komentar komentar)
+        public override void ChangeState(Comment komentar)
         {
-            if (komentar.OdustaoOdPisanja)
+            if (komentar.GaveUpOnWriting)
             {
-                komentar.Stanje = new ObrisanKomentar();
+                komentar.State = new ObrisanKomentar();
                 return;
             }
-            komentar.Stanje = new OtvorenKomentar();
+            komentar.State = new OtvorenKomentar();
 
         }
     }

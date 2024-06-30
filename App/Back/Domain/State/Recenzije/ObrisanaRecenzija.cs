@@ -5,9 +5,9 @@ namespace App.Back.Domain.State.Recenzije
     public class ObrisanaRecenzija : StanjeRecenzije
     {
         public ObrisanaRecenzija() {
-            _stanje = Enums.StateRecenzija.Obrisana;
+            _stanje = Enums.StateReview.Deleted;
         }
-        public override void PromeniStanje(Recenzija recenzija)
+        public override void PromeniStanje(Review recenzija)
         {
             return;
         }

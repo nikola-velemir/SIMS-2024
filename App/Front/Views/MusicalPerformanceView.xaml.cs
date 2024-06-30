@@ -24,7 +24,7 @@ namespace App.Front.Views
     public partial class MusicalPerformanceView : Window
     {
         public PictureViewModel CurrentPicture {  get; set; }        
-        public MusicalPerformanceDataViewModel CurrentMusicalPerformance {  get; set; }
+        public MusicalPieceViewModel CurrentMusicalPerformance {  get; set; }
         private MusicalPerformanceViewModel _musicalPerformanceViewModel { get; set; }
 
         private void SetComboBoxOptions()
@@ -39,7 +39,7 @@ namespace App.Front.Views
         {
             InitializeComponent();
             CurrentPicture = new PictureViewModel();
-            CurrentMusicalPerformance = new MusicalPerformanceDataViewModel();
+            CurrentMusicalPerformance = new MusicalPieceViewModel();
             _musicalPerformanceViewModel = new MusicalPerformanceViewModel();
             SetComboBoxOptions();
             DataContext = this;
@@ -71,7 +71,7 @@ namespace App.Front.Views
             CurrentMusicalPerformance.MusicalGenreId = genreId;
             if (CurrentMusicalPerformance.IsValid)
             {
-                MusicalPerformance? musicalPerformance = _musicalPerformanceViewModel.CreateMusicalPerformance(CurrentMusicalPerformance.ToMusicalPerformance());
+                MusicalPiece? musicalPerformance = _musicalPerformanceViewModel.CreateMusicalPerformance(CurrentMusicalPerformance.ToMusicalPerformance());
                 if(musicalPerformance != null)
                 {
                     MessageBox.Show("You successfuly add new musical performance!");

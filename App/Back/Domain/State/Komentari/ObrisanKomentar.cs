@@ -5,9 +5,9 @@ namespace App.Back.Domain.State.Komentari
     public class ObrisanKomentar : StanjeKomentara
     {
         public ObrisanKomentar() {
-            _stanje = Enums.StateKomentara.Obrisan;
+            _state = Enums.StateComment.Deleted;
         }
-        public override void PromeniStanje(Komentar komentar)
+        public override void ChangeState(Comment komentar)
         {
             return;
         }

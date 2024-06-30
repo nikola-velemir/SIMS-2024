@@ -5,9 +5,9 @@ namespace App.Back.Domain.State.Komentari
     public class PrihvacenKomentar : StanjeKomentara
     {
         public PrihvacenKomentar() {
-            _stanje = Enums.StateKomentara.Prihvacen;
+            _state = Enums.StateComment.Accepted;
         }
-        public override void PromeniStanje(Komentar komentar)
+        public override void ChangeState(Comment komentar)
         {
             return;
         }

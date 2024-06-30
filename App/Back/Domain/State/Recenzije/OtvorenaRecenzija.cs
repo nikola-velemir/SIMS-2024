@@ -6,11 +6,11 @@ namespace App.Back.Domain.State.Recenzije
     {
         public OtvorenaRecenzija()
         {
-            _stanje = Enums.StateRecenzija.Otvorena;
+            _stanje = Enums.StateReview.Open;
         }
-        public override void PromeniStanje(Recenzija recenzija)
+        public override void PromeniStanje(Review recenzija)
         {
-            recenzija.Stanje = new PodRazmatranjemRecenzija();
+            recenzija.State = new PodRazmatranjemRecenzija();
         }
     }
 }

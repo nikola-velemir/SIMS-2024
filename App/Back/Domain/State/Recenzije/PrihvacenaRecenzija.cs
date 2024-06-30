@@ -5,9 +5,9 @@ namespace App.Back.Domain.State.Recenzije
     public class PrihvacenaRecenzija : StanjeRecenzije
     {
         public PrihvacenaRecenzija() {
-            _stanje = Enums.StateRecenzija.Prihvacena;
+            _stanje = Enums.StateReview.Accepted;
         }
-        public override void PromeniStanje(Recenzija recenzija)
+        public override void PromeniStanje(Review recenzija)
         {
             return;
         }
