@@ -118,7 +118,7 @@
 
         <!-- Korisnicko Ime Label and TextBox -->
         <Label Content="Korisničko Ime:" Grid.Row="0" Grid.Column="0"/>
-        <TextBox Text="{Binding ViewModel.Nalog.UserName, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"/>
+        <TextBox Text="{Binding ViewModel.Account.UserName, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"/>
 
         <!-- Lozinka Label and PasswordBox -->
         <Label Content="Lozinka:" Grid.Row="1" Grid.Column="0"/>
