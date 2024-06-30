@@ -5,12 +5,12 @@ namespace App.Front.ViewModels.ViewControllers
 {
     public class MusicalPerformanceViewModel
     {
-        private MusicalPerformanceService _musicalPerformanceService;
+        private MusicalPieceService _musicalPerformanceService;
         private PictureService _pictureService;
         private MusicalGenreService _musicalGenreService;
         public MusicalPerformanceViewModel() 
         {
-            _musicalPerformanceService = new MusicalPerformanceService();
+            _musicalPerformanceService = new MusicalPieceService();
             _pictureService = new PictureService();
             _musicalGenreService = new MusicalGenreService();
         }

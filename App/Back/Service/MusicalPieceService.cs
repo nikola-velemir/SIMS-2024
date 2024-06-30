@@ -4,12 +4,12 @@ using App.Back.Repository;
 namespace App.Back.Service
 {
 
-    public class MusicalPerformanceService 
+    public class MusicalPieceService 
     {
-        private MusicalPerformanceRepository _musicalPerformanceRepository;
-        public MusicalPerformanceService() 
+        private MusicalPieceRepository _musicalPerformanceRepository;
+        public MusicalPieceService() 
         {
-            _musicalPerformanceRepository = new MusicalPerformanceRepository();
+            _musicalPerformanceRepository = new MusicalPieceRepository();
         }
         public MusicalPiece? Create(MusicalPiece newMusicalPerformance)
         {

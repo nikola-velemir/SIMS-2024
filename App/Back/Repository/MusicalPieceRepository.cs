@@ -5,11 +5,11 @@ using App.Back.Utilities;
 
 namespace App.Back.Repository
 {
-    public class MusicalPerformanceRepository : Repository<MusicalPiece>, IRepository<MusicalPiece>
+    public class MusicalPieceRepository : Repository<MusicalPiece>, IRepository<MusicalPiece>
     {
-        public MusicalPerformanceRepository() 
+        public MusicalPieceRepository() 
         {
-            SetFileName("MusicalPerformanceData.json");
+            SetFileName("MusicalPieceData.json");
         }   
         public MusicalPiece? Create(MusicalPiece newMusicalPerformance)
         {
