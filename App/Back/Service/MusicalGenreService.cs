@@ -15,7 +15,15 @@ namespace App.Back.Service
         {
             return _musicalGenreRepository.GetAll();
         }
+        public MusicalGenre? GetById(int id)
+        {
+            foreach (var g in _musicalGenreRepository.GetAll())
+            {
+                if (g.Id == id) return g;
+            }
+            return null;
 
+        }
         public MusicalGenre? Create(MusicalGenre newGenre)
         {
             return _musicalGenreRepository.Create(newGenre);
@@ -23,9 +31,9 @@ namespace App.Back.Service
 
         public MusicalGenre? GetByName(string name)
         {
-            foreach(MusicalGenre musicalGenre in _musicalGenreRepository.GetAll())
+            foreach (MusicalGenre musicalGenre in _musicalGenreRepository.GetAll())
             {
-                if(musicalGenre.Name == name)
+                if (musicalGenre.Name == name)
                 {
                     return musicalGenre;
                 }

@@ -4,16 +4,20 @@ using App.Back.Repository;
 namespace App.Back.Service
 {
 
-    public class MusicalPieceService 
+    public class MusicalPieceService
     {
         private MusicalPieceRepository _musicalPerformanceRepository;
-        public MusicalPieceService() 
+        public MusicalPieceService()
         {
             _musicalPerformanceRepository = new MusicalPieceRepository();
         }
         public MusicalPiece? Create(MusicalPiece newMusicalPerformance)
         {
             return _musicalPerformanceRepository.Create(newMusicalPerformance);
+        }
+        public List<MusicalPiece> GetAll()
+        {
+            return _musicalPerformanceRepository.GetAll();
         }
     }
 }

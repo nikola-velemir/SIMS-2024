@@ -7,7 +7,7 @@ namespace App.Back.Repository
 {
     public class PictureRepository : Repository<Picture>, IRepository<Picture>
     {
-        public PictureRepository() 
+        public PictureRepository()
         {
             SetFileName("PictureData.json");
         }
@@ -23,22 +23,46 @@ namespace App.Back.Repository
 
         public Picture? Delete(Picture instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(instance);
+            Save(instances);
+
+            return instance;
         }
 
         public Picture? Get(Picture instance)
         {
-            throw new NotImplementedException();
+            foreach (var izvodjac in GetAll())
+            {
+                if (izvodjac.Id == instance.Id)
+                {
+                    return izvodjac;
+                }
+            }
+            return null;
         }
 
         public List<Picture> GetAll()
         {
-            throw new NotImplementedException();
+            return Load();
         }
 
         public Picture? Update(Picture instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(fetchedInstance);
+            instances.Add(instance);
+            Save(instances);
+
+            return instance;
         }
     }
 }

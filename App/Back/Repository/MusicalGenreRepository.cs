@@ -23,12 +23,27 @@ namespace App.Back.Repository
 
         public MusicalGenre? Delete(MusicalGenre instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(instance);
+            Save(instances);
+
+            return instance;
         }
 
         public MusicalGenre? Get(MusicalGenre instance)
         {
-            throw new NotImplementedException();
+            foreach (var izvodjac in GetAll())
+            {
+                if (izvodjac.Id == instance.Id)
+                {
+                    return izvodjac;
+                }
+            }
+            return null;
         }
 
         public List<MusicalGenre> GetAll()
@@ -38,7 +53,16 @@ namespace App.Back.Repository
 
         public MusicalGenre? Update(MusicalGenre instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(fetchedInstance);
+            instances.Add(instance);
+            Save(instances);
+
+            return instance;
         }
     }
 }

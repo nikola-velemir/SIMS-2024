@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using App.Front.ViewModels.ViewControllers;
+using System.Windows;
 
 namespace App.Front.Views
 {
@@ -7,10 +8,13 @@ namespace App.Front.Views
     /// </summary>
     public partial class UserView : Window
     {
+        public UserViewViewModel ViewModel { get; set; }
         public UserView()
         {
             InitializeComponent();
             DataContext = this;
+
+            ViewModel = new();
         }
     }
 }

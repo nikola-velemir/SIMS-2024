@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="clr-namespace:App.Front.ViewModels.Presentation.Wrappers"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
         Title="" Height="400" Width="600" ResizeMode="NoResize">
     <Window.Resources>
+
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="White" />
@@ -66,13 +68,18 @@
 
             <!-- Scrollable ListView -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                <ListView>
-                    <!-- Sample items -->
-                    <ListViewItem Content="Item 1" />
-                    <ListViewItem Content="Item 2" />
-                    <ListViewItem Content="Item 3" />
-                    <!-- Add more items as needed -->
-                </ListView>
+                <ListBox ItemsSource="{Binding ViewModel.Notions}"
+                         >
+                    <ListBox.Resources>
+                        <DataTemplate DataType="{x:Type ext:MusicalNotionWrapperViewModel}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Picture.Path}"></Image>
+                                <TextBlock Text="{Binding Notion.Description}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding Genre.Name}" Foreground="Gray" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.Resources>
+                </ListBox>
             </ScrollViewer>
         </Grid>
     </Grid>

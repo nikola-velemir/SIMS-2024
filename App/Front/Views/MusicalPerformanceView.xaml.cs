@@ -24,7 +24,7 @@ namespace App.Front.Views
     public partial class MusicalPerformanceView : Window
     {
         public PictureViewModel CurrentPicture {  get; set; }        
-        public MusicalPerformanceDataViewModel CurrentMusicalPerformance {  get; set; }
+        public MusicalPieceViewModel CurrentMusicalPerformance {  get; set; }
         private MusicalPerformanceViewModel _musicalPerformanceViewModel { get; set; }
 
         private void SetComboBoxOptions()
@@ -39,7 +39,7 @@ namespace App.Front.Views
         {
             InitializeComponent();
             CurrentPicture = new PictureViewModel();
-            CurrentMusicalPerformance = new MusicalPerformanceDataViewModel();
+            CurrentMusicalPerformance = new MusicalPieceViewModel();
             _musicalPerformanceViewModel = new MusicalPerformanceViewModel();
             SetComboBoxOptions();
             DataContext = this;
