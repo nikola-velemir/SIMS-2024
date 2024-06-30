@@ -10,7 +10,7 @@
             IdPlayListe = idPlayListe;
             IdMuzickogDela = idMuzickogDela;
         }
-        public PlayListaMuzickoDeloConnector(PlayLista playLista, MuzickoDelo delo)
+        public PlayListaMuzickoDeloConnector(PlayLista playLista, MusicalPerformance delo)
         {
             IdPlayListe = playLista.Id;
             IdMuzickogDela = delo.Id;

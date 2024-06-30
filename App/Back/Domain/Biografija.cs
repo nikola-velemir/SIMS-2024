@@ -6,16 +6,16 @@
         public string Tekst { get; set; }
         public List<int> Slike { get; set; }
 
-        public Biografija(int id, string tekst, List<Slika> slike)
+        public Biografija(int id, string tekst, List<Picture> slike)
         {
             Tekst = tekst;
             Slike = new List<int>(id);
             Id = id;
             AddSlikeId(slike);
         }
-        private void AddSlikeId(List<Slika> slike)
+        private void AddSlikeId(List<Picture> slike)
         {
-            foreach (Slika slika in slike)
+            foreach (Picture slika in slike)
             {
                 if (Slike.Count != 0 && Slike.Contains(slika.Id)) { continue; }
                 Slike.Add(slika.Id);

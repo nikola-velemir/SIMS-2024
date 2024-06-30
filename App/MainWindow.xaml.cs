@@ -1,4 +1,5 @@
-﻿using App.Front.Views;
+﻿using App.Back.Service;
+using App.Front.Views;
 using System.Windows;
 namespace App
 {
@@ -18,6 +19,11 @@ namespace App
             window.ShowDialog();
         }
 
+        private void KreiranjeDelaClick(object sender, RoutedEventArgs e)
+        {
+            MusicalPerformanceView musicalPerformanceView = new MusicalPerformanceView();
+            musicalPerformanceView.Show();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var window = new Login();
