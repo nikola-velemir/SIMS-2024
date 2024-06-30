@@ -1,6 +1,8 @@
 ﻿using App.Back.Domain;
 using App.Back.Service;
+using App.Front.Views;
 using System.ComponentModel;
+using System.Windows;
 
 namespace App.Front.ViewModels.ViewControllers
 {
@@ -62,6 +64,20 @@ namespace App.Front.ViewModels.ViewControllers
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public bool LogIn(string password)
+        {
+            Account.Password = password;
+            var nalog = Login();
+            if (nalog != null)
+            {
+                MessageBox.Show("Welcome " + Account.UserName + "!");
+                var window = new UserView(new UserAccountViewModel(nalog));
+                window.Show();
+                return true;
+            }
+            return false;
         }
 
     }
