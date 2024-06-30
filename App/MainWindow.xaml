@@ -8,5 +8,6 @@
     <Grid>
         <Button Content="Login" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Width="75"/>
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="kreiraj izvodjaca" Click="KreiraIzvodjacaClick"></Button>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Content="kreiraj dela" Click="KreiranjeDelaClick" Margin="0,232,0,0"></Button>
     </Grid>
 </Window>

@@ -16,7 +16,7 @@
             IdKorisnika = idKorisnika;
             Pesme = pesme;
         }
-        public PlayLista(int id, Nalog korisnik, List<MuzickoDelo> pesme)
+        public PlayLista(int id, Nalog korisnik, List<MusicalPerformance> pesme)
         {
             Id = id;
             IdKorisnika = korisnik.Id;
@@ -30,9 +30,9 @@
             IdKorisnika = other.IdKorisnika;
             Pesme = new(other.Pesme);
         }
-        private void FillPesme(List<MuzickoDelo> pesme)
+        private void FillPesme(List<MusicalPerformance> pesme)
         {
-            foreach (MuzickoDelo md in pesme)
+            foreach (MusicalPerformance md in pesme)
             {
                 if (Pesme.Contains(md.Id))
                     Pesme.Add(md.Id);

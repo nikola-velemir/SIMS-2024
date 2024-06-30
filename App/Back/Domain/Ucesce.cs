@@ -9,7 +9,7 @@ namespace App.Back.Domain
         public int IdTipaUcesnika { get; set; }
        
         public Ucesce() { }
-        public Ucesce(MuzickoDelo delo, Izvodjac izvodjac, TipUcesnika tipUcesnika)
+        public Ucesce(MusicalPerformance delo, Izvodjac izvodjac, TipUcesnika tipUcesnika)
         {
             IdDela = delo.Id;
             IdTipaUcesnika = tipUcesnika.Id;

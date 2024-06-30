@@ -3,12 +3,12 @@
     public class Slika
     {
         public int Id { get; set; }
-        public string Opis { get; set; }
+        public string Description { get; set; }
         public string Path { get; set; }
-        public Slika(int id, string opis, string path)
+        public Slika(int id, string description, string path)
         {
             Id = id;
-            Opis = opis;
+            Description = description;
             Path = path;
         }
     }

@@ -18,5 +18,11 @@ namespace App
             var window = new KreiranjeIzvodjaca();
             window.ShowDialog();
         }
+
+        private void KreiranjeDelaClick(object sender, RoutedEventArgs e)
+        {
+            MusicalPerformanceView musicalPerformanceView = new MusicalPerformanceView();
+            musicalPerformanceView.Show();
+        }
     }
 }
