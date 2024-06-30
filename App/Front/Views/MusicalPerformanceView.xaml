@@ -6,6 +6,15 @@
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
         Title="MusicalPerformanceView" Height="450" Width="800">
+
+    <Window.Resources>
+        <ControlTemplate x:Key="ValidationTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder />
+                <TextBlock Padding="0" Margin="0" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -16,26 +25,40 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="2.5*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="1.2*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="7*" />
             <RowDefinition Height="0.8*" />
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Genre:" />
-        <ComboBox Grid.Row="0" Grid.Column="1"></ComboBox>
+        <ComboBox x:Name="GenreComboBox" Grid.Row="0" Grid.Column="1"></ComboBox>
 
         <Label Grid.Row="1" Grid.Column="0" Content="Description:"/>
-        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox  x:Name="DescriptionTextBox" Grid.Row="1" Grid.Column="1" 
+                  Text="{Binding Path=CurrentMusicalPerformance.Description, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                  Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="0,0,0,22"></TextBox>
 
         <Label Grid.Row="2" Grid.Column="0" Content="Pictures: " />
-        <Label Grid.Row="2" Grid.Column="1" Content="Picture path: " Margin="0,0,532,0" Padding="0"></Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="107,0,0,0"></TextBox>
+        <Label Grid.Row="2" Grid.Column="1" Content="Picture path: " Margin="0,0,504,56" Padding="0" Grid.RowSpan="2"></Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="107,0,0,10" x:Name="PicturePathTextBox"
+                 Text="{Binding Path=CurrentPicture.Path,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                  Validation.ErrorTemplate="{StaticResource ValidationTemplate}"></TextBox>
         <Button Grid.Row="2" Grid.Column="3" Content="Add picture" Click="AddPictureClick"/>
-        <Label Grid.Row="2" Grid.Column="1" Content="Picture description: " Margin="0,28,499,197" Padding="0" Grid.RowSpan="3"></Label>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="107,0,0,0"></TextBox>
+        <Label Grid.Row="3" Grid.Column="1" Content="Picture description: " Margin="0,5,499,2" Padding="0"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="107,5,0,195" x:Name="PictureDescriptionTextBox" Grid.RowSpan="2"
+                 Text="{Binding Path=CurrentPicture.Description,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=false}"></TextBox>
 
-        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></DataGrid>
+        <DataGrid x:Name="PicturesDataGrid" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                  ItemsSource="{Binding Path=CurrentMusicalPerformance.Pictures, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=False}"
+                  AutoGenerateColumns="False" 
+                  SelectionMode="Single" Margin="0,0,0,23">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Picture path" Binding="{Binding Path}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Picture description" Binding="{Binding Description}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Grid.Row="5" Grid.Column="1" Content="Submit" Margin="0,0,424,0" Click="SubmitClick"></Button>
         <Button Grid.Row="5" Grid.Column="1" Content="Exit" Margin="403,0,0,0" Click="ExitClick"></Button>
     </Grid>

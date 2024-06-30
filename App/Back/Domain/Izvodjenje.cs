@@ -30,7 +30,7 @@ namespace App.Back.Domain
             }
             Izvodjaci.Add(izvodjac.Id);
         }
-        public void DodajSliku(Slika slika)
+        public void DodajSliku(Picture slika)
         {
             foreach (var i in Slike)
             {
