@@ -1,11 +1,5 @@
 ﻿using App.Back.Domain;
-using App.Back.Repository;
 using App.Back.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Front.ViewModels.ViewControllers
 {
@@ -26,7 +20,7 @@ namespace App.Front.ViewModels.ViewControllers
             return _pictureService.Create(newPicture);
         }
 
-        public MusicalPerformance? CreateMusicalPerformance(MusicalPerformance newMusicalPerformance)
+        public MusicalPiece? CreateMusicalPerformance(MusicalPiece newMusicalPerformance)
         {
             return _musicalPerformanceService.Create(newMusicalPerformance);
         }

@@ -5,16 +5,16 @@ namespace App.Back.Domain.State.Recenzije
     public class PodRazmatranjemRecenzija : StanjeRecenzije
     {
         public PodRazmatranjemRecenzija() {
-            _stanje = Enums.StateRecenzija.PodRazmatranjem;
+            _stanje = Enums.StateReview.UnderReview;
         }
-        public override void PromeniStanje(Recenzija recenzija)
+        public override void PromeniStanje(Review recenzija)
         {
-            if (recenzija.PrihvatioRecenziju)
+            if (recenzija.AcceptedReview)
             {
-                recenzija.Stanje = new PrihvacenaRecenzija();
+                recenzija.State = new PrihvacenaRecenzija();
                 return;
             }
-            recenzija.Stanje = new OdbijenaRecenzija();
+            recenzija.State = new OdbijenaRecenzija();
         }
     }
 }

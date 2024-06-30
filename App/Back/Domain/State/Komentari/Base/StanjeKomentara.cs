@@ -4,17 +4,17 @@ namespace App.Back.Domain.State.Komentari.Base
 {
     public abstract class StanjeKomentara
     {
-        protected StateKomentara _stanje;
+        protected StateComment _state;
 
-        public StateKomentara Stanje
+        public StateComment State
         {
             get
             {
-                return _stanje;
+                return _state;
             }
         }
 
-        public virtual void PromeniStanje(Komentar komentar)
+        public virtual void ChangeState(Comment komentar)
         {
             throw new NotImplementedException();
         }

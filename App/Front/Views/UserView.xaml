@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="" Height="600" Width="800" ResizeMode="NoResize">
+        Title="" Height="400" Width="600" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
@@ -74,40 +74,6 @@
                     <!-- Add more items as needed -->
                 </ListView>
             </ScrollViewer>
-        </Grid>
-
-        <!-- Playback Controls -->
-        <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="#282828" Height="100">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-
-            <!-- Left Controls (song details) -->
-            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="10">
-                <Image Width="50" Height="50"/>
-                <StackPanel Margin="10">
-                    <TextBlock Text="Song Title" Foreground="White" />
-                    <TextBlock Text="Artist" Foreground="Gray" />
-                </StackPanel>
-            </StackPanel>
-
-            <!-- Center Controls (play/pause, progress) -->
-            <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Content="Previous" />
-                    <Button Content="Play/Pause" />
-                    <Button Content="Next" />
-                </StackPanel>
-                <Slider Minimum="0" Maximum="100" Value="50" />
-            </StackPanel>
-
-            <!-- Right Controls (volume) -->
-            <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">
-                <Button Content="Volume" />
-                <Slider Minimum="0" Maximum="100" Value="50" Width="100" />
-            </StackPanel>
         </Grid>
     </Grid>
 </Window>

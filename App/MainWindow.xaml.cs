@@ -15,7 +15,7 @@ namespace App
 
         private void KreiraIzvodjacaClick(object sender, RoutedEventArgs e)
         {
-            var window = new KreiranjeIzvodjaca();
+            var window = new PerformerCreation();
             window.ShowDialog();
         }
 

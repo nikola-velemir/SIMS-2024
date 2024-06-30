@@ -5,16 +5,16 @@ namespace App.Back.Domain.State.Komentari
     public class PodRazmatranjemKomentar : StanjeKomentara
     {
         public PodRazmatranjemKomentar() {
-            _stanje = Enums.StateKomentara.PodRazmatranjem;
+            _state = Enums.StateComment.UnderReview;
         }
-        public override void PromeniStanje(Komentar komentar)
+        public override void ChangeState(Comment komentar)
         {
-            if (komentar.OdobrioKomentar)
+            if (komentar.AcceptedComment)
             {
-                komentar.Stanje = new PrihvacenKomentar();
+                komentar.State = new PrihvacenKomentar();
                 return;
             }
-            komentar.Stanje = new OdbijenKomentar();
+            komentar.State = new OdbijenKomentar();
         }
     }
 }

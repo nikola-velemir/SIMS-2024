@@ -5,9 +5,9 @@ namespace App.Back.Domain.State.Komentari
     public class OdbijenKomentar : StanjeKomentara
     {
         public OdbijenKomentar() {
-            _stanje = Enums.StateKomentara.Odbijen;
+            _state = Enums.StateComment.Rejected;
         }
-        public override void PromeniStanje(Komentar komentar)
+        public override void ChangeState(Comment komentar)
         {
             return;
         }

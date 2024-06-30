@@ -1,10 +1,5 @@
 ﻿using App.Back.Domain;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Front.ViewModels.Presentation
 {
@@ -57,7 +52,7 @@ namespace App.Front.ViewModels.Presentation
             Pictures = new List<Picture>();
         }
 
-        public MusicalPerformanceDataViewModel(MusicalPerformance musicalPerformance) 
+        public MusicalPerformanceDataViewModel(MusicalPiece musicalPerformance) 
         {
             Id = musicalPerformance.Id;
             Description = musicalPerformance.Description;
@@ -131,10 +126,10 @@ namespace App.Front.ViewModels.Presentation
             }
             return ids;
         }
-        public MusicalPerformance ToMusicalPerformance()
+        public MusicalPiece ToMusicalPerformance()
         {
             var ids = GetPicturesId();
-            return new MusicalPerformance(Id, Description, ids, MusicalGenreId);
+            return new MusicalPiece(Id, Description, ids, MusicalGenreId);
         }
     }
 }

@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Korisnicko Ime:" Grid.Row="0" Grid.Column="0" Margin="10,10,10,10"/>
-        <TextBox Text="{Binding ViewModel.Nalog.KorisnickoIme, Mode=TwoWay}" Name="KorisnickoImeTextBox" Grid.Row="0" Grid.Column="1" Margin="10,10,10,10"/>
+        <TextBox Text="{Binding ViewModel.Nalog.UserName, Mode=TwoWay}" Name="KorisnickoImeTextBox" Grid.Row="0" Grid.Column="1" Margin="10,10,10,10"/>
 
         <Label Content="Lozinka:" Grid.Row="1" Grid.Column="0" Margin="10,10,10,10"/>
         <PasswordBox Name="LozinkaPasswordBox" Grid.Row="1" Grid.Column="1" Margin="10,10,10,10"/>

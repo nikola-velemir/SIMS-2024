@@ -1,0 +1,44 @@
+﻿<Window x:Class="App.Front.Views.PerformerCreation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App.Front.Views"
+        mc:Ignorable="d"
+        Title="Kreiranje Performera" Height="350" Width="763">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Ime:" Grid.Row="0" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="16" />
+        <TextBox Text="{Binding ViewModel.Performer.FirstName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="10" FontSize="16" />
+
+        <TextBlock Text="Prezime:" Grid.Row="1" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="16" />
+        <TextBox Text="{Binding ViewModel.Performer.LastName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Margin="10" FontSize="16" />
+
+        <TextBlock Text="JMBG:" Grid.Row="2" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="16" />
+        <TextBox Text="{Binding ViewModel.Performer.JMBG, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="16" />
+
+        <TextBlock Text="Datum Rodjenja:" Grid.Row="3" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="16" />
+        <DatePicker SelectedDate="{Binding ViewModel.Performer.BirthDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="16" />
+
+        <TextBlock Text="Pol:" Grid.Row="4" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="16" />
+        <ComboBox x:Name="PolComboBox" SelectedItem="{Binding ViewModel.Performer.Gender, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Margin="10" FontSize="16" />
+
+        <TextBlock Text="{Binding ViewModel.Performer.Error, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+
+        <Button Content="Submit" Grid.Row="6" Grid.Column="1" Margin="10" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" Click="Submit" />
+    </Grid>
+</Window>

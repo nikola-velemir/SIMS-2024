@@ -6,24 +6,24 @@ namespace App.Front.ViewModels.ViewControllers
 {
     public class LoginViewModel : INotifyPropertyChanged
     {
-        private NalogService _nalogService;
+        private UserAccountService _accountService;
 
         private string _error;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public NalogViewModel Nalog { get; set; }
+        public UserAccountViewModel Account { get; set; }
         public LoginViewModel()
         {
-            Nalog = new NalogViewModel();
-            _nalogService = new NalogService();
+            Account = new UserAccountViewModel();
+            _accountService = new UserAccountService();
             _error = "";
         }
-        public Nalog? Login()
+        public UserAccount? Login()
         {
             if (!IsValid()) { return null; }
 
-            var found = _nalogService.GeyByKorisnickoAndLozinka(Nalog.KorisnickoIme, Nalog.Lozinka);
+            var found = _accountService.GeyByKorisnickoAndLozinka(Account.UserName, Account.Password);
             if (found == null)
             {
                 Error = "Username or password are incorrect!";
@@ -46,12 +46,12 @@ namespace App.Front.ViewModels.ViewControllers
 
         public bool IsValid()
         {
-            if (string.IsNullOrEmpty(Nalog.KorisnickoIme))
+            if (string.IsNullOrEmpty(Account.UserName))
             {
                 Error = "Username is requeired!";
                 return false;
             }
-            if (string.IsNullOrEmpty(Nalog.Lozinka))
+            if (string.IsNullOrEmpty(Account.Password))
             {
                 Error = "Password is requeired!";
                 return false;

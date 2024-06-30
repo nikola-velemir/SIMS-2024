@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 27015,
+    "FirstName": "dasdasdasdas",
+    "LastName": "dasdasdasdas",
+    "JMBG": "dasdasdasdasdas",
+    "BirthDate": "0003-10-18",
+    "Gender": 0,
+    "AccountId": null,
+    "Role": 1
+  },
+  {
+    "Id": 79795,
+    "FirstName": "asdasdasdasdasdas",
+    "LastName": "dasdasdasd",
+    "JMBG": "dsadasdasdas",
+    "BirthDate": "2024-06-24",
+    "Gender": 0,
+    "AccountId": null,
+    "Role": 1
+  }
+]

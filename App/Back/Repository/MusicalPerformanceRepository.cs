@@ -2,21 +2,16 @@
 using App.Back.Repository.Base;
 using App.Back.Repository.Interface;
 using App.Back.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Back.Repository
 {
-    public class MusicalPerformanceRepository : Repository<MusicalPerformance>, IRepository<MusicalPerformance>
+    public class MusicalPerformanceRepository : Repository<MusicalPiece>, IRepository<MusicalPiece>
     {
         public MusicalPerformanceRepository() 
         {
             SetFileName("MusicalPerformanceData.json");
         }   
-        public MusicalPerformance? Create(MusicalPerformance newMusicalPerformance)
+        public MusicalPiece? Create(MusicalPiece newMusicalPerformance)
         {
             var instances = Load();
             newMusicalPerformance.Id = Utils.GenerateId();
@@ -26,22 +21,22 @@ namespace App.Back.Repository
             return newMusicalPerformance;
         }
 
-        public MusicalPerformance? Delete(MusicalPerformance instance)
+        public MusicalPiece? Delete(MusicalPiece instance)
         {
             throw new NotImplementedException();
         }
 
-        public MusicalPerformance? Get(MusicalPerformance instance)
+        public MusicalPiece? Get(MusicalPiece instance)
         {
             throw new NotImplementedException();
         }
 
-        public List<MusicalPerformance> GetAll()
+        public List<MusicalPiece> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public MusicalPerformance? Update(MusicalPerformance instance)
+        public MusicalPiece? Update(MusicalPiece instance)
         {
             throw new NotImplementedException();
         }
