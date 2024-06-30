@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Back\Data\" />
+    <Folder Include="Back\Data\Pictures\" />
     <Folder Include="Back\Serialization\" />
   </ItemGroup>
 

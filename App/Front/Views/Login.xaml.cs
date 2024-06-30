@@ -21,10 +21,13 @@ namespace App.Front.Views
         {
             ViewModel.Account.Password = LozinkaPasswordBox.Password;
             var nalog = ViewModel.Login();
-            if (nalog != null) { MessageBox.Show("Welcome " + ViewModel.Account.UserName + "!"); }
-            var window = new UserView();
-            window.Show();
-            Close();
+            if (nalog != null)
+            {
+                MessageBox.Show("Welcome " + ViewModel.Account.UserName + "!");
+                var window = new UserView(new UserAccountViewModel(nalog));
+                window.Show();
+                Close();
+            }
         }
     }
 }

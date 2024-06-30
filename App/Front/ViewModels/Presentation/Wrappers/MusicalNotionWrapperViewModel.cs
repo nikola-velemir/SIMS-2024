@@ -1,5 +1,7 @@
 ﻿using App.Back.Domain;
 using App.Back.Service;
+using System.IO;
+using System.Windows;
 
 namespace App.Front.ViewModels.Presentation.Wrappers
 {
@@ -24,6 +26,7 @@ namespace App.Front.ViewModels.Presentation.Wrappers
             var genreService = new MusicalGenreService();
 
             Picture = new PictureViewModel(pictureService.GetById(notion.ProfileImageId) ?? new Picture());
+            
             Genre = new MusicalGenreViewModel(genreService.GetById(notion.MusicalGenreId) ?? new MusicalGenre());
         }
 

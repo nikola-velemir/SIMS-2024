@@ -9,12 +9,19 @@ namespace App.Front.Views
     public partial class UserView : Window
     {
         public UserViewViewModel ViewModel { get; set; }
-        public UserView()
+        public UserView(UserAccountViewModel account)
         {
             InitializeComponent();
             DataContext = this;
 
-            ViewModel = new();
+            ViewModel = new(account);
+        }
+
+        private void OpenLibrary(object sender, RoutedEventArgs e)
+        {
+            var library = new UserLibrary(ViewModel.Account);
+            library.Show();
+            Close();
         }
     }
 }
