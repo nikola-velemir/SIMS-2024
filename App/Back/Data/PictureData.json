@@ -2,6 +2,6 @@
   {
     "Id": 75484,
     "Description": null,
-    "Path": "../../../../App/Back/Data/Pictures/song"
+    "Path": "pack://application:,,,/App;component/../../Back/Data/Pictures/song.png"
   }
 ]
