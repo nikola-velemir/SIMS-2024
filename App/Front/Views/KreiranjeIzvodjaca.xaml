@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="KreiranjeIzvodjaca" Height="350" Width="763">
+        Title="Kreiranje Izvodjaca" Height="350" Width="763">
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -13,6 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -36,6 +37,8 @@
         <TextBlock Text="Pol:" Grid.Row="4" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="16" />
         <ComboBox x:Name="PolComboBox" SelectedItem="{Binding ViewModel.Izvodjac.Pol, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Margin="10" FontSize="16" />
 
-        <Button Content="Submit" Grid.Row="5" Grid.Column="1" Margin="10" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" Click="Submit" />
+        <TextBlock Text="{Binding ViewModel.Izvodjac.Error, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+
+        <Button Content="Submit" Grid.Row="6" Grid.Column="1" Margin="10" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" Click="Submit" />
     </Grid>
 </Window>
