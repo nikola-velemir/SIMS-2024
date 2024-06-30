@@ -1,0 +1,10 @@
+[
+  {
+    "Id": 0,
+    "Lozinka": "string",
+    "KorisnickoIme": "string",
+    "Aktivan": true,
+    "Tip": 0,
+    "IdOsobe": 0
+  }
+]

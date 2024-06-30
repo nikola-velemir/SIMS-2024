@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="" Height="600" Width="800">
+        Title="" Height="600" Width="800" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
@@ -44,6 +44,7 @@
         <!-- Sidebar -->
         <StackPanel Grid.Row="0" Grid.Column="0" Background="#403183">
             <Button Content="Home" Style="{StaticResource SidebarButtonStyle}" />
+
             <Button Content="Your Library" Style="{StaticResource SidebarButtonStyle}" />
             <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" />
         </StackPanel>
@@ -56,7 +57,12 @@
             </Grid.RowDefinitions>
 
             <!-- Search Box -->
-            <TextBox Grid.Row="0" Margin="10" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Search" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <StackPanel Width="559">
+                    <TextBox Grid.Row="0" Margin="10" FontSize="12"/>
+                </StackPanel>
+            </StackPanel>
 
             <!-- Scrollable ListView -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">

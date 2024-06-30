@@ -22,6 +22,9 @@ namespace App.Front.Views
             ViewModel.Nalog.Lozinka = LozinkaPasswordBox.Password;
             var nalog = ViewModel.Login();
             if (nalog != null) { MessageBox.Show("Welcome " + ViewModel.Nalog.KorisnickoIme + "!"); }
+            var window = new UserView();
+            window.Show();
+            Close();
         }
     }
 }
