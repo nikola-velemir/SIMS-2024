@@ -18,5 +18,11 @@ namespace App
             var window = new KreiranjeIzvodjaca();
             window.ShowDialog();
         }
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+            var window = new Login();
+            window.ShowDialog();
+        }
     }
 }

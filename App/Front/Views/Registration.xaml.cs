@@ -1,5 +1,4 @@
-﻿using App.Front.ViewModels.ViewControllers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,28 +15,33 @@ using System.Windows.Shapes;
 namespace App.Front.Views
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for Registration.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Registration : Window
     {
-        public LoginViewModel ViewModel { get; set; }
-        public Login()
+        public Registration()
         {
             InitializeComponent();
-            DataContext = this;
-
-            ViewModel = new();
         }
 
-        private void LoginClick(object sender, RoutedEventArgs e)
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ViewModel.Login();
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
 
         private void Registrate(object sender, RoutedEventArgs e)
         {
-            Registration registration = new Registration();
-            registration.ShowDialog();
+
         }
     }
 }
