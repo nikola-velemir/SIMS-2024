@@ -33,7 +33,7 @@ namespace App.Back.Repository
 
         public List<MusicalPiece> GetAll()
         {
-            throw new NotImplementedException();
+           return Load();
         }
 
         public MusicalPiece? Update(MusicalPiece instance)

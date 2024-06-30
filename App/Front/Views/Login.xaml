@@ -5,8 +5,106 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="Login" Height="168" Width="558">
-    <Grid>
+        Title="Login" Height="250" Width="400">
+    <Window.Resources>
+        <!-- Style for labels -->
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#333333" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+
+        <!-- Style for text boxes -->
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="#E0E0E0" />
+            <Setter Property="Foreground" Value="#333333" />
+            <Setter Property="MinHeight" Value="30" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="15">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style for password box -->
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="#E0E0E0" />
+            <Setter Property="Foreground" Value="#333333" />
+            <Setter Property="MinHeight" Value="30" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="15">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style for error text block -->
+        <Style TargetType="TextBlock" x:Key="ErrorTextBlockStyle">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Foreground" Value="Red" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <!-- Style for login button -->
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Background" Value="#1DB954" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="MinWidth" Value="100" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#168F3D" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#0E6B2B" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#F0F0F0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -18,15 +116,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Korisnicko Ime:" Grid.Row="0" Grid.Column="0" Margin="10,10,10,10"/>
-        <TextBox Text="{Binding ViewModel.Nalog.UserName, Mode=TwoWay}" Name="KorisnickoImeTextBox" Grid.Row="0" Grid.Column="1" Margin="10,10,10,10"/>
+        <!-- Korisnicko Ime Label and TextBox -->
+        <Label Content="Korisničko Ime:" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Text="{Binding ViewModel.Nalog.UserName, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"/>
 
-        <Label Content="Lozinka:" Grid.Row="1" Grid.Column="0" Margin="10,10,10,10"/>
-        <PasswordBox Name="LozinkaPasswordBox" Grid.Row="1" Grid.Column="1" Margin="10,10,10,10"/>
+        <!-- Lozinka Label and PasswordBox -->
+        <Label Content="Lozinka:" Grid.Row="1" Grid.Column="0"/>
+        <PasswordBox Name="LozinkaPasswordBox" Grid.Row="1" Grid.Column="1"/>
 
-        <TextBlock Text="{Binding ViewModel.Error, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+        <!-- Error Message TextBlock -->
+        <TextBlock Text="{Binding ViewModel.Error, UpdateSourceTrigger=PropertyChanged}"
+                   Grid.Row="2" Grid.Column="1" Style="{StaticResource ErrorTextBlockStyle}"/>
 
-
-        <Button Content="Login" Grid.Row="3" Grid.Column="1" Margin="0,10,0,10" HorizontalAlignment="Center" Click="LoginClick" Width="41"/>
+        <!-- Login Button -->
+        <Button Content="Login" Grid.Row="3" Grid.Column="0" Margin="10" Grid.ColumnSpan="2" Click="LoginClick"/>
     </Grid>
 </Window>

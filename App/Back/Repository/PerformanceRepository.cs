@@ -28,7 +28,7 @@ namespace App.Back.Repository
 
         public List<Performance> GetAll()
         {
-            throw new NotImplementedException();
+            return Load();
         }
 
         public Performance? Update(Performance instance)

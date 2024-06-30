@@ -4,38 +4,42 @@
     {
         public int Id { get; set; }
         public int AccountId { get; set; }
-        public List<int> Pesme { get; set; }
+        public List<int> Pieces { get; set; }
 
+        public string Name { get; set; }    
         public PlayList()
         {
-            Pesme = new List<int>();
+            Pieces = new List<int>();
         }
-        public PlayList(int id, int accountId, List<int> pieces)
+        public PlayList(int id, int accountId, string name, List<int> pieces)
         {
             Id = id;
             AccountId = accountId;
-            Pesme = pieces;
+            Pieces = pieces;
+            Name = name;
         }
-        public PlayList(int id, UserAccount user, List<MusicalPiece> pieces)
+        public PlayList(int id, UserAccount user, string name, List<MusicalPiece> pieces)
         {
             Id = id;
             AccountId = user.Id;
-            Pesme = new List<int>();
+            Pieces = new List<int>();
             FillPesme(pieces);
+            Name = name;
 
         }
         public PlayList(PlayList other)
         {
             Id = other.Id;  
             AccountId = other.AccountId;
-            Pesme = new(other.Pesme);
+            Pieces = new(other.Pieces);
+            Name = other.Name;
         }
         private void FillPesme(List<MusicalPiece> pieces)
         {
             foreach (MusicalPiece md in pieces)
             {
-                if (Pesme.Contains(md.Id))
-                    Pesme.Add(md.Id);
+                if (Pieces.Contains(md.Id))
+                    Pieces.Add(md.Id);
             }
         }
     }

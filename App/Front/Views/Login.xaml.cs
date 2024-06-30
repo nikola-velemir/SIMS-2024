@@ -19,12 +19,10 @@ namespace App.Front.Views
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.Account.Password = LozinkaPasswordBox.Password;
-            var nalog = ViewModel.Login();
-            if (nalog != null) { MessageBox.Show("Welcome " + ViewModel.Account.UserName + "!"); }
-            var window = new UserView();
-            window.Show();
-            Close();
+            if (ViewModel.LogIn(LozinkaPasswordBox.Password.Trim()))
+            {
+                Close();
+            }
         }
     }
 }

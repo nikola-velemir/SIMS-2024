@@ -5,10 +5,10 @@
         public int Id { get; set; }
         public string Password { get; set; }
         public string UserName { get; set; }
-        public bool IsActive { get; set; }
+        public bool Active { get; set; }
         public AccountType Type { get; set; }
 
-        public int IdOsobe { get; set; }
+        public int PersonId { get; set; }
         public UserAccount()
         {
             Password = string.Empty;
@@ -19,18 +19,18 @@
             Id = id;
             Password = lozinka;
             UserName = korisnickoIme;
-            IsActive = aktivan;
+            Active = aktivan;
             Type = tip;
-            IdOsobe = idOsobe;
+            PersonId = idOsobe;
         }
         public UserAccount(UserAccount other)
         {
             Id = other.Id;
             Type = other.Type;
             Password = other.Password;
-            IsActive = other.IsActive;
+            Active = other.Active;
             UserName = other.UserName;
-            IdOsobe = other.IdOsobe;
+            PersonId = other.PersonId;
         }
         
     }

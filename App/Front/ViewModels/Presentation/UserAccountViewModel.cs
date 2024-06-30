@@ -114,7 +114,15 @@ public class UserAccountViewModel : INotifyPropertyChanged, IDataErrorInfo
         UserName = other.UserName;
         PersonId = other.PersonId;
     }
-
+    public UserAccountViewModel(UserAccount other)
+    {
+        Id = other.Id;
+        Type = other.Type;
+        Password = other.Password;
+        Active = other.Active;
+        UserName = other.UserName;
+        PersonId = other.PersonId;
+    }
     public UserAccount ToUserAccount()
     {
         return new UserAccount(Id, Password, UserName, Active, Type, PersonId);

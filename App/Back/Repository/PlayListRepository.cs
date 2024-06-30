@@ -53,13 +53,13 @@ namespace App.Back.Repository
             return Load();
         }
 
-        public List<PlayList> GetByKorisnikId(int korisnikId)
+        public List<PlayList> GetByUserId(int userId)
         {
             var playLists = GetAll();
             List<PlayList> userPlayLists = new List<PlayList>();
             foreach (var pl in playLists)
             {
-                if (pl.AccountId == korisnikId)
+                if (pl.AccountId == userId)
                 {
                     userPlayLists.Add(pl);
                 }
