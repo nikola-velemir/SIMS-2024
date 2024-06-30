@@ -1,106 +1,126 @@
 ﻿using App.Back.Domain;
-using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System.Reflection;
 
-public class OsobaViewModel : INotifyPropertyChanged
+public class OsobaViewModel : INotifyPropertyChanged, IDataErrorInfo
 {
-    private int id;
-    private string ime;
-    private string prezime;
-    private string jmbg;
-    private DateTime datumRodjenja;
-    private Polovi pol;
-    private int? idNaloga;
-
+    private int _id;
+    private string _ime;
+    private string _prezime;
+    private string _jmbg;
+    private DateTime _datumRodjenja;
+    private Polovi _pol;
+    private int? _idNaloga;
+    private string _error;
     public int Id
     {
-        get => id;
+        get => _id;
         set
         {
-            if (id != value)
+            if (_id != value)
             {
-                id = value;
-                OnPropertyChanged();
+                _id = value;
+                OnPropertyChanged(nameof(Id));
             }
         }
     }
 
     public string Ime
     {
-        get => ime;
+        get => _ime;
         set
         {
-            if (ime != value)
+            if (_ime != value)
             {
-                ime = value;
-                OnPropertyChanged();
+                _ime = value;
+                OnPropertyChanged(nameof(Ime));
             }
         }
     }
 
     public string Prezime
     {
-        get => prezime;
+        get => _prezime;
         set
         {
-            if (prezime != value)
+            if (_prezime != value)
             {
-                prezime = value;
-                OnPropertyChanged();
+                _prezime = value;
+                OnPropertyChanged(nameof(Prezime));
             }
         }
     }
 
     public string JMBG
     {
-        get => jmbg;
+        get => _jmbg;
         set
         {
-            if (jmbg != value)
+            if (_jmbg != value)
             {
-                jmbg = value;
-                OnPropertyChanged();
+                _jmbg = value;
+                OnPropertyChanged(nameof(JMBG));
             }
         }
     }
 
     public DateTime DatumRodjenja
     {
-        get => datumRodjenja;
+        get => _datumRodjenja;
         set
         {
-            if (datumRodjenja != value)
+            if (_datumRodjenja != value)
             {
-                datumRodjenja = value;
-                OnPropertyChanged();
+                _datumRodjenja = value;
+                OnPropertyChanged(nameof(DatumRodjenja));
             }
         }
     }
 
     public Polovi Pol
     {
-        get => pol;
+        get => _pol;
         set
         {
-            if (pol != value)
+            if (_pol != value)
             {
-                pol = value;
-                OnPropertyChanged();
+                _pol = value;
+                OnPropertyChanged(nameof(Pol));
             }
         }
     }
 
     public int? IdNaloga
     {
-        get => idNaloga;
+        get => _idNaloga;
         set
         {
-            if (idNaloga != value)
+            if (_idNaloga != value)
             {
-                idNaloga = value;
-                OnPropertyChanged();
+                _idNaloga = value;
+                OnPropertyChanged(nameof(IdNaloga));
             }
+        }
+    }
+
+    public bool IsValid
+    {
+        get
+        {
+            // Get all public properties of the class
+            PropertyInfo[] properties = GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            // Iterate through the properties and check for validation errors
+            foreach (PropertyInfo property in properties)
+            {
+                string error = this[property.Name];
+                if (!string.IsNullOrEmpty(error))
+                {
+                    Error = error;
+                    return false;
+                }
+            }
+            Error = string.Empty;
+            return true;
         }
     }
 
@@ -117,7 +137,7 @@ public class OsobaViewModel : INotifyPropertyChanged
         Ime = ime;
         Prezime = prezime;
         JMBG = jmbg;
-        DatumRodjenja = new DateTime(datumRodjenja, new TimeOnly(0, 0, 0));
+        DatumRodjenja = datumRodjenja.ToDateTime(new TimeOnly(0, 0));
         Pol = pol;
         IdNaloga = null;
     }
@@ -128,15 +148,66 @@ public class OsobaViewModel : INotifyPropertyChanged
         Ime = ime;
         Prezime = prezime;
         JMBG = jmbg;
-        DatumRodjenja = new DateTime(datumRodjenja, new TimeOnly(0, 0, 0));
+        DatumRodjenja = datumRodjenja.ToDateTime(new TimeOnly(0, 0));
         Pol = pol;
         IdNaloga = idNaloga;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
-    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    protected void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    // IDataErrorInfo implementation
+    public string Error
+    {
+        get { return _error; }
+        set
+        {
+            if (value != _error)
+            {
+                _error = value;
+                OnPropertyChanged(nameof(Error));
+            }
+        }
+    }
+
+    public string this[string columnName]
+    {
+        get
+        {
+            string result = "";
+            switch (columnName)
+            {
+                case nameof(Ime):
+                    if (string.IsNullOrWhiteSpace(Ime)) { }
+                    result = "First name cannot be empty.";
+                    break;
+                case nameof(Prezime):
+                    if (string.IsNullOrWhiteSpace(Prezime))
+                        result = "Last name cannot be empty.";
+                    break;
+                case nameof(JMBG):
+                    if (string.IsNullOrWhiteSpace(JMBG))
+                        result = "JMBG cannot be empty.";
+                    break;
+                case nameof(DatumRodjenja):
+                    if (DatumRodjenja == default(DateTime))
+                        result = "Birth date must be set.";
+                    if (DatumRodjenja.CompareTo(DateTime.Now) >= 0)
+                        result = "Birth date cannot be in the future.";
+                    break;
+                case nameof(Pol):
+                    if (!Enum.IsDefined(typeof(Polovi), Pol))
+                        result = "Gender is not valid.";
+                    break;
+                default:
+                    result = "";
+                    break;
+            }
+            return result;
+        }
     }
 }

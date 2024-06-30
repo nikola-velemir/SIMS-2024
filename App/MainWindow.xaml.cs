@@ -10,13 +10,18 @@ namespace App
         public MainWindow()
         {
             InitializeComponent();
-           
         }
 
         private void KreiraIzvodjacaClick(object sender, RoutedEventArgs e)
         {
             var window = new KreiranjeIzvodjaca();
             window.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Login();
+            window.Show();
         }
     }
 }

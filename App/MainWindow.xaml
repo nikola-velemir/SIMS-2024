@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Login" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Width="75"/>
+        <Button Content="Login" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Width="75" Click="Button_Click"/>
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="kreiraj izvodjaca" Click="KreiraIzvodjacaClick"></Button>
     </Grid>
 </Window>

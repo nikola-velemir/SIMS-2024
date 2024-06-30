@@ -1,8 +1,11 @@
 ﻿using App.Back.Domain;
+using System;
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
-public class NalogViewModel : INotifyPropertyChanged
+public class NalogViewModel : INotifyPropertyChanged, IDataErrorInfo
 {
     private int id;
     private string lozinka;
@@ -19,7 +22,7 @@ public class NalogViewModel : INotifyPropertyChanged
             if (id != value)
             {
                 id = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Id));
             }
         }
     }
@@ -32,7 +35,7 @@ public class NalogViewModel : INotifyPropertyChanged
             if (lozinka != value)
             {
                 lozinka = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Lozinka));
             }
         }
     }
@@ -45,7 +48,7 @@ public class NalogViewModel : INotifyPropertyChanged
             if (korisnickoIme != value)
             {
                 korisnickoIme = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(KorisnickoIme));
             }
         }
     }
@@ -58,7 +61,7 @@ public class NalogViewModel : INotifyPropertyChanged
             if (aktivan != value)
             {
                 aktivan = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Aktivan));
             }
         }
     }
@@ -71,7 +74,7 @@ public class NalogViewModel : INotifyPropertyChanged
             if (tip != value)
             {
                 tip = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Tip));
             }
         }
     }
@@ -84,7 +87,7 @@ public class NalogViewModel : INotifyPropertyChanged
             if (idOsobe != value)
             {
                 idOsobe = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(IdOsobe));
             }
         }
     }
@@ -122,8 +125,67 @@ public class NalogViewModel : INotifyPropertyChanged
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
-    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    protected void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    // IDataErrorInfo implementation
+    public string Error { get; set; }
+
+    public string this[string columnName]
+    {
+        get
+        {
+            string result = "";
+            switch (columnName)
+            {
+                case nameof(Id):
+                    if (Id <= 0)
+                        result = "Id must be a positive number.";
+                    break;
+                case nameof(Lozinka):
+                    if (string.IsNullOrWhiteSpace(Lozinka))
+                        result = "Lozinka cannot be empty.";
+                    break;
+                case nameof(KorisnickoIme):
+                    if (string.IsNullOrWhiteSpace(KorisnickoIme))
+                        result = "KorisnickoIme cannot be empty.";
+                    break;
+                case nameof(Aktivan):
+                    // No validation needed for bool type
+                    break;
+                case nameof(Tip):
+                    if (!Enum.IsDefined(typeof(TipNaloga), Tip))
+                        result = "Type is not valid.";
+                    break;
+                case nameof(IdOsobe):
+                    if (IdOsobe <= 0)
+                        result = "IdOsobe must be a positive number.";
+                    break;
+                default:
+                    break;
+            }
+            return result;
+        }
+    }
+
+    public bool IsValid
+    {
+        get
+        {
+            // Get all public properties of the class
+            PropertyInfo[] properties = GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            // Iterate through the properties and check for validation errors
+            foreach (PropertyInfo property in properties)
+            {
+                string error = this[property.Name];
+                if (!string.IsNullOrEmpty(error))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
