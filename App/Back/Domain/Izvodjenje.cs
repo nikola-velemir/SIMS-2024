@@ -13,7 +13,8 @@ namespace App.Back.Domain
         public Izvodjenje(int id,
             string opis,
             DateOnly datum,
-            bool uzivo, List<int> dela, List<int> izvodjaci, List<int> slike) : base(id, opis)
+            int musicalGenreId,
+            bool uzivo, List<int> dela, List<int> izvodjaci, List<int> slike) : base(id, opis, musicalGenreId)
         {
             Datum = datum;
             Uzivo = uzivo;
@@ -29,7 +30,7 @@ namespace App.Back.Domain
             }
             Izvodjaci.Add(izvodjac.Id);
         }
-        public void DodajSliku(Slika slika)
+        public void DodajSliku(Picture slika)
         {
             foreach (var i in Slike)
             {
@@ -37,7 +38,7 @@ namespace App.Back.Domain
             }
             Slike.Add(slika.Id);
         }
-        public void DodajDelo(MuzickoDelo delo)
+        public void DodajDelo(MusicalPerformance delo)
         {
             foreach (var i in Dela)
             {

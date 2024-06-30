@@ -3,12 +3,15 @@
     public class MuzickiPojam
     {
         public int Id { get; set; }
-        public string Opis { get; set; }
+        public string Description { get; set; }
+        public int MusicalGenreId {  get; set; }
 
-        public MuzickiPojam(int id, string opis)
+        public MuzickiPojam() { }
+        public MuzickiPojam(int id, string description, int musicalGenreId)
         {
             Id = id;
-            Opis = opis;
+            Description = description;
+            MusicalGenreId = musicalGenreId;
         }
     }
 }
