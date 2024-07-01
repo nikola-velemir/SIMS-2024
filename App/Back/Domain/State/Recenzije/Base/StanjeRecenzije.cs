@@ -4,9 +4,9 @@ namespace App.Back.Domain.State.Recenzije.Base
 {
     public abstract class StanjeRecenzije
     {
-        protected StateRecenzija _stanje;
+        protected StateReview _stanje;
 
-        public StateRecenzija Stanje
+        public StateReview Stanje
         {
             get
             {
@@ -14,7 +14,7 @@ namespace App.Back.Domain.State.Recenzije.Base
             }
         }
 
-        public virtual void PromeniStanje(Recenzija recenzija)
+        public virtual void PromeniStanje(Review recenzija)
         {
            throw new NotImplementedException();
         }

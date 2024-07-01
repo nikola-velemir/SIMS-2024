@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Id": 1,
+    "Password": "password123",
+    "UserName": "user123",
+    "IsActive": true,
+    "Type": 0,
+    "PersonId": 101
+  }
+]

@@ -21,13 +21,13 @@ namespace App.Front.Views
     public partial class Registration : Window
     {
         public PersonDTO SelectedPerson { get; set; }
-        private PersonViewModel _personViewModel { get; set; }
+        private RegistrationViewModel _personViewModel { get; set; }
         public Registration()
         {
             InitializeComponent();
-            _personViewModel = new PersonViewModel();
+            _personViewModel = new RegistrationViewModel();
             SelectedPerson = new PersonDTO();
-            SelectedPerson.Role = Back.Domain.Uloga.Korisnik;
+            SelectedPerson.Role = Role.User;
 
             SetOptionsComboBox();
             BirthDateTimePicker.SelectedDate = new DateTime(2000,1,1);
@@ -36,7 +36,7 @@ namespace App.Front.Views
 
         private void SetOptionsComboBox()
         {
-            foreach (var level in Enum.GetValues(typeof(Polovi)))
+            foreach (var level in Enum.GetValues(typeof(Genders)))
             {
                 GendersComboBox.Items.Add(level);
             }
@@ -64,7 +64,7 @@ namespace App.Front.Views
         {
             SetBirthDateTime();
             if(GendersComboBox.SelectedIndex < 0) { MessageBox.Show("You have to choose a gender"); return; }
-            else { SelectedPerson.Gender = (Polovi)GendersComboBox.SelectedIndex; }
+            else { SelectedPerson.Gender = (Genders)GendersComboBox.SelectedIndex; }
             if(SelectedPerson.IsValid)
             {
                 _personViewModel.Create(SelectedPerson);

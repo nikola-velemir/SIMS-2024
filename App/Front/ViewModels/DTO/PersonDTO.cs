@@ -83,8 +83,8 @@ namespace App.Front.ViewModels.DTO
             }
         }
 
-        private Polovi gender;
-        public Polovi Gender
+        private Genders gender;
+        public Genders Gender
         {
             get
             {
@@ -102,7 +102,7 @@ namespace App.Front.ViewModels.DTO
 
         public int AccountId { get; set; }
 
-        public Uloga Role { get; set; }
+        public Role Role { get; set; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -177,23 +177,23 @@ namespace App.Front.ViewModels.DTO
             }
         }
 
-        public Osoba ToPerson()
+        public Person ToPerson()
         {
-            return new Osoba(Id, FirstName, LastName, JMBG, DateOnly.FromDateTime(BirthDate), Gender, AccountId, Role);
+            return new Person(Id, FirstName, LastName, JMBG, DateOnly.FromDateTime(BirthDate), Gender, AccountId, Role);
         }
 
         public PersonDTO() { }
 
-        public PersonDTO (Osoba osoba)
+        public PersonDTO (Person person)
         {
-            Id = osoba.Id;
-            FirstName = osoba.Ime;
-            LastName = osoba.Prezime;
-            JMBG = osoba.JMBG;
-            BirthDate = (osoba.DatumRodjenja).ToDateTime(TimeOnly.Parse("00:00 AM"));
-            Gender = osoba.Pol;
-            AccountId = (int)osoba.IdNaloga;
-            Role = osoba.Uloga;
+            Id = person.Id;
+            FirstName = person.FirstName;
+            LastName = person.LastName;
+            JMBG = person.JMBG;
+            BirthDate = (person.BirthDate).ToDateTime(TimeOnly.Parse("00:00 AM"));
+            Gender = person.Gender;
+            AccountId = (int)person.AccountId;
+            Role = person.Role;
         }
     }
 }

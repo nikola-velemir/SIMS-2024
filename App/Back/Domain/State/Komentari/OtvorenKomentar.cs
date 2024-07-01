@@ -6,11 +6,11 @@ namespace App.Back.Domain.State.Komentari
     {
         public OtvorenKomentar()
         {
-            _stanje = Enums.StateKomentara.Otvoren;
+            _state = Enums.StateComment.Open;
         }
-        public override void PromeniStanje(Komentar komentar)
+        public override void ChangeState(Comment komentar)
         {
-            komentar.Stanje = new PodRazmatranjemKomentar();
+            komentar.State = new PodRazmatranjemKomentar();
         }
     }
 }
