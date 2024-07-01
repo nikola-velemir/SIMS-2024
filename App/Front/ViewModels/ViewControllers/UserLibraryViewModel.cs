@@ -10,8 +10,8 @@ namespace App.Front.ViewModels.ViewControllers
     {
         private PlayListService _playListService;
         public ObservableCollection<PlayListViewModel> PlayLists { get; set; }
-        public UserAccountViewModel Account { get; set; }
-        public UserLibraryViewModel(UserAccountViewModel account)
+        public UserAccountDTO Account { get; set; }
+        public UserLibraryViewModel(UserAccountDTO account)
         {
             PlayLists = new();
             Account = account;

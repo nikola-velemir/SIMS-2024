@@ -8,10 +8,10 @@ namespace App.Front.ViewModels.ViewControllers
     {
         private MusicalNotionService _notionService;
 
-        public UserAccountViewModel Account { get; set; }
+        public UserAccountDTO Account { get; set; }
         public ObservableCollection<MusicalNotionWrapperViewModel> Notions { get; set; }
 
-        public UserViewViewModel(UserAccountViewModel account)
+        public UserViewViewModel(UserAccountDTO account)
         {
             Notions = new();
             _notionService = new MusicalNotionService();

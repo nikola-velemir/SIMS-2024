@@ -21,6 +21,7 @@ namespace App.Front.Views
     public partial class Registration : Window
     {
         public PersonDTO SelectedPerson { get; set; }
+        public UserAccountDTO SelectedUserAccount { get; set; }
         private RegistrationViewModel _personViewModel { get; set; }
         public Registration()
         {
@@ -28,6 +29,10 @@ namespace App.Front.Views
             _personViewModel = new RegistrationViewModel();
             SelectedPerson = new PersonDTO();
             SelectedPerson.Role = Role.User;
+            SelectedUserAccount = new UserAccountDTO();
+            SelectedUserAccount.AccountType = AccountType.User;
+            SelectedUserAccount.Active = true;
+
 
             SetOptionsComboBox();
             BirthDateTimePicker.SelectedDate = new DateTime(2000,1,1);
@@ -65,10 +70,20 @@ namespace App.Front.Views
             SetBirthDateTime();
             if(GendersComboBox.SelectedIndex < 0) { MessageBox.Show("You have to choose a gender"); return; }
             else { SelectedPerson.Gender = (Genders)GendersComboBox.SelectedIndex; }
-            if(SelectedPerson.IsValid)
+            if (!_personViewModel.CanUserRegistrate(SelectedUserAccount)) { MessageBox.Show("Username already exist"); return; }
+            if (!_personViewModel.CheckJMBG(SelectedPerson)) { MessageBox.Show("You do not have valid JMBG"); return; }
+
+            if(SelectedPerson.IsValid && SelectedUserAccount.IsValid)
             {
-                _personViewModel.Create(SelectedPerson);
+                PersonDTO? personDTO = _personViewModel.Create(SelectedPerson);
+                if(personDTO == null) { MessageBox.Show("FAIL"); return; }
+                SelectedUserAccount.PersonId = personDTO.Id;
+                UserAccountDTO? userAccountDTO = _personViewModel.Create(SelectedUserAccount);
+                if(userAccountDTO == null) { MessageBox.Show("FAIL"); return; }
+                personDTO.AccountId = userAccountDTO.Id;
+                _personViewModel.Update(personDTO); 
                 MessageBox.Show("You have successfully registrate");
+                Close();
             }
             else
             {

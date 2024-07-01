@@ -9,7 +9,7 @@ namespace App.Front.Views
     public partial class UserLibrary : Window
     {
         public UserLibraryViewModel ViewModel { get; set; }
-        public UserLibrary(UserAccountViewModel account)
+        public UserLibrary(UserAccountDTO account)
         {
             InitializeComponent();
 

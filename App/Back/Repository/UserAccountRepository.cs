@@ -2,6 +2,7 @@
 using App.Back.Repository.Base;
 using App.Back.Repository.Interface;
 using App.Back.Utilities;
+using Newtonsoft.Json.Linq;
 
 namespace App.Back.Repository
 {
@@ -18,7 +19,7 @@ namespace App.Back.Repository
             if (fetchedInstance != null) { return null; }
 
             var instances = Load();
-            instance.Id = Utils.GenerateId();
+            instance.Id = GetLastId() + 1;
             instances.Add(instance);
             Save(instances);
 
@@ -53,6 +54,13 @@ namespace App.Back.Repository
         public List<UserAccount> GetAll()
         {
             return Load();
+        }
+
+        public int GetLastId()
+        {
+            var jArray = Load();
+            if (jArray.Count == 0) { return 0; }
+            return jArray[jArray.Count-1].Id;
         }
 
         public UserAccount? Update(UserAccount instance)
