@@ -5,8 +5,230 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="CreatePlayListView" Height="450" Width="800">
+        Title="Create PlayList" Height="450" Width="800">
+    <Window.Resources>
+        <!-- Styles -->
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  RecognizesAccessKey="True"/>
+                            </Border>
+                            <Border x:Name="overlayBorder"
+                                    Background="#1DB954"
+                                    Opacity="0"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="overlayBorder" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SaveButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#1DB954" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BorderBrush" Value="#1DB954" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#24B35D" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#0E7D37" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#CCCCCC" />
+                                <Setter Property="BorderBrush" Value="#CCCCCC" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style for "Add" button -->
+        <Style x:Key="AddButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#1DB954" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style for "Remove" button -->
+        <Style x:Key="RemoveButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF5733" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DataTemplate x:Key="SongTemplate">
+            <Border Margin="5" Padding="5" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Picture.Path}" Width="50" Height="50" Margin="5"/>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Piece.Description}" FontWeight="Bold" FontSize="14"/>
+                        <!-- Artists -->
+                        <ItemsControl ItemsSource="{Binding Performers}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding FirstName}" Margin="0,0,5,0"/>
+                                        <TextBlock Text="{Binding LastName}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <TextBlock Text="{Binding Genre.Name}" FontSize="12"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid>
-        
+        <!-- Main layout with 2 columns -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Column="0" Background="#403183">
+            <Button Content="Home" Style="{StaticResource SidebarButtonStyle}" Click="OpenHome" />
+            <Button Content="Your Library" Style="{StaticResource SidebarButtonStyle}" Click="OpenLibrary"/>
+            <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" Click="OpenCreatePlayList"/>
+        </StackPanel>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Save Button -->
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <TextBlock Text="Create Playlist" FontSize="24" FontWeight="Bold" Margin="10" />
+                <Button Content="Save" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Width="75" Height="30" Style="{StaticResource SaveButtonStyle}" Click="SaveClick"/>
+            </StackPanel>
+
+            <!-- Input Field for Playlist Name -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Playlist Name:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox Width="300" Text="{Binding PlaylistName}" />
+            </StackPanel>
+
+            <!-- Input Field for Search -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Search:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox Width="300" Text="{Binding SearchQuery}" />
+            </StackPanel>
+
+            <!-- Split ListViews for Pieces and AddedPieces -->
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Left ListView (AddedPieces) with Remove button -->
+                <ListView Grid.Column="0" ItemsSource="{Binding ViewModel.AddedPieces}" ItemTemplate="{StaticResource SongTemplate}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Grid>
+                                            <ContentPresenter/>
+                                            <Button Content="Remove" Width="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Style="{StaticResource RemoveButtonStyle}" Click="RemoveButtonClick"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+
+                <!-- Right ListView (Pieces) with Add button -->
+                <ListView Grid.Column="1" ItemsSource="{Binding ViewModel.Pieces}" ItemTemplate="{StaticResource SongTemplate}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Grid>
+                                            <ContentPresenter/>
+                                            <Button Content="Add" HorizontalAlignment="Right"  Width="20" VerticalAlignment="Center" Margin="10" Style="{StaticResource AddButtonStyle}" Click="AddButtonClick"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

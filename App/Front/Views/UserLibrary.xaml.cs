@@ -23,5 +23,12 @@ namespace App.Front.Views
             home.Show();
             Close();
         }
+
+        private void CreatePlaylist(object sender, RoutedEventArgs e)
+        {
+            var createPlaylist = new CreatePlayListView(ViewModel.Account);
+            createPlaylist.Show();
+            Close();
+        }
     }
 }

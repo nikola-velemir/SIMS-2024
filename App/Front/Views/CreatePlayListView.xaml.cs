@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace App.Front.Views
 {
@@ -19,9 +7,46 @@ namespace App.Front.Views
     /// </summary>
     public partial class CreatePlayListView : Window
     {
-        public CreatePlayListView()
+        public CreatePlayListViewViewModel ViewModel { get; set; }
+        public CreatePlayListView(UserAccountViewModel account)
         {
             InitializeComponent();
+            DataContext = this;
+
+            ViewModel = new(account);
+        }
+
+        private void OpenLibrary(object sender, RoutedEventArgs e)
+        {
+            var library = new UserLibrary(ViewModel.Account);
+            library.Show();
+            Close();
+        }
+
+        private void OpenHome(object sender, RoutedEventArgs e)
+        {
+            var home = new UserView(ViewModel.Account);
+            home.Show();
+            Close();
+        }
+        private void AddButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenCreatePlayList(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+
+        private void SaveClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

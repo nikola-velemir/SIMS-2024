@@ -60,7 +60,7 @@
         <StackPanel Grid.Row="0" Grid.Column="0" Background="#403183">
             <Button Content="Home" Style="{StaticResource SidebarButtonStyle}" />
             <Button Content="Your Library" Style="{StaticResource SidebarButtonStyle}" Click="OpenLibrary" />
-            <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" Click="CreatePlayList" />
         </StackPanel>
 
         <!-- Main Content Area -->

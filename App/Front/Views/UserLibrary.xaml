@@ -53,13 +53,14 @@
             <Setter Property="BorderBrush" Value="#CCCCCC" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Width" Value="150" />
-            <Setter Property="Height" Value="200" />
+            <Setter Property="Height" Value="250" />
         </Style>
 
         <!-- DataTemplate for PlayList items -->
         <DataTemplate x:Key="PlayListTemplate">
             <Border Style="{StaticResource CardStyle}">
                 <StackPanel>
+                    <Image Source="pack://application:,,,/App;component/../../Back/Data/Pictures/playlist.png" Height="100" Margin="5"/>
                     <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="5"/>
                     <TextBlock Text="Pieces:" Margin="5"/>
                     <ItemsControl ItemsSource="{Binding Pieces}" Margin="5">
@@ -85,7 +86,7 @@
         <StackPanel Grid.Column="0" Background="#403183">
             <Button Content="Home" Style="{StaticResource SidebarButtonStyle}" Click="OpenHome" />
             <Button Content="Your Library" Style="{StaticResource SidebarButtonStyle}" />
-            <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" Click="CreatePlaylist" />
         </StackPanel>
 
         <!-- Main Content Area -->
