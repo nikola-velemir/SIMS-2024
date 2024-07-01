@@ -27,7 +27,7 @@ namespace App.Front.ViewModels.Presentation.Wrappers
 
             Picture = new PictureViewModel(pictureService.GetById(notion.ProfileImageId) ?? new Picture());
             
-            Genre = new MusicalGenreViewModel(genreService.GetById(notion.MusicalGenreId) ?? new MusicalGenre());
+            Genre = new MusicalGenreViewModel(genreService.GetById(notion.MusicalGenreId) ?? new MusicGenre());
         }
 
     }

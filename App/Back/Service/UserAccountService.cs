@@ -60,5 +60,18 @@ namespace App.Back.Service
             }
             return true;
         }
+
+        public List<UserAccount> GetAllEditors()
+        {
+            var editors = new List<UserAccount>();
+            foreach(var account in GetAll())
+            {
+                if(account.Type == AccountType.Editor)
+                {
+                    editors.Add(account);
+                }
+            }
+            return editors;
+        }
     }
 }

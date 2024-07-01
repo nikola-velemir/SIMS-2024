@@ -1,56 +1,56 @@
 ﻿using App.Back.Domain;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
-public class MusicalGenreViewModel : INotifyPropertyChanged
+namespace App.Front.ViewModels.Presentation
 {
-    private int _id;
-    private string _name;
-
-    public int Id
+    public class MusicalGenreViewModel : INotifyPropertyChanged, IDataErrorInfo
     {
-        get => _id;
-        set
+        private int _id;
+        private string _name;
+
+        public int Id
         {
-            if (_id != value)
+            get => _id;
+            set
             {
-                _id = value;
-                OnPropertyChanged(nameof(Id));
+                if (_id != value)
+                {
+                    _id = value;
+                    OnPropertyChanged(nameof(Id));
+                }
             }
         }
-    }
 
-    public string Name
-    {
-        get => _name;
-        set
+        public string Name
         {
-            if (_name != value)
+            get => _name;
+            set
             {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
+                if (_name != value)
+                {
+                    _name = value;
+                    OnPropertyChanged(nameof(Name));
+                }
             }
         }
-    }
 
-    public MusicalGenreViewModel() { }
+        public string Error => throw new NotImplementedException();
 
-    public MusicalGenreViewModel(int id, string name)
-    {
-        _id = id;
-        _name = name;
-    }
+        public string this[string columnName] => throw new NotImplementedException();
 
-    public MusicalGenreViewModel(MusicalGenre musicalGenre)
-    {
-        this._id = musicalGenre.Id;
-        this._name = musicalGenre.Name;
-    }
+        public MusicalGenreViewModel() { }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+        public MusicalGenreViewModel(MusicGenre musicalGenre)
+        {
+            _id = musicalGenre.Id;
+            _name = musicalGenre.Name;
+        }
 
-    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }

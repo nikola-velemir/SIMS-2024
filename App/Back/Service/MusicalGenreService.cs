@@ -11,11 +11,11 @@ namespace App.Back.Service
             _musicalGenreRepository = new MusicalGenreRepository();
         }
 
-        public List<MusicalGenre> GetAll()
+        public List<MusicGenre> GetAll()
         {
             return _musicalGenreRepository.GetAll();
         }
-        public MusicalGenre? GetById(int id)
+        public MusicGenre? GetById(int id)
         {
             foreach (var g in _musicalGenreRepository.GetAll())
             {
@@ -24,14 +24,14 @@ namespace App.Back.Service
             return null;
 
         }
-        public MusicalGenre? Create(MusicalGenre newGenre)
+        public MusicGenre? Create(MusicGenre newGenre)
         {
             return _musicalGenreRepository.Create(newGenre);
         }
 
-        public MusicalGenre? GetByName(string name)
+        public MusicGenre? GetByName(string name)
         {
-            foreach (MusicalGenre musicalGenre in _musicalGenreRepository.GetAll())
+            foreach (MusicGenre musicalGenre in _musicalGenreRepository.GetAll())
             {
                 if (musicalGenre.Name == name)
                 {

@@ -1,0 +1,147 @@
+﻿<Window x:Class="App.Front.Views.AdministratorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="clr-namespace:App.Front.ViewModels.Presentation"
+        xmlns:wrp="clr-namespace:App.Front.ViewModels.Presentation.Wrappers"
+        xmlns:local="clr-namespace:App.Front.Views"
+        mc:Ignorable="d"
+        Title="Administrator" Height="450" Width="1000">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type ext:MusicalGenreViewModel}">
+            <StackPanel Orientation="Horizontal" Margin="10" >
+                <StackPanel Orientation="Horizontal" IsEnabled="False">
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Id: "></Run>
+                        <Run Text="{Binding Id}"></Run>
+                    </TextBlock>
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Name: "></Run>
+                        <Run Text="{Binding Name}"></Run>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ext:EditorViewModel}">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <StackPanel Orientation="Horizontal" IsEnabled="False">
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Username: "></Run>
+                        <Run Text="{Binding UserAccount.UserName}"></Run>
+                    </TextBlock>
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="First name: "></Run>
+                        <Run Text="{Binding Person.FirstName}"></Run>
+                    </TextBlock>
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Last name: "></Run>
+                        <Run Text="{Binding Person.LastName}"></Run>
+                    </TextBlock>
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Birth date: "></Run>
+                        <Run Text="{Binding Person.BirthDate}"></Run>
+                    </TextBlock>
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Account status: "></Run>
+                        <Run Text="{Binding AccountStatus}"></Run>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type wrp:MusicalNotionWrapperViewModel}">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <StackPanel Orientation="Horizontal" IsEnabled="False">
+                    <Image Source="{Binding Picture.Path}" Width="50" Height="50" Margin="5"/>
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Genre: "></Run>
+                        <Run Text="{Binding Genre.Name}"></Run>
+                    </TextBlock>
+                    <TextBlock  FontWeight="Bold" Margin="10">
+                        <Run Text="Description: "></Run>
+                        <Run Text="{Binding Notion.Description}"></Run>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <!-- Style for Sidebar Buttons -->
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                 Background="{TemplateBinding Background}"
+                                 BorderBrush="{TemplateBinding BorderBrush}"
+                                 BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                               Margin="{TemplateBinding Padding}"
+                                               RecognizesAccessKey="True"/>
+                            </Border>
+                            <Border x:Name="overlayBorder"
+                                 Background="White"
+                                 Opacity="0"
+                                 BorderBrush="{TemplateBinding BorderBrush}"
+                                 BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="overlayBorder" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <!-- Main layout with 3 rows and 2 columns -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Background="#403183">
+            <Button Content="Music pieces" Style="{StaticResource SidebarButtonStyle}" Command="{Binding CurrentAdminItems.ShowMusicPieceCommand}"/>
+            <Button Content="Music editors" Style="{StaticResource SidebarButtonStyle}" Command="{Binding CurrentAdminItems.ShowMusicEditorCommand}" />
+            <Button Content="Music genres" Style="{StaticResource SidebarButtonStyle}" Command="{Binding CurrentAdminItems.ShowMusicGenreCommand}"/>
+        </StackPanel>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Search Box -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,10" Width="390" >
+                <Button>Add</Button>
+                <Button>Update</Button>
+                <Button>Delete</Button>
+            </StackPanel>
+
+            <!-- Scrollable ListView -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <ListBox ItemsSource="{Binding CurrentAdminItems.CurrentItems,UpdateSourceTrigger=PropertyChanged}">
+                   
+                </ListBox>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>

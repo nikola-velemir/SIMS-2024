@@ -1,15 +1,15 @@
 ﻿namespace App.Back.Domain
 {
-    public class MusicalGenre
+    public class MusicGenre
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public MusicalGenre(int id, string name)
+        public MusicGenre(int id, string name)
         {
             Id = id;
             Name = name;
         }
-        public MusicalGenre() { }
+        public MusicGenre() { }
 
     }
 }

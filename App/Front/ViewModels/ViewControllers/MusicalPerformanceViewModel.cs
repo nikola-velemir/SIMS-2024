@@ -25,7 +25,7 @@ namespace App.Front.ViewModels.ViewControllers
             return _musicalPerformanceService.Create(newMusicalPerformance);
         }
 
-        public List<MusicalGenre> GetAllMusicalGenre()
+        public List<MusicGenre> GetAllMusicalGenre()
         {
             return _musicalGenreService.GetAll();
         }

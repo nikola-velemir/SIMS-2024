@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace App.Back.Domain
+﻿namespace App.Back.Domain
 {
     public class MusicalPiece : MusicalNotion
     {
