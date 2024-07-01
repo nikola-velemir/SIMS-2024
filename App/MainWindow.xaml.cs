@@ -19,15 +19,16 @@ namespace App
             window.ShowDialog();
         }
 
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+            var window = new Login();
+            window.ShowDialog();
+        }
         private void KreiranjeDelaClick(object sender, RoutedEventArgs e)
         {
             MusicalPerformanceView musicalPerformanceView = new MusicalPerformanceView();
             musicalPerformanceView.Show();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new Login();
-            window.Show();
         }
     }
 }

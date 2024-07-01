@@ -21,8 +21,11 @@ namespace App.Front.ViewModels.ViewControllers
             _accountService = new UserAccountService();
             _error = "";
         }
-        public UserAccount? Login()
+
+        
+        public UserAccount? Login(string password)
         {
+            Account.Password = password;
             if (!IsValid()) { return null; }
 
             var found = _accountService.GeyByKorisnickoAndLozinka(Account.UserName, Account.Password);
@@ -32,6 +35,7 @@ namespace App.Front.ViewModels.ViewControllers
             }
 
             return found;
+
         }
         public string Error
         {
@@ -69,7 +73,7 @@ namespace App.Front.ViewModels.ViewControllers
         public bool LogIn(string password)
         {
             Account.Password = password;
-            var nalog = Login();
+            var nalog = Login(Account.Password);
             if (nalog != null)
             {
                 MessageBox.Show("Welcome " + Account.UserName + "!");
