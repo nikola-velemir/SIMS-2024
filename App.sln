@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "App\App.csproj", "{A5350482-F0D6-4F14-8157-54B182170F51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LangLang", "..\..\Uvod u softversko inzenjerstvo\Language school\cp-usi-2024-3-a\LangLang\LangLang.csproj", "{4AEDA427-1D31-4C58-B1BD-49638AB1E89C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LangLang", "..\..\Uvod u softversko inzenjerstvo\Language school\cp-usi-2024-3-a\LangLang\LangLang.csproj", "{98243246-6EC7-4AB0-8685-8450F40F7C16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A5350482-F0D6-4F14-8157-54B182170F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5350482-F0D6-4F14-8157-54B182170F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5350482-F0D6-4F14-8157-54B182170F51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AEDA427-1D31-4C58-B1BD-49638AB1E89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AEDA427-1D31-4C58-B1BD-49638AB1E89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AEDA427-1D31-4C58-B1BD-49638AB1E89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AEDA427-1D31-4C58-B1BD-49638AB1E89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98243246-6EC7-4AB0-8685-8450F40F7C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98243246-6EC7-4AB0-8685-8450F40F7C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98243246-6EC7-4AB0-8685-8450F40F7C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98243246-6EC7-4AB0-8685-8450F40F7C16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

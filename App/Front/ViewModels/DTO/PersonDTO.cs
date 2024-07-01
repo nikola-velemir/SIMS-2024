@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using App.Back.Domain;
+using App.Back.Domain.Osobe;
 
 namespace App.Front.ViewModels.DTO
 {
-    class PersonDTO : INotifyPropertyChanged, IDataErrorInfo
+    public class PersonDTO : INotifyPropertyChanged, IDataErrorInfo
     {
         public int Id { get; set; }
 
@@ -107,13 +108,11 @@ namespace App.Front.ViewModels.DTO
 
         protected virtual void OnPropertyChanged(string name)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            
         }
 
-        private readonly string[] _validatedProperties = { "FirstName", "LastName", "JMBG", "BirthDate", "Gender" };
+        private readonly string[] _validatedProperties = { "FirstName", "LastName", "JMBG", "BirthDate" };
         public bool IsValid
         {
             get
@@ -136,10 +135,6 @@ namespace App.Front.ViewModels.DTO
             {
                 if (columnName == "FirstName")
                 {
-                    if (FirstName == null)
-                    {
-                        return "";
-                    }
                     if (string.IsNullOrEmpty(FirstName))
                     {
                         return "FirstName is required";
@@ -147,10 +142,6 @@ namespace App.Front.ViewModels.DTO
                 }
                 else if(columnName == "LastName")
                 {
-                    if (LastName == null)
-                    {
-                        return "";
-                    }
                     if (string.IsNullOrEmpty(LastName))
                     {
                         return "LastName is required";
@@ -158,36 +149,51 @@ namespace App.Front.ViewModels.DTO
                 }
                 else if(columnName == "JMBG")
                 {
-                    if (JMBG == null)
-                    {
-                        return "";
-                    }
                     if (string.IsNullOrEmpty(JMBG))
                     {
                         return "JMBG is required";
                     }
                     if(JMBG.Length != 13)
                     {
-                        return "JMBG must have 13 character";
+                        return "JMBG must have 13 numbers";
                     }
                 }
                 else if(columnName == "BirthDate")
                 {
-                    if (BirthDate == null)
-                    {
-                        return "";
-                    }
                     if (BirthDate.Date >= DateTime.Now.Date)
                     {
                         return "BirthDate must be in the future";
                     }
-                    if(BirthDate.Date.AddYears(18) > DateTime.Now.Date)
+                    if(BirthDate.AddYears(18).Date > DateTime.Now.Date)
                     {
-                        return "You have toi be 18 years old";
+                        return "You have to be 18 years old";
+                    }
+                    if(BirthDate.Year < 1900)
+                    {
+                        return "Minimum is 1900 year";
                     }
                 }
                 return null;
             }
+        }
+
+        public Osoba ToPerson()
+        {
+            return new Osoba(Id, FirstName, LastName, JMBG, DateOnly.FromDateTime(BirthDate), Gender, AccountId, Role);
+        }
+
+        public PersonDTO() { }
+
+        public PersonDTO (Osoba osoba)
+        {
+            Id = osoba.Id;
+            FirstName = osoba.Ime;
+            LastName = osoba.Prezime;
+            JMBG = osoba.JMBG;
+            BirthDate = (osoba.DatumRodjenja).ToDateTime(TimeOnly.Parse("00:00 AM"));
+            Gender = osoba.Pol;
+            AccountId = (int)osoba.IdNaloga;
+            Role = osoba.Uloga;
         }
     }
 }

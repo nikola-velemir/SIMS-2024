@@ -20,18 +20,24 @@ namespace App.Front.Views
     /// </summary>
     public partial class Login : Window
     {
-        public LoginViewModel ViewModel { get; set; }
+        public LoginViewModel LoginViewModel { get; set; }
         public Login()
         {
             InitializeComponent();
-            DataContext = this;
+            LoginViewModel = new();
 
-            ViewModel = new();
+            DataContext = this;
         }
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.Login();
+            string user = LoginViewModel.Login();
+            // call constructor for any type instead of messages 
+            if(user == "") { MessageBox.Show("You do not have an account"); }
+            else if (user == "Korisnik") { MessageBox.Show("Welcome user"); }
+            else if (user == "Administrator") { MessageBox.Show("Welcome admin"); }
+            else if (user == "MuzickiUrednik") { MessageBox.Show("Welcome reviser"); }
+
         }
 
         private void Registrate(object sender, RoutedEventArgs e)

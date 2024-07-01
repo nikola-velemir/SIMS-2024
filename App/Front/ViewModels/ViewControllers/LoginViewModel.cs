@@ -11,11 +11,11 @@ namespace App.Front.ViewModels.ViewControllers
             Nalog = new NalogViewModel();
             _nalogService = new NalogService();
         }
-        public int Login()
+        public string Login()
         {
             var found = _nalogService.GeyByKorisnickoAndLozinka(Nalog.KorisnickoIme, Nalog.Lozinka);
-            if (found == null) { return -1; }
-            return found.Id;
+            if (found == null) { return ""; }
+            return found.Tip.ToString();
         }
     }
 }
