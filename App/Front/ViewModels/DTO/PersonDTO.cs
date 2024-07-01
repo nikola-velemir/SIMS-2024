@@ -139,12 +139,20 @@ namespace App.Front.ViewModels.DTO
                     {
                         return "FirstName is required";
                     }
+                    if (!char.IsUpper(FirstName[0]))
+                    {
+                        return "First letter must be upper";
+                    }
                 }
                 else if(columnName == "LastName")
                 {
                     if (string.IsNullOrEmpty(LastName))
                     {
                         return "LastName is required";
+                    }
+                    if (!char.IsUpper(LastName[0]))
+                    {
+                        return "First letter must be upper";
                     }
                 }
                 else if(columnName == "JMBG")

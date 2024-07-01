@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "FirstName": "Milos",
+    "LastName": "Mrdja",
+    "JMBG": "1231231233333",
+    "BirthDate": "2000-01-01",
+    "Gender": 2,
+    "AccountId": 1,
+    "Role": 0
+  },
+  {
+    "Id": 2,
+    "FirstName": "Milorad",
+    "LastName": "Milic",
+    "JMBG": "1231231231233",
+    "BirthDate": "2000-01-01",
+    "Gender": 1,
+    "AccountId": 2,
+    "Role": 0
+  },
+  {
+    "Id": 3,
+    "FirstName": "Marko",
+    "LastName": "Markovic",
+    "JMBG": "2501000123123",
+    "BirthDate": "2000-01-25",
+    "Gender": 0,
+    "AccountId": 3,
+    "Role": 0
+  }
+]
