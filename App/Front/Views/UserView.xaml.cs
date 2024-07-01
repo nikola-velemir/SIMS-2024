@@ -24,11 +24,11 @@ namespace App.Front.Views
             Close();
         }
 
-        private void CreatePlayList(object sender, RoutedEventArgs e)
+        private void Create(object sender, RoutedEventArgs e)
         {
-            var createPlaylist = new CreatePlayListView(ViewModel.Account);
-            createPlaylist.Show();
-            Close();
+            var window = new CreatePlayList(ViewModel.Account);
+            window.ShowDialog();
+            OpenLibrary(sender, e);
         }
     }
 }

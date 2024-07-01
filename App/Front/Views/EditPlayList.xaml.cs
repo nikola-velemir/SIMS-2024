@@ -1,19 +1,20 @@
-﻿using System.Windows;
+﻿using App.Front.ViewModels.Presentation;
+using System.Windows;
 
 namespace App.Front.Views
 {
     /// <summary>
     /// Interaction logic for CreatePlayListView.xaml
     /// </summary>
-    public partial class CreatePlayListView : Window
+    public partial class EditPlayList : Window
     {
-        public CreatePlayListViewViewModel ViewModel { get; set; }
-        public CreatePlayListView(UserAccountViewModel account)
+        public EditPlayListViewViewModel ViewModel { get; set; }
+        public EditPlayList(UserAccountViewModel account, PlayListViewModel playList)
         {
             InitializeComponent();
             DataContext = this;
 
-            ViewModel = new(account);
+            ViewModel = new(account, playList);
         }
 
         private void OpenLibrary(object sender, RoutedEventArgs e)
@@ -31,17 +32,20 @@ namespace App.Front.Views
         }
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
-
+            ViewModel.AddPieces();
         }
 
         private void RemoveButtonClick(object sender, RoutedEventArgs e)
         {
-
+            ViewModel.RemovePiece();
         }
 
         private void OpenCreatePlayList(object sender, RoutedEventArgs e)
         {
-            return;
+            var window = new CreatePlayList(ViewModel.Account);
+            window.ShowDialog();
+
+            OpenLibrary(sender,e);
         }
 
         private void SaveClick(object sender, RoutedEventArgs e)

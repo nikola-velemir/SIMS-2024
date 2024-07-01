@@ -1,5 +1,6 @@
 ﻿using App.Back.Domain;
 using App.Back.Repository;
+using App.Back.Utilities;
 
 namespace App.Back.Service
 {
@@ -18,6 +19,11 @@ namespace App.Back.Service
         public List<PlayList> GetByUserId(int id)
         {
             return _repository.GetByUserId(id);
+        }
+        public PlayList? Create(PlayList item)
+        {
+            item.Id = Utils.GenerateId();
+            return _repository.Create(item);
         }
     }
 }

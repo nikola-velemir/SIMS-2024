@@ -24,7 +24,7 @@
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}">
                                 <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                                   Margin="{TemplateBinding Padding}"
                                                   RecognizesAccessKey="True"/>
                             </Border>
@@ -54,6 +54,14 @@
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Width" Value="150" />
             <Setter Property="Height" Value="250" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F0F0F0" />
+                    <Setter Property="BorderBrush" Value="#1DB954" />
+                    <Setter Property="BorderThickness" Value="2" />
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <!-- DataTemplate for PlayList items -->
@@ -61,15 +69,9 @@
             <Border Style="{StaticResource CardStyle}">
                 <StackPanel>
                     <Image Source="pack://application:,,,/App;component/../../Back/Data/Pictures/playlist.png" Height="100" Margin="5"/>
-                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="5"/>
-                    <TextBlock Text="Pieces:" Margin="5"/>
-                    <ItemsControl ItemsSource="{Binding Pieces}" Margin="5">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding}" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="24" Margin="5"/>
+                    <TextBlock Text="Created:" Margin="5"/>
+                    <TextBlock Text="{Binding DateCreated}" Margin="5"/>
                 </StackPanel>
             </Border>
         </DataTemplate>
@@ -101,9 +103,18 @@
 
             <!-- Scrollable ListView -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                <WrapPanel>
-                    <ItemsControl ItemsSource="{Binding ViewModel.PlayLists}" ItemTemplate="{StaticResource PlayListTemplate}" />
-                </WrapPanel>
+                <ItemsControl ItemsSource="{Binding ViewModel.PlayLists}" ItemTemplate="{StaticResource PlayListTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel ItemWidth="170" ItemHeight="270" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <EventSetter Event="MouseLeftButtonUp" Handler="PlayListClick" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
             </ScrollViewer>
         </Grid>
     </Grid>
