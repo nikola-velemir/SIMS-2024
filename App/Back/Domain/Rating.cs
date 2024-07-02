@@ -30,5 +30,20 @@
         {
             StarCount = ocena;
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Rating other = (Rating)obj;
+            return StarCount == other.StarCount;
+        }
+
+        public override int GetHashCode()
+        {
+            return StarCount.GetHashCode();
+        }
     }
 }

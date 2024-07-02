@@ -9,7 +9,7 @@ namespace App.Back.Domain
         public int PerformerTypeId { get; set; }
        
         public Participation() { }
-        public Participation(MusicalPiece delo, Performer izvodjac, PeformerType tipUcesnika)
+        public Participation(MusicalPiece delo, Performer izvodjac, PerformerType tipUcesnika)
         {
             PieceId = delo.Id;
             PerformerTypeId = tipUcesnika.Id;
@@ -26,6 +26,30 @@ namespace App.Back.Domain
             PieceId = other.PieceId;
             PerformerId = other.PerformerId;
             PerformerTypeId = other.PerformerTypeId;
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Participation other = (Participation)obj;
+            return PieceId == other.PieceId &&
+                   PerformerId == other.PerformerId &&
+                   PerformerTypeId == other.PerformerTypeId;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                hash = hash * 23 + PieceId.GetHashCode();
+                hash = hash * 23 + PerformerId.GetHashCode();
+                hash = hash * 23 + PerformerTypeId.GetHashCode();
+                return hash;
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ namespace App.Front.Views
     public class EditPlayListViewViewModel
     {
         private MusicalPieceService _musicalPieceService;
+        private PlayListService _playListService;
         public UserAccountViewModel Account { get; set; }
         public ObservableCollection<MusicalPieceWrapperViewModel> Pieces { get; set; }
         public ObservableCollection<MusicalPieceWrapperViewModel> AddedPieces { get; set; }
@@ -19,6 +20,7 @@ namespace App.Front.Views
             Account = account;
             PlayList = playList;
             _musicalPieceService = new();
+            _playListService = new PlayListService();
             Pieces = new();
             AddedPieces = new();
             FillAddedPieces();
@@ -48,7 +50,7 @@ namespace App.Front.Views
         public void Update()
         {
             Pieces.Clear();
-            
+
             foreach (var p in _musicalPieceService.GetAll())
             {
                 var vm = new MusicalPieceWrapperViewModel(new MusicalPieceViewModel(p));
@@ -57,16 +59,26 @@ namespace App.Front.Views
 
         }
 
-        public void AddPieces(MusicalPieceWrapperViewModel piece)
+        public void AddPiece(MusicalPieceWrapperViewModel piece)
         {
             AddedPieces.Add(piece);
             Update();
         }
 
-        internal void RemovePiece(MusicalPieceWrapperViewModel piece)
+        public void RemovePiece(MusicalPieceWrapperViewModel piece)
         {
             AddedPieces.Remove(piece);
             Update();
+        }
+        public bool Save()
+        {
+            PlayList.Pieces = new();
+            foreach (var ap in AddedPieces)
+            {
+                PlayList.Pieces.Add(ap.Piece.Id);
+            }
+            var a = _playListService.Update(PlayList.ToPlayList());
+            return a != null;
         }
     }
 }

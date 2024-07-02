@@ -44,19 +44,25 @@
             </Setter>
         </Style>
 
+        <!-- Updated Save Button Style -->
+        <!-- Updated Save Button Style -->
         <Style x:Key="SaveButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#1DB954" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="FontSize" Value="16" />
-            <Setter Property="Padding" Value="10" />
-            <Setter Property="BorderBrush" Value="#1DB954" />
+            <Setter Property="Padding" Value="8 5" />
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="50"/>
+            <!-- Adjusted padding -->
+            <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="5">
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5" Padding="{TemplateBinding Padding}">
+                            <!-- Rounded corners and padding -->
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -76,27 +82,8 @@
             </Setter>
         </Style>
 
-        <!-- Style for "Add" button -->
-        <Style x:Key="AddButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#1DB954" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="Padding" Value="5" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
 
-        <!-- Style for "Remove" button -->
+        <!-- Updated Remove Button Style -->
         <Style x:Key="RemoveButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#FF5733" />
             <Setter Property="Foreground" Value="White" />
@@ -107,8 +94,32 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5" Padding="5">
+                            <!-- Rounded corners and padding -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Updated Add Button Style -->
+        <Style x:Key="AddButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#1DB954" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5" Padding="5">
+                            <!-- Rounded corners and padding -->
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -174,7 +185,7 @@
                     <TextBlock Text="Edit Playlist" FontSize="24" FontWeight="Bold" Margin="10" />
                 </StackPanel>
                 <StackPanel>
-                <Button Content="Save" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Width="75" Height="30" Style="{StaticResource SaveButtonStyle}" Click="SaveClick"/>
+                <Button Content="Save" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Height="30" Style="{StaticResource SaveButtonStyle}" Click="SaveClick"/>
                 </StackPanel>
                 </StackPanel>
 
@@ -206,7 +217,7 @@
                                     <ControlTemplate TargetType="ListViewItem">
                                         <Grid>
                                             <ContentPresenter/>
-                                            <Button Content="Remove" Width="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Style="{StaticResource RemoveButtonStyle}" Click="RemoveButtonClick"/>
+                                            <Button Content="Remove"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Style="{StaticResource RemoveButtonStyle}" Click="RemoveButtonClick"/>
                                         </Grid>
                                     </ControlTemplate>
                                 </Setter.Value>
@@ -224,7 +235,7 @@
                                     <ControlTemplate TargetType="ListViewItem">
                                         <Grid>
                                             <ContentPresenter/>
-                                            <Button Content="Add" HorizontalAlignment="Right"  Width="20" VerticalAlignment="Center" Margin="10" Style="{StaticResource AddButtonStyle}" Click="AddButtonClick"/>
+                                            <Button Content="Add" HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="10" Style="{StaticResource AddButtonStyle}" Click="AddButtonClick"/>
                                         </Grid>
                                     </ControlTemplate>
                                 </Setter.Value>

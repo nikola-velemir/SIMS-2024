@@ -1,5 +1,8 @@
-﻿using App.Front.ViewModels.Presentation;
+﻿using App.Back.Domain;
+using App.Front.ViewModels.Presentation;
+using App.Front.ViewModels.Presentation.Wrappers;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace App.Front.Views
 {
@@ -32,12 +35,31 @@ namespace App.Front.Views
         }
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.AddPieces();
+            var a = sender;
+            if (sender is Button button)
+            {
+                // Get the DataContext of the ListViewItem associated with this button
+                if (button.DataContext is MusicalPieceWrapperViewModel musicalPieceViewModel)
+                {
+                    ViewModel.AddPiece(musicalPieceViewModel);
+                }
+            }
+
         }
 
         private void RemoveButtonClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.RemovePiece();
+            var a = sender;
+            if (sender is Button button)
+            {
+                // Get the DataContext of the ListViewItem associated with this button
+                if (button.DataContext is MusicalPieceWrapperViewModel musicalPieceViewModel)
+                {
+                    ViewModel.RemovePiece(musicalPieceViewModel);
+                }
+            }
+
+            //ViewModel.RemovePiece();
         }
 
         private void OpenCreatePlayList(object sender, RoutedEventArgs e)
@@ -45,12 +67,21 @@ namespace App.Front.Views
             var window = new CreatePlayList(ViewModel.Account);
             window.ShowDialog();
 
-            OpenLibrary(sender,e);
+            OpenLibrary(sender, e);
         }
 
         private void SaveClick(object sender, RoutedEventArgs e)
         {
+            if (ViewModel.Save())
+            {
+                MessageBox.Show("Play list save successfuly!");
 
+            }
+            else
+            {
+                MessageBox.Show("Failed to save the playlist!");
+            }
+            OpenLibrary(sender, e);
         }
     }
 }

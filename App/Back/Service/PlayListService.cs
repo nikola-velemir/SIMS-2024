@@ -25,5 +25,9 @@ namespace App.Back.Service
             item.Id = Utils.GenerateId();
             return _repository.Create(item);
         }
+        public PlayList? Update(PlayList item)
+        {
+            return _repository.Update(item);
+        }
     }
 }

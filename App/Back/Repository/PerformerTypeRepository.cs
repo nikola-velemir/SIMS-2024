@@ -5,13 +5,13 @@ using App.Back.Utilities;
 
 namespace App.Back.Repository
 {
-    public class PerformerTypeRepository : Repository<PeformerType>, IRepository<PeformerType>
+    public class PerformerTypeRepository : Repository<PerformerType>, IRepository<PerformerType>
     {
         public PerformerTypeRepository()
         {
             SetFileName("PerformerTypeData.json");
         }
-        public PeformerType? Create(PeformerType instance)
+        public PerformerType? Create(PerformerType instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -25,7 +25,7 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public PeformerType? Delete(PeformerType instance)
+        public PerformerType? Delete(PerformerType instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -38,7 +38,7 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public PeformerType? Get(PeformerType instance)
+        public PerformerType? Get(PerformerType instance)
         {
             foreach (var izvodjac in GetAll())
             {
@@ -50,12 +50,12 @@ namespace App.Back.Repository
             return null;
         }
 
-        public List<PeformerType> GetAll()
+        public List<PerformerType> GetAll()
         {
             return Load();
         }
 
-        public PeformerType? Update(PeformerType instance)
+        public PerformerType? Update(PerformerType instance)
         {
             var fetchedInstance = Get(instance);
 

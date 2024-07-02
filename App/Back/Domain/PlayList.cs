@@ -45,5 +45,36 @@
                     Pieces.Add(md.Id);
             }
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            PlayList other = (PlayList)obj;
+            return Id == other.Id &&
+                   AccountId == other.AccountId &&
+                   Pieces.SequenceEqual(other.Pieces) &&
+                   DateCreated.Equals(other.DateCreated) &&
+                   Name == other.Name;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                hash = hash * 23 + Id.GetHashCode();
+                hash = hash * 23 + AccountId.GetHashCode();
+                hash = hash * 23 + DateCreated.GetHashCode();
+                hash = hash * 23 + (Name != null ? Name.GetHashCode() : 0);
+                foreach (var piece in Pieces)
+                {
+                    hash = hash * 23 + piece.GetHashCode();
+                }
+                return hash;
+            }
+        }
     }
 }

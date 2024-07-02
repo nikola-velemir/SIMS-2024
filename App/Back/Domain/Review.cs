@@ -7,20 +7,21 @@ namespace App.Back.Domain
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public bool EditiorPriority { get; set; }
-        public DateOnly Date { get; set;}
-        
+        public bool EditorPriority { get; set; }
+        public DateOnly Date { get; set; }
+
         public int AccountId { get; set; }
         public int MusicalNotionId { get; set; }
 
         public Rating Rating { get; set; }
-        
+
         public StanjeRecenzije State { get; set; }
 
         public bool GaveUpOnWriting { get; set; }
         public bool AcceptedReview { get; set; }
         public bool WantsToEdit { get; set; }
-        public Review() {
+        public Review()
+        {
             Description = string.Empty;
             Rating = new();
             State = new DraftRecenzija();
@@ -29,7 +30,7 @@ namespace App.Back.Domain
         {
             Id = id;
             Description = opis;
-            EditiorPriority = urednikPriorited;
+            EditorPriority = urednikPriorited;
             Date = datum;
             AccountId = idKorisnika;
             MusicalNotionId = idMuzickogPojma;
@@ -43,7 +44,7 @@ namespace App.Back.Domain
         {
             Id = id;
             Description = opis;
-            EditiorPriority = urednikPriorited;
+            EditorPriority = urednikPriorited;
             Date = datum;
             AccountId = idKorisnika;
             MusicalNotionId = idMuzickogPojma;
@@ -52,6 +53,43 @@ namespace App.Back.Domain
             GaveUpOnWriting = false;
             AcceptedReview = false;
             WantsToEdit = false;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Review other = (Review)obj;
+            return Id == other.Id &&
+                   Description == other.Description &&
+                   EditorPriority == other.EditorPriority &&
+                   Date == other.Date &&
+                   AccountId == other.AccountId &&
+                   MusicalNotionId == other.MusicalNotionId &&
+                   Rating.Equals(other.Rating) &&
+                   State.Equals(other.State) &&
+                   GaveUpOnWriting == other.GaveUpOnWriting &&
+                   AcceptedReview == other.AcceptedReview &&
+                   WantsToEdit == other.WantsToEdit;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 17;
+            hash = hash * 23 + Id.GetHashCode();
+            hash = hash * 23 + (Description?.GetHashCode() ?? 0);
+            hash = hash * 23 + EditorPriority.GetHashCode();
+            hash = hash * 23 + Date.GetHashCode();
+            hash = hash * 23 + AccountId.GetHashCode();
+            hash = hash * 23 + MusicalNotionId.GetHashCode();
+            hash = hash * 23 + Rating.GetHashCode();
+            hash = hash * 23 + State.GetHashCode();
+            hash = hash * 23 + GaveUpOnWriting.GetHashCode();
+            hash = hash * 23 + AcceptedReview.GetHashCode();
+            hash = hash * 23 + WantsToEdit.GetHashCode();
+            return hash;
         }
     }
 }
