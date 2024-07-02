@@ -28,5 +28,15 @@
     "Gender": 0,
     "AccountId": 3,
     "Role": 0
+  },
+  {
+    "Id": 4,
+    "FirstName": "Aleksa",
+    "LastName": "Test",
+    "JMBG": "1406004800053",
+    "BirthDate": "2004-06-14",
+    "Gender": 0,
+    "AccountId": 4,
+    "Role": 2
   }
 ]

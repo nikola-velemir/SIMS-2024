@@ -1,7 +1,6 @@
 ﻿using App.Back.Domain;
 using App.Back.Repository;
 using App.Front.ViewModels.DTO;
-
 namespace App.Back.Service
 {
 
@@ -52,6 +51,17 @@ namespace App.Back.Service
         public void Delete(MusicPieceDTO musicPieceDTO)
         {
             _musicalPieceRepository.Delete(musicPieceDTO.ToMusicPiece());
+        }
+
+        internal MusicPieceDTO? GetById(int id)
+        {
+            foreach (var p in GetAll()) { 
+                if(p.Id == id)
+                {
+                    return p;
+                }
+            }
+            return null;
         }
     }
 }

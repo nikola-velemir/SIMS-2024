@@ -62,6 +62,7 @@ namespace App.Front.ViewModels.DTO
         public MusicPieceDTO()
         {
             Pictures = new List<Picture>();
+            ProfilePicture = new Picture();
         }
 
         public MusicPieceDTO(MusicPieceDTO musicalPiece)

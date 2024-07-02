@@ -5,57 +5,53 @@ using App.Back.Utilities;
 
 namespace App.Back.Repository
 {
-    public class PerformerTypeRepository : Repository<PerformerType>, IRepository<PerformerType>
+    public class BandRepository : Repository<Band>, IRepository<Band>
     {
-        public PerformerTypeRepository()
+        public BandRepository()
         {
-            SetFileName("PerformerTypeData.json");
+            SetFileName("BandData.json");
         }
-        public PerformerType? Create(PerformerType instance)
+        public Band? Create(Band newBand)
         {
-            var fetchedInstance = Get(instance);
-
-            if (fetchedInstance != null) { return null; }
-
-            var instances = GetAll();
-            instance.Id = Utils.GenerateId();
-            instances.Add(instance);
+            var instances = Load();
+            newBand.Id = Utils.GenerateId();
+            instances.Add(newBand);
             Save(instances);
 
-            return instance;
+            return newBand;
         }
 
-        public PerformerType? Delete(PerformerType instance)
+        public Band? Delete(Band instance)
         {
             var fetchedInstance = Get(instance);
 
             if (fetchedInstance == null) { return null; }
 
             var instances = Load();
-            instances.Remove(instance);
+            instances.Remove(fetchedInstance);
             Save(instances);
 
             return instance;
         }
 
-        public PerformerType? Get(PerformerType instance)
+        public Band? Get(Band instance)
         {
-            foreach (var izvodjac in GetAll())
+            foreach (var band in GetAll())
             {
-                if (izvodjac.Id == instance.Id)
+                if (band.Id == instance.Id)
                 {
-                    return izvodjac;
+                    return band;
                 }
             }
             return null;
         }
 
-        public List<PerformerType> GetAll()
+        public List<Band> GetAll()
         {
             return Load();
         }
 
-        public PerformerType? Update(PerformerType instance)
+        public Band? Update(Band instance)
         {
             var fetchedInstance = Get(instance);
 

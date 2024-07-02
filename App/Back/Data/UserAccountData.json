@@ -20,7 +20,15 @@
     "Password": "marko123",
     "UserName": "marko",
     "Active": true,
+    "Type": 0,
+    "PersonId": 0
+  },
+  {
+    "Id": 4,
+    "Password": "test123",
+    "UserName": "aleksa",
+    "Active": true,
     "Type": 2,
-    "PersonId": 3
+    "PersonId": 4
   }
 ]

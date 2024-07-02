@@ -1,9 +1,13 @@
-﻿namespace App.Back.Domain
+﻿
+namespace App.Back.Domain
 {
     public class MusicalPiece : MusicalNotion
     {
         public List<int> Pictures { get; set; }
-        public MusicalPiece() : base() { }
+        public MusicalPiece() : base()
+        {
+            Pictures = new();
+        }
         public MusicalPiece(int id, string description, List<int> pictures, int musicalGenreId, int profilePictureId) : base(id, description, musicalGenreId, profilePictureId)
         {
             Pictures = pictures;
@@ -25,6 +29,11 @@
         {
             return obj is MusicalPiece piece &&
                    Id == piece.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
         }
     }
 }

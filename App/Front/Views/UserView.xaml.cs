@@ -23,5 +23,14 @@ namespace App.Front.Views
             library.Show();
             Close();
         }
+
+        private void Create(object sender, RoutedEventArgs e)
+        {
+            var window = new CreatePlayList(ViewModel.Account);
+            window.ShowDialog();
+            
+            OpenLibrary(sender, e);
+            
+        }
     }
 }
