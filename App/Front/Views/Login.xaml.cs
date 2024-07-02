@@ -23,11 +23,12 @@ namespace App.Front.Views
 
             var user = LoginViewModel.Login(PasswordBox.Password.Trim());
             // call constructor for any type instead of messages 
+            var loginSuccessful = false;
             if(user == null) { MessageBox.Show("You do not have an account"); }
-            else if (user.Type == AccountType.User) { var UserWindow = new UserView(new UserAccountDTO(user)); UserWindow.Show(); Close(); }
+            else if (user.Type == AccountType.User) { var UserWindow = new UserView(new UserAccountDTO(user)); UserWindow.Show(); loginSuccessful = true; }
             else if (user.Type == AccountType.Admin) { MessageBox.Show("Welcome admin"); }
-            else if (user.Type == AccountType.Editor) { var MusicalEditorWindow = new MusicalEditorView(); MusicalEditorWindow.Show(); Close(); }
-
+            else if (user.Type == AccountType.Editor) { var MusicalEditorWindow = new MusicalEditorView(); MusicalEditorWindow.Show(); loginSuccessful = true; }
+            if(loginSuccessful) { DialogResult = true; }
         }
 
         private void Registrate(object sender, RoutedEventArgs e)
