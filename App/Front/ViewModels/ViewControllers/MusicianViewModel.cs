@@ -12,13 +12,9 @@ namespace App.Front.ViewModels.ViewControllers
     public class MusicianViewModel
     {
         private PerformerService _musicalPerformerService;
-        //private PictureService _pictureService;
-        //private MusicalGenreService _musicalGenreService;
         public MusicianViewModel()
         {
             _musicalPerformerService = new PerformerService();
-            //_pictureService = new PictureService();
-            //_musicalGenreService = new MusicalGenreService();
         }
         public List<Performer> GetAllMusicians()
         {

@@ -63,9 +63,13 @@ namespace App.Front.Views
                 performer.BirthDate = DateOnly.FromDateTime(birthDatePicker.SelectedDate.Value);
                 performer.Gender = (Genders)comboBoxGender.SelectedItem;
 
-                musicianViewModel.UpdateMusician((Performer)dataMusicians.SelectedItem);
+                musicianViewModel.UpdateMusician(performer);
                 MessageBox.Show("Performer updated successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 Reset();
+            }
+            else
+            {
+                MessageBox.Show("You must select a performer!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -76,6 +80,10 @@ namespace App.Front.Views
                 musicianViewModel.DeleteMusician((Performer)dataMusicians.SelectedItem);
                 MessageBox.Show("Performer deleted successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 Reset();
+            }
+            else
+            {
+                MessageBox.Show("You must select a performer!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
