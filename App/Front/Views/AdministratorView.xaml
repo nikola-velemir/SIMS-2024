@@ -134,7 +134,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,10" Width="390" Background="#403183">
 
                 <Button Content="Add" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}"  Width="130" Command="{Binding CurrentAdminItems.AddMusicItemCommand}"/>
-                <Button Content="Update" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130" />
+                <Button Content="Update" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130" Command="{Binding CurrentAdminItems.UpdateMusicItemCommand}"/>
                 <Button  Content="Delete" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130" Command="{Binding CurrentAdminItems.DeleteMusicItemCommand}"/>
             </StackPanel>
 

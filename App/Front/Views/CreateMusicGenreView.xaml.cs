@@ -23,7 +23,8 @@ namespace App.Front.Views
     public partial class CreateMusicGenreView : Window
     {
         private MusicalGenreViewModel _musicalGenreViewModel;
-        public MusicalGenreDTO CurrentMusicalGenre { get; set; }    
+        public MusicalGenreDTO CurrentMusicalGenre { get; set; }
+        private bool update = false;
         public CreateMusicGenreView(MusicalGenreDTO? musicalGenre)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace App.Front.Views
             if(musicalGenre != null )
             {
                 CurrentMusicalGenre = new MusicalGenreDTO(musicalGenre.ToMusicGenre());
+                update = true;
             }
             else
             {
@@ -43,12 +45,25 @@ namespace App.Front.Views
         {
             if (CurrentMusicalGenre.IsValid)
             {
-                var genre = _musicalGenreViewModel.Create(CurrentMusicalGenre);
-                if(genre != null )
+                if (update)
                 {
-                    MessageBox.Show("You successfuly create new musical genre");
-                    Close();
+                    var updateGenre = _musicalGenreViewModel.Update(CurrentMusicalGenre);
+                    if (updateGenre != null)
+                    {
+                        MessageBox.Show("You successfuly update music genre");
+                        Close();
+                    }
                 }
+                else
+                {
+                    var genre = _musicalGenreViewModel.Create(CurrentMusicalGenre);
+                    if (genre != null)
+                    {
+                        MessageBox.Show("You successfuly create new music genre");
+                        Close();
+                    }
+                }
+                
             }
             
         }

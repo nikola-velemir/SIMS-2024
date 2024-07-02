@@ -79,6 +79,20 @@ namespace App.Front.ViewModels.Presentation
             }
         }
 
+        private ICommand _updateMusicItemCommand;
+        public ICommand UpdateMusicItemCommand
+        {
+            get { return _updateMusicItemCommand; }
+            set
+            {
+                if(value != null)
+                {
+                    _updateMusicItemCommand = value;
+                    OnPropertyChanged(nameof(UpdateMusicItemCommand));
+                }
+            }
+        }
+
         private void ShowMusicEditor()
         {
             var editorAccounts = _userAccountService.GetAllEditors();
@@ -101,6 +115,7 @@ namespace App.Front.ViewModels.Presentation
             }
             AddMusicItemCommand = new RelayCommand(i => AddMusicGenre());
             DeleteMusicItemCommand = new RelayCommand(d => DeleteMusicGenre((MusicalGenreDTO)SelectedItem));
+            UpdateMusicItemCommand = new RelayCommand(u => UpdateMusicGenre((MusicalGenreDTO)SelectedItem));
         }
         private void ShowMusicPiece()
         {
@@ -137,6 +152,17 @@ namespace App.Front.ViewModels.Presentation
         private void AddMusicEditor()
         {
             
+        }
+
+        private void UpdateMusicGenre(MusicalGenreDTO musicalGenreDTO)
+        {
+            if(musicalGenreDTO != null)
+            {
+                CreateMusicGenreView createMusicGenreView = new CreateMusicGenreView(musicalGenreDTO);
+                createMusicGenreView.Closed += CreateMusicGenreView_Closed;
+                createMusicGenreView.Show();
+            }
+
         }
 
         private void DeleteMusicPiece(MusicPieceDTO musicPieceDTO)
@@ -193,7 +219,6 @@ namespace App.Front.ViewModels.Presentation
             _personService = new PersonService();
             _userAccountService = new UserAccountService();
             CurrentItems = new ObservableCollection<object>();
-            AddMusicItemCommand = new RelayCommand(o => AddMusicPiece());
         }
     }
 }
