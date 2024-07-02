@@ -28,19 +28,32 @@ namespace App.Front.Views
         public MusicPieceDTO CurrentMusicalPiece {  get; set; }
         private MusicalPieceViewModel _musicalPerformanceViewModel { get; set; }
 
+        private bool update = false;
         private void SetComboBoxOptions()
         {
             var genres = _musicalPerformanceViewModel.GetAllMusicalGenre();
             foreach(var musicalGenre in genres)
             {
                 GenreComboBox.Items.Add(musicalGenre.Name);
+                if (update && musicalGenre.Id == CurrentMusicalPiece.MusicalGenre.Id)
+                {
+                    GenreComboBox.SelectedItem = musicalGenre.Name;
+                }
             }
         }
-        public MusicalPieceView()
+        public MusicalPieceView(MusicPieceDTO? musicPieceDTO)
         {
             InitializeComponent();
             CurrentPicture = new PictureViewModel();
-            CurrentMusicalPiece = new MusicPieceDTO();
+            if(musicPieceDTO == null )
+            {
+                CurrentMusicalPiece = new MusicPieceDTO();
+            }
+            else
+            {
+                CurrentMusicalPiece = new MusicPieceDTO(musicPieceDTO);
+                update = true;
+            }
             _musicalPerformanceViewModel = new MusicalPieceViewModel();
             SetComboBoxOptions();
             DataContext = this;
@@ -72,12 +85,25 @@ namespace App.Front.Views
             CurrentMusicalPiece.MusicalGenre = genre.ToMusicGenre();
             if (CurrentMusicalPiece.IsValid)
             {
-                MusicPieceDTO? musicalPerformance = _musicalPerformanceViewModel.CreateMusicPiece(CurrentMusicalPiece);
-                if(musicalPerformance != null)
+                if (update)
                 {
-                    MessageBox.Show("You successfuly add new musical performance!");
-                    this.Close();
+                    MusicPieceDTO? musicalPerformance = _musicalPerformanceViewModel.UpdateMusicPiece(CurrentMusicalPiece);
+                    if (musicalPerformance != null)
+                    {
+                        MessageBox.Show("You successfully update musical performance!");
+                        this.Close();
+                    }
                 }
+                else
+                {
+                    MusicPieceDTO? musicalPerformance = _musicalPerformanceViewModel.CreateMusicPiece(CurrentMusicalPiece);
+                    if (musicalPerformance != null)
+                    {
+                        MessageBox.Show("You successfully add new musical performance!");
+                        this.Close();
+                    }
+                }
+                
             }
         }
 

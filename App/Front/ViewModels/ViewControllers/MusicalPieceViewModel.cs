@@ -6,12 +6,12 @@ namespace App.Front.ViewModels.ViewControllers
 {
     public class MusicalPieceViewModel
     {
-        private MusicalPieceService _musicalPerformanceService;
+        private MusicalPieceService _musicalPieceService;
         private PictureService _pictureService;
         private MusicalGenreService _musicalGenreService;
         public MusicalPieceViewModel() 
         {
-            _musicalPerformanceService = new MusicalPieceService();
+            _musicalPieceService = new MusicalPieceService();
             _pictureService = new PictureService();
             _musicalGenreService = new MusicalGenreService();
         }
@@ -24,7 +24,7 @@ namespace App.Front.ViewModels.ViewControllers
         public MusicPieceDTO? CreateMusicPiece(MusicPieceDTO newMusicPiece)
         {
             newMusicPiece.ProfilePicture = _pictureService.GetDefaultProfilePicture();
-            return _musicalPerformanceService.Create(newMusicPiece);
+            return _musicalPieceService.Create(newMusicPiece);
         }
 
         public List<MusicalGenreDTO> GetAllMusicalGenre()
@@ -42,6 +42,13 @@ namespace App.Front.ViewModels.ViewControllers
             return null;
         }
 
-
+        public MusicPieceDTO? UpdateMusicPiece(MusicPieceDTO currentMusicalPiece)
+        {
+            if(currentMusicalPiece.ProfilePicture.Id == -1)
+            {
+                currentMusicalPiece.ProfilePicture = _pictureService.GetDefaultProfilePicture();
+            }
+            return _musicalPieceService.Update(currentMusicalPiece);  
+        }
     }
 }

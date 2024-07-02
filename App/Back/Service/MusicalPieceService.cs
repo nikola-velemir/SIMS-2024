@@ -1,6 +1,7 @@
 ﻿using App.Back.Domain;
 using App.Back.Repository;
 using App.Front.ViewModels.DTO;
+
 namespace App.Back.Service
 {
 
@@ -62,6 +63,12 @@ namespace App.Back.Service
                 }
             }
             return null;
+        }
+
+        public MusicPieceDTO? Update(MusicPieceDTO currentMusicalPiece)
+        {
+            _musicalPieceRepository.Update(currentMusicalPiece.ToMusicPiece());
+            return currentMusicalPiece;
         }
     }
 }

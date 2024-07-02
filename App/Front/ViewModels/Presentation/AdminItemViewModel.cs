@@ -127,10 +127,11 @@ namespace App.Front.ViewModels.Presentation
             }
             AddMusicItemCommand = new RelayCommand(o => AddMusicPiece());
             DeleteMusicItemCommand = new RelayCommand(d => DeleteMusicPiece((MusicPieceDTO)SelectedItem));
+            UpdateMusicItemCommand = new RelayCommand(u => UpdateMusicPiece((MusicPieceDTO)SelectedItem));
         }
         private void AddMusicPiece()
         {
-            MusicalPieceView musicalPieceView = new MusicalPieceView();
+            MusicalPieceView musicalPieceView = new MusicalPieceView(null);
             musicalPieceView.Closed += CreateMusicPieceView_Closed;
             musicalPieceView.Show();
         }
@@ -165,6 +166,17 @@ namespace App.Front.ViewModels.Presentation
 
         }
 
+        private void UpdateMusicPiece(MusicPieceDTO musicPieceDTO)
+        {
+            if (musicPieceDTO != null)
+            {
+                MusicalPieceView musicalPieceView = new MusicalPieceView(musicPieceDTO);
+                musicalPieceView.Closed += CreateMusicPieceView_Closed;
+                musicalPieceView.Show();
+            }
+
+        }
+
         private void DeleteMusicPiece(MusicPieceDTO musicPieceDTO)
         {
             if(musicPieceDTO != null)
@@ -175,15 +187,12 @@ namespace App.Front.ViewModels.Presentation
                     case MessageBoxResult.Yes:
                         _pieceService.Delete(musicPieceDTO);
                         ShowMusicPiece();
-                        MessageBox.Show("You successfuly delete music piece");
+                        MessageBox.Show("You successfully delete music piece");
                         break;
                     default:
                         break;
                 }
-                
             }
-            
-            
         }
 
         private void DeleteMusicGenre(MusicalGenreDTO musicalGenreDTO)
@@ -197,7 +206,7 @@ namespace App.Front.ViewModels.Presentation
                     case MessageBoxResult.Yes:
                         _genreService.Delete(musicalGenreDTO);
                         ShowMusicGenre();
-                        MessageBox.Show("You successfuly delete music genre");
+                        MessageBox.Show("You successfully delete music genre");
                         break;
                     default:
                         break;
