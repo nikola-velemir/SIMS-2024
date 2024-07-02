@@ -14,24 +14,28 @@ namespace App.Front.ViewModels.ViewControllers
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public UserAccountViewModel Account { get; set; }
+        public UserAccountDTO Account { get; set; }//DTO
         public LoginViewModel()
         {
-            Account = new UserAccountViewModel();
+            Account = new UserAccountDTO();
             _accountService = new UserAccountService();
             _error = "";
         }
-        public UserAccount? Login()
+
+        
+        public UserAccount? Login(string password)
         {
+            Account.Password = password;
             if (!IsValid()) { return null; }
 
-            var found = _accountService.GeyByKorisnickoAndLozinka(Account.UserName, Account.Password);
+            var found = _accountService.GeyByUserName(Account.UserName);
             if (found == null)
             {
                 Error = "Username or password are incorrect!";
             }
 
             return found;
+
         }
         public string Error
         {
@@ -69,11 +73,11 @@ namespace App.Front.ViewModels.ViewControllers
         public bool LogIn(string password)
         {
             Account.Password = password;
-            var nalog = Login();
+            var nalog = Login(Account.Password);
             if (nalog != null)
             {
                 MessageBox.Show("Welcome " + Account.UserName + "!");
-                var window = new UserView(new UserAccountViewModel(nalog));
+                var window = new UserView(new UserAccountDTO(nalog));
                 window.Show();
                 return true;
             }

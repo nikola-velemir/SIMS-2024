@@ -36,5 +36,23 @@ namespace App.Back.Service
         {
             return _repository.Update(instance);
         }
+
+        public bool CheckJMBG(Person person)
+        {
+            string jmbg = person.JMBG;
+            string jmbgDay = jmbg.Substring(0, 2);
+            string jmbgMonth = jmbg.Substring(2, 2);
+            string jmbgYear = jmbg.Substring(4, 3);
+            string birthdate = person.BirthDate.ToString("dd.MM.yyyy");
+            string[] partsDate = birthdate.Split(".");
+            partsDate[2] = partsDate[2].Substring(1,3);
+            if (jmbgDay != partsDate[0] || jmbgMonth != partsDate[1] || jmbgYear != partsDate[2])
+            {
+                return false;
+            }
+            return true;
+
+        }
+
     }
 }

@@ -1,0 +1,52 @@
+﻿<Window x:Class="App.Front.Views.MusicalEditorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App.Front.Views"
+        mc:Ignorable="d"
+        Title="MusicalEditorView" Height="450" Width="800">
+    <Grid Margin="15" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="0.8*" />
+        </Grid.RowDefinitions>
+
+        <!--first-->
+        <Label Grid.Row="0" Grid.Column="0" Content="Lists:" VerticalAlignment="Center" />
+        <Button Grid.Column="1" Content="Songs of the year playlist" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="180" Height="30" Click="SongsOfTheYearClick"/>
+        <Button Grid.Column="1" Content="Performers toplist" HorizontalAlignment="Left" Margin="281,0,0,0" VerticalAlignment="Center" Width="180" Height="30" Click="PerformersToplistClick"/>
+
+
+        <!--second-->
+        <Label Grid.Row="1" Grid.Column="0" Content="CRUDs:" VerticalAlignment="Center"/>
+        <Button Grid.Column="1" Content="CRUD Musical Piece" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="120" Height="30" Click="CrudMusicalPieceClick" Grid.Row="1"/>
+        <Button Grid.Column="1" Content="CRUD Band" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="120" Height="30" Click="CrudBandClick"/>
+        <Button Grid.Column="1" Content="CRUD Musician" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" Width="120" Height="30" Click="CrudMusicianClick" Grid.Row="1"/>
+
+        <!--third-->
+        <Label Grid.Row="2" Grid.Column="0" Content="Comments:" VerticalAlignment="Center" />
+        <Button Grid.Column="1" Content="Approve comments" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="180" Height="30" Click="ApproveCommentsClick"/>
+        <Button Grid.Column="1" Content="Edit comments" HorizontalAlignment="Left" Margin="281,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="180" Height="30" Click="EditCommentsClick"/>
+
+        <!--fourth-->
+        <Label Grid.Row="3" Grid.Column="0" Content="Reviews:" VerticalAlignment="Center" />
+        <Button Grid.Column="1" Content="Make a review" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="180" Height="30" Click="MakeReviewClick"/>
+        <Button Grid.Column="1" Content="Approve user's reviews" HorizontalAlignment="Left" Margin="281,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="180" Height="30" Click="ApproveReviewClick"/>
+
+
+       
+        <Button Content="Logout" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="280" Height="30" Click="LogoutClick"/>
+
+
+
+    </Grid>
+</Window>

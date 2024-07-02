@@ -18,7 +18,6 @@ namespace App
             var window = new PerformerCreation();
             window.ShowDialog();
         }
-
         private void KreiranjeDelaClick(object sender, RoutedEventArgs e)
         {
             MusicalPerformanceView musicalPerformanceView = new MusicalPerformanceView();

@@ -37,16 +37,28 @@ namespace App.Back.Service
             return _repository.Update(instance);
         }
 
-        public UserAccount? GeyByKorisnickoAndLozinka(string korisnickoIme, string lozinka)
+        public UserAccount? GeyByUserName(string userName)
         {
-            foreach (var nalog in _repository.GetAll())
+            foreach (var account in _repository.GetAll())
             {
-                if (nalog.UserName == korisnickoIme && nalog.Password == lozinka)
+                if (account.UserName == userName)
                 {
-                    return nalog;
+                    return account;
                 }
             }
             return null;
+        }
+
+        public bool CanUserRegistrate(UserAccount userAccount)
+        {
+            foreach(var account in _repository.GetAll())
+            {
+                if(account.UserName == userAccount.UserName)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

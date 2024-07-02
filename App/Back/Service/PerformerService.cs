@@ -32,5 +32,15 @@ namespace App.Back.Service
             }
             return null;
         }
+
+        internal Performer? Update(Performer performer)
+        {
+            return _repository.Update(performer);
+        }
+
+        internal Performer? Delete(Performer performer)
+        {
+            return _repository.Delete(performer);
+        }
     }
 }

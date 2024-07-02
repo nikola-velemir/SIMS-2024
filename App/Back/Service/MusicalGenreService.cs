@@ -3,42 +3,43 @@ using App.Back.Repository;
 
 namespace App.Back.Service
 {
-    public class MusicalGenreService
+    public class BandService
     {
-        private MusicalGenreRepository _musicalGenreRepository;
-        public MusicalGenreService()
+        private BandRepository _bandRepository;
+        public BandService()
         {
-            _musicalGenreRepository = new MusicalGenreRepository();
+            _bandRepository = new BandRepository();
         }
 
-        public List<MusicalGenre> GetAll()
+        public List<Band> GetAll()
         {
-            return _musicalGenreRepository.GetAll();
+            return _bandRepository.GetAll();
         }
-        public MusicalGenre? GetById(int id)
+        public Band? GetById(int id)
         {
-            foreach (var g in _musicalGenreRepository.GetAll())
+            foreach (var band in _bandRepository.GetAll())
             {
-                if (g.Id == id) return g;
+                if (band.Id == id) return band;
             }
             return null;
 
         }
-        public MusicalGenre? Create(MusicalGenre newGenre)
+        public Band? Create(Band newBand)
         {
-            return _musicalGenreRepository.Create(newGenre);
+            return _bandRepository.Create(newBand);
         }
 
-        public MusicalGenre? GetByName(string name)
+        public Band? GetByName(string name)
         {
-            foreach (MusicalGenre musicalGenre in _musicalGenreRepository.GetAll())
+            foreach (Band band in _bandRepository.GetAll())
             {
-                if (musicalGenre.Name == name)
+                if (band.Name == name)
                 {
-                    return musicalGenre;
+                    return band;
                 }
             }
             return null;
         }
+
     }
 }

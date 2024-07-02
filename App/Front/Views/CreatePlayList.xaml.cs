@@ -21,7 +21,7 @@ namespace App.Front.Views
     public partial class CreatePlayList : Window
     {
         public CreatePlayListViewModel ViewModel { get; set; }
-        public CreatePlayList(UserAccountViewModel account)
+        public CreatePlayList(UserAccountDTO account)
         {
             InitializeComponent();
             DataContext = this;

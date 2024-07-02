@@ -2,31 +2,26 @@
 using App.Back.Repository.Base;
 using App.Back.Repository.Interface;
 using App.Back.Utilities;
-using Newtonsoft.Json.Linq;
 
 namespace App.Back.Repository
 {
-    public class UserAccountRepository : Repository<UserAccount>, IRepository<UserAccount>
+    public class BandRepository : Repository<Band>, IRepository<Band>
     {
-        public UserAccountRepository()
+        public BandRepository()
         {
-            SetFileName("UserAccountData.json");
+            SetFileName("BandData.json");
         }
-        public UserAccount? Create(UserAccount instance)
+        public Band? Create(Band newBand)
         {
-            var fetchedInstance = Get(instance);
-
-            if (fetchedInstance != null) { return null; }
-
             var instances = Load();
-            instance.Id = GetLastId() + 1;
-            instances.Add(instance);
+            newBand.Id = Utils.GenerateId();
+            instances.Add(newBand);
             Save(instances);
 
-            return instance;
+            return newBand;
         }
 
-        public UserAccount? Delete(UserAccount instance)
+        public Band? Delete(Band instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -39,36 +34,28 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public UserAccount? Get(UserAccount instance)
+        public Band? Get(Band instance)
         {
-            foreach (var nalog in GetAll())
+            foreach (var band in GetAll())
             {
-                if (nalog.Id == instance.Id)
+                if (band.Id == instance.Id)
                 {
-                    return nalog;
+                    return band;
                 }
             }
             return null;
         }
 
-        public List<UserAccount> GetAll()
+        public List<Band> GetAll()
         {
             return Load();
         }
 
-        public int GetLastId()
-        {
-            var jArray = Load();
-            if (jArray.Count == 0) { return 0; }
-            return jArray[jArray.Count-1].Id;
-        }
-
-        public UserAccount? Update(UserAccount instance)
+        public Band? Update(Band instance)
         {
             var fetchedInstance = Get(instance);
 
             if (fetchedInstance == null) { return null; }
-
 
             var instances = Load();
             instances.Remove(fetchedInstance);

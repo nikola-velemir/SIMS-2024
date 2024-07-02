@@ -10,7 +10,7 @@ public class EditPlayListViewViewModel : INotifyPropertyChanged
     private MusicalPieceService _musicalPieceService;
     private PlayListService _playListService;
 
-    public UserAccountViewModel Account { get; set; }
+    public UserAccountDTO Account { get; set; }
     public ObservableCollection<MusicalPieceWrapperViewModel> Pieces { get; set; }
     public ObservableCollection<MusicalPieceWrapperViewModel> AddedPieces { get; set; }
     public PlayListViewModel PlayList { get; set; }
@@ -30,7 +30,7 @@ public class EditPlayListViewViewModel : INotifyPropertyChanged
         }
     }
 
-    public EditPlayListViewViewModel(UserAccountViewModel account, PlayListViewModel playList)
+    public EditPlayListViewViewModel(UserAccountDTO  account, PlayListViewModel playList)
     {
         Account = account;
         PlayList = playList;

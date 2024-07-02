@@ -9,7 +9,7 @@ namespace App.Front.Views
     public partial class UserView : Window
     {
         public UserViewViewModel ViewModel { get; set; }
-        public UserView(UserAccountViewModel account)
+        public UserView(UserAccountDTO account)
         {
             InitializeComponent();
             DataContext = this;

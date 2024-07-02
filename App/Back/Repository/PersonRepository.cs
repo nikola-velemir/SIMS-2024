@@ -18,7 +18,7 @@ namespace App.Back.Repository
             if (fetchedInstance != null) { return null; }
 
             var instances = GetAll();
-            instance.Id = Utils.GenerateId();
+            instance.Id = GetLastId() + 1;
             instances.Add(instance);
             Save(instances);
 
@@ -67,6 +67,13 @@ namespace App.Back.Repository
         public List<Person> GetAll()
         {
             return Load();
+        }
+
+        public int GetLastId()
+        {
+            var jArray = Load();
+            if(jArray.Count == 0) { return 0; }
+            return jArray[jArray.Count - 1].Id;
         }
     }
 }

@@ -27,10 +27,11 @@ namespace App.Front.ViewModels.ViewControllers
                 }
             }
         }
-        public UserAccountViewModel Account { get; set; }
+
+        public UserAccountDTO Account { get; set; }
         public ObservableCollection<MusicalNotionWrapperViewModel> Notions { get; set; }
 
-        public UserViewViewModel(UserAccountViewModel account)
+        public UserViewViewModel(UserAccountDTO account)
         {
             Notions = new();
             _notionService = new MusicalNotionService();

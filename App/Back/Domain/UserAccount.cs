@@ -14,14 +14,14 @@
             Password = string.Empty;
             UserName = string.Empty;
         }
-        public UserAccount(int id, string lozinka, string korisnickoIme, bool aktivan, AccountType tip, int idOsobe)
+        public UserAccount(int id, string password, string userName, bool active, AccountType accountType, int personId)
         {
             Id = id;
-            Password = lozinka;
-            UserName = korisnickoIme;
-            Active = aktivan;
-            Type = tip;
-            PersonId = idOsobe;
+            Password = password;
+            UserName = userName;
+            Active = active;
+            Type = accountType;
+            PersonId = personId;
         }
         public UserAccount(UserAccount other)
         {

@@ -6,9 +6,9 @@ namespace App.Front.ViewModels.ViewControllers
     public class CreatePlayListViewModel
     {
         private PlayListService _playListService;
-        public UserAccountViewModel Account { get; set; }
+        public UserAccountDTO Account { get; set; }
         public PlayListViewModel PlayList { get; set; }
-        public CreatePlayListViewModel(UserAccountViewModel account)
+        public CreatePlayListViewModel(UserAccountDTO account)
         {
             _playListService = new();
             Account = account;

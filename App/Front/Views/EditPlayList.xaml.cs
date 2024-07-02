@@ -12,7 +12,7 @@ namespace App.Front.Views
     public partial class EditPlayList : Window
     {
         public EditPlayListViewViewModel ViewModel { get; set; }
-        public EditPlayList(UserAccountViewModel account, PlayListViewModel playList)
+        public EditPlayList(UserAccountDTO account, PlayListViewModel playList)
         {
             InitializeComponent();
             DataContext = this;
