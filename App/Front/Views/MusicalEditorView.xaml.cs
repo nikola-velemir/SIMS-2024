@@ -24,5 +24,56 @@ namespace App.Front.Views
             InitializeComponent();
         }
 
+        private void SongsOfTheYearClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void PerformersToplistClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void CrudMusicalPieceClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void CrudBandClick(object sender, RoutedEventArgs e)
+        {
+            CrudBandView crudBandView = new CrudBandView();
+            crudBandView.Show();
+        }
+
+        private void CrudMusicianClick(object sender, RoutedEventArgs e)
+        {
+            CrudMusicianView crudMusicianView = new CrudMusicianView();
+            crudMusicianView.Show();
+        }
+
+        private void ApproveCommentsClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void EditCommentsClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void MakeReviewClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void ApproveReviewClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void LogoutClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
