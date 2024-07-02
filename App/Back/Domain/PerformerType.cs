@@ -1,16 +1,22 @@
 ﻿namespace App.Back.Domain
 {
-    public class MusicalGenre
+    public class PerformerType
     {
+        public string Type { get; set; }
         public int Id { get; set; }
-        public string Name { get; set; }
-        public MusicalGenre(int id, string name)
+        public PerformerType()
         {
-            Id = id;
-            Name = name;
+            Type = string.Empty;
         }
-        public MusicalGenre() {
-            Name = string.Empty;
+        public PerformerType(string tip, int id)
+        {
+            Type = tip;
+            Id = id;
+        }
+        public PerformerType(PerformerType other)
+        {
+            Type = other.Type;
+            Id = other.Id;
         }
         public override bool Equals(object? obj)
         {
@@ -19,8 +25,8 @@
                 return false;
             }
 
-            MusicalGenre other = (MusicalGenre)obj;
-            return Id == other.Id && Name == other.Name;
+            PerformerType other = (PerformerType)obj;
+            return Type == other.Type && Id == other.Id;
         }
 
         public override int GetHashCode()
@@ -28,8 +34,8 @@
             unchecked
             {
                 int hash = 17;
+                hash = hash * 23 + (Type != null ? Type.GetHashCode() : 0);
                 hash = hash * 23 + Id.GetHashCode();
-                hash = hash * 23 + (Name != null ? Name.GetHashCode() : 0);
                 return hash;
             }
         }

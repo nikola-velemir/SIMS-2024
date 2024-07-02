@@ -54,5 +54,45 @@ namespace App.Back.Domain
             }
             Piece.Add(delo.Id);
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Performance other = (Performance)obj;
+            return base.Equals(obj) &&
+                   Date.Equals(other.Date) &&
+                   Live == other.Live &&
+                   Piece.SequenceEqual(other.Piece) &&
+                   Performers.SequenceEqual(other.Performers) &&
+                   Pictures.SequenceEqual(other.Pictures) &&
+                   ProfilePictureId == other.ProfilePictureId;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = base.GetHashCode();
+                hash = hash * 23 + Date.GetHashCode();
+                hash = hash * 23 + Live.GetHashCode();
+                foreach (var item in Piece)
+                {
+                    hash = hash * 23 + item.GetHashCode();
+                }
+                foreach (var item in Performers)
+                {
+                    hash = hash * 23 + item.GetHashCode();
+                }
+                foreach (var item in Pictures)
+                {
+                    hash = hash * 23 + item.GetHashCode();
+                }
+                hash = hash * 23 + ProfilePictureId.GetHashCode();
+                return hash;
+            }
+        }
     }
 }

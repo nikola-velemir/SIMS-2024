@@ -6,7 +6,7 @@
         xmlns:ext="clr-namespace:App.Front.ViewModels.Presentation.Wrappers"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="" Height="400" Width="600" ResizeMode="NoResize">
+        Title="" Height="600" Width="900" ResizeMode="NoResize">
     <Window.Resources>
         <!-- Style for Sidebar Buttons -->
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
@@ -52,7 +52,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="175" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -60,7 +60,7 @@
         <StackPanel Grid.Row="0" Grid.Column="0" Background="#403183">
             <Button Content="Home" Style="{StaticResource SidebarButtonStyle}" />
             <Button Content="Your Library" Style="{StaticResource SidebarButtonStyle}" Click="OpenLibrary" />
-            <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Create Playlist" Style="{StaticResource SidebarButtonStyle}" Click="Create" />
         </StackPanel>
 
         <!-- Main Content Area -->
@@ -74,7 +74,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10" Width="390">
                 <TextBlock Text="Search" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <StackPanel Width="349">
-                    <TextBox Grid.Row="0" Margin="10" FontSize="12"/>
+                    <TextBox Grid.Row="0" Margin="10" FontSize="12" Text="{Binding ViewModel.SearchText, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </StackPanel>
 

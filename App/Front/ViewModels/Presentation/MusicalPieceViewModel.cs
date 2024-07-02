@@ -69,6 +69,7 @@ namespace App.Front.ViewModels.Presentation
             Id = musicalPerformance.Id;
             Description = musicalPerformance.Description;
             MusicalGenreId = musicalPerformance.MusicalGenreId;
+            ProfilePictureId = musicalPerformance.ProfileImageId;
         }
 
         public void AddPicture(Picture picture)

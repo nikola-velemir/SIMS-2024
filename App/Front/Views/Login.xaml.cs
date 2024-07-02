@@ -34,7 +34,6 @@ namespace App.Front.Views
         {
             Registration registration = new Registration();
             registration.ShowDialog();
-
         }
     }
 }

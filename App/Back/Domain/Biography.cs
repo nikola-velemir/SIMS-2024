@@ -33,6 +33,32 @@
             Pictures = other.Pictures;
             Id = other.Id;
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
 
+            Biography other = (Biography)obj;
+            return Id == other.Id &&
+                   Text == other.Text &&
+                   Pictures.SequenceEqual(other.Pictures);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                hash = hash * 23 + Id.GetHashCode();
+                hash = hash * 23 + (Text != null ? Text.GetHashCode() : 0);
+                foreach (var pictureId in Pictures)
+                {
+                    hash = hash * 23 + pictureId.GetHashCode();
+                }
+                return hash;
+            }
+        }
     }
 }

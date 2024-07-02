@@ -10,7 +10,7 @@ namespace App.Front.ViewModels.Presentation
         private int _accountId;
         private List<int> _pieces;
         private string _name;
-
+        private DateOnly _dateCreated;
         public int Id
         {
             get => _id;
@@ -62,27 +62,40 @@ namespace App.Front.ViewModels.Presentation
                 }
             }
         }
-
+        public DateOnly DateCreated
+        {
+            get => _dateCreated;
+            set
+            {
+                if (_dateCreated != value)
+                {
+                    _dateCreated = value;
+                    OnPropertyChanged(nameof(DateCreated));
+                }
+            }
+        }
         public PlayListViewModel()
         {
             _pieces = new List<int>();
         }
 
-        public PlayListViewModel(int id, int accountId, string name, List<int> pieces)
+        public PlayListViewModel(int id, int accountId, string name, List<int> pieces, DateOnly dateCreated)
         {
             _id = id;
             _accountId = accountId;
             _pieces = pieces;
             _name = name;
+            _dateCreated = dateCreated;
         }
 
-        public PlayListViewModel(int id, UserAccount user, string name, List<MusicalPiece> pieces)
+        public PlayListViewModel(int id, UserAccount user, string name, List<MusicalPiece> pieces, DateOnly dateCreated)
         {
             _id = id;
             _accountId = user.Id;
             _pieces = new List<int>();
             FillPesme(pieces);
             _name = name;
+            _dateCreated = dateCreated;
         }
 
         public PlayListViewModel(PlayList other)
@@ -91,6 +104,7 @@ namespace App.Front.ViewModels.Presentation
             _accountId = other.AccountId;
             _pieces = new List<int>(other.Pieces);
             _name = other.Name;
+            _dateCreated = other.DateCreated;
         }
 
         private void FillPesme(List<MusicalPiece> pieces)
@@ -109,5 +123,9 @@ namespace App.Front.ViewModels.Presentation
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public PlayList ToPlayList()
+        {
+            return new PlayList(Id, AccountId, Name, Pieces,DateCreated);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using App.Back.Domain;
 using App.Back.Repository;
+using App.Front.ViewModels.Presentation;
 
 namespace App.Back.Service
 {
@@ -18,6 +19,18 @@ namespace App.Back.Service
         public List<MusicalPiece> GetAll()
         {
             return _musicalPerformanceRepository.GetAll();
+        }
+
+        internal MusicalPiece? GetById(int id)
+        {
+            var instances = GetAll();
+            foreach (var p in instances) { 
+                if(p.Id == id)
+                {
+                    return p;
+                }
+            }
+            return null;
         }
     }
 }
