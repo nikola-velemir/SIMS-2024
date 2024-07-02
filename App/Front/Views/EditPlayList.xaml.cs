@@ -74,14 +74,8 @@ namespace App.Front.Views
         {
             if (ViewModel.Save())
             {
-                MessageBox.Show("Play list save successfuly!");
-
+                OpenLibrary(sender, e);
             }
-            else
-            {
-                MessageBox.Show("Failed to save the playlist!");
-            }
-            OpenLibrary(sender, e);
         }
     }
 }

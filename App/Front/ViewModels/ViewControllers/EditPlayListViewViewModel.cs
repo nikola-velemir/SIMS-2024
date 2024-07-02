@@ -117,6 +117,7 @@ public class EditPlayListViewViewModel : INotifyPropertyChanged
 
     public bool Save()
     {
+        if (!PlayList.IsValid) { return false; }
         PlayList.Pieces = new List<int>();
         foreach (var ap in AddedPieces)
         {

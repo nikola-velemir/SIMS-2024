@@ -178,7 +178,7 @@
 
             <!-- Save Button -->
             <StackPanel Orientation="Horizontal" Grid.Row="0">
-                <StackPanel Width="652">
+                <StackPanel Width="620">
                     <TextBlock Text="Edit Playlist" FontSize="24" FontWeight="Bold" Margin="10" />
                 </StackPanel>
                 <Button Content="Save" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Height="30" Style="{StaticResource SaveButtonStyle}" Click="SaveClick"/>
@@ -188,6 +188,10 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
                 <TextBlock Text="Playlist Name:" VerticalAlignment="Center" Margin="0,0,10,0"/>
                 <TextBox Width="300" Text="{Binding ViewModel.PlayList.Name,Mode=TwoWay}" />
+                <TextBlock Text="{Binding ViewModel.PlayList.Error, UpdateSourceTrigger=PropertyChanged}"
+                           Foreground="Red"
+                           VerticalAlignment="Center"
+                           Margin="5,0,0,0"/>
             </StackPanel>
 
             <!-- Input Field for Search -->

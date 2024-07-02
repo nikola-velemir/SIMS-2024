@@ -24,8 +24,12 @@
   {
     "Id": 7782,
     "AccountId": 1,
-    "Pieces": [],
+    "Pieces": [
+      1,
+      2,
+      3
+    ],
     "DateCreated": "2024-07-02",
-    "Name": null
+    "Name": "a"
   }
 ]
