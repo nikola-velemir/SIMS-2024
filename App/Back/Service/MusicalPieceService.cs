@@ -1,30 +1,61 @@
 ﻿using App.Back.Domain;
 using App.Back.Repository;
-using App.Front.ViewModels.Presentation;
-
+using App.Front.ViewModels.DTO;
 namespace App.Back.Service
 {
 
     public class MusicalPieceService
     {
-        private MusicalPieceRepository _musicalPerformanceRepository;
+        private MusicalPieceRepository _musicalPieceRepository;
+        private PictureService _pictureService;
+        private MusicalGenreService _musicalGenreService;
         public MusicalPieceService()
         {
-            _musicalPerformanceRepository = new MusicalPieceRepository();
+            _musicalPieceRepository = new MusicalPieceRepository();
+            _pictureService = new PictureService();
+            _musicalGenreService = new MusicalGenreService();
         }
-        public MusicalPiece? Create(MusicalPiece newMusicalPerformance)
+        public MusicPieceDTO? Create(MusicPieceDTO newMusicalPerformance)
         {
-            return _musicalPerformanceRepository.Create(newMusicalPerformance);
+            var musicPiece = _musicalPieceRepository.Create(newMusicalPerformance.ToMusicPiece());
+            var musicPieceDTO = new MusicPieceDTO();
+            musicPieceDTO.MusicalGenre = _musicalGenreService.GetById(musicPiece.MusicalGenreId).ToMusicGenre();
+            var pictures = new List<Picture>();
+            foreach (var pictureId in musicPiece.Pictures)
+            {
+                pictures.Add(_pictureService.GetById(pictureId));
+            }
+            musicPieceDTO.Pictures = pictures;
+            return musicPieceDTO;
         }
-        public List<MusicalPiece> GetAll()
+        public List<MusicPieceDTO> GetAll()
         {
-            return _musicalPerformanceRepository.GetAll();
+            var musicPieces = _musicalPieceRepository.GetAll();
+            var musicalPieceDTOs = new List<MusicPieceDTO>();
+            foreach(var musicPiece in musicPieces)
+            {
+                var musicalPieceDTO = new MusicPieceDTO(musicPiece);
+                var pictures = new List<Picture>();
+                foreach(var pictureId in musicPiece.Pictures)
+                {
+                    pictures.Add(_pictureService.GetById(pictureId));
+                }
+                musicalPieceDTO.Pictures = pictures;
+                musicalPieceDTO.ProfilePicture = _pictureService.GetById(musicPiece.ProfileImageId);
+                musicalPieceDTO.MusicalGenre = _musicalGenreService.GetById(musicPiece.MusicalGenreId).ToMusicGenre();
+                musicalPieceDTOs.Add(musicalPieceDTO);
+            }
+            return musicalPieceDTOs;
         }
 
-        internal MusicalPiece? GetById(int id)
+        public void Delete(MusicPieceDTO musicPieceDTO)
         {
-            var instances = GetAll();
-            foreach (var p in instances) { 
+            _musicalPieceRepository.Delete(musicPieceDTO.ToMusicPiece());
+        }
+
+        internal MusicPieceDTO? GetById(int id)
+        {
+            foreach (var p in GetAll()) { 
                 if(p.Id == id)
                 {
                     return p;

@@ -1,141 +1,209 @@
 [
   {
-    "Id": 1,
-    "Description": "Serenade under Moonlight",
-    "Pictures": [ 1, 2, 3 ],
-    "MusicalGenreId": 1,
+    "Pictures": [
+      4,
+      5
+    ],
+    "Id": 2,
+    "Description": "Epic Symphony of Heroes",
+    "MusicalGenreId": 2,
     "ProfileImageId": 1
   },
   {
-    "Id": 2,
-    "Description": "Epic Symphony of Heroes",
-    "Pictures": [ 4, 5 ],
-    "MusicalGenreId": 2,
+    "Pictures": [
+      6
+    ],
+    "Id": 3,
+    "Description": "Jazz Tales from New Orleans",
+    "MusicalGenreId": 3,
     "ProfileImageId": 2
   },
   {
-    "Id": 3,
-    "Description": "Jazz Tales from New Orleans",
-    "Pictures": [ 6 ],
-    "MusicalGenreId": 3,
+    "Pictures": [
+      27313
+    ],
+    "Id": 41327,
+    "Description": "wdaaaa",
+    "MusicalGenreId": 2,
     "ProfileImageId": 3
   },
   {
+    "Pictures": [
+      33450
+    ],
+    "Id": 28234,
+    "Description": "NEsto",
+    "MusicalGenreId": 1,
+    "ProfileImageId": 4
+  },
+  {
+    "Pictures": [
+      7,
+      8
+    ],
     "Id": 4,
     "Description": "Metallic Thunderstorm",
-    "Pictures": [ 7, 8 ],
     "MusicalGenreId": 4,
     "ProfileImageId": 4
   },
   {
+    "Pictures": [
+      9,
+      10,
+      11
+    ],
     "Id": 5,
     "Description": "Pop Dreams of Tomorrow",
-    "Pictures": [ 9, 10, 11 ],
     "MusicalGenreId": 5,
     "ProfileImageId": 5
   },
   {
+    "Pictures": [
+      12
+    ],
     "Id": 6,
     "Description": "Classical Elegance in C Minor",
-    "Pictures": [ 12 ],
     "MusicalGenreId": 1,
     "ProfileImageId": 6
   },
   {
+    "Pictures": [
+      13,
+      14
+    ],
     "Id": 7,
     "Description": "Blues by the Mississippi",
-    "Pictures": [ 13, 14 ],
     "MusicalGenreId": 2,
     "ProfileImageId": 7
   },
   {
+    "Pictures": [
+      15,
+      16,
+      17
+    ],
     "Id": 8,
     "Description": "Funk Groove Explosion",
-    "Pictures": [ 15, 16, 17 ],
     "MusicalGenreId": 3,
     "ProfileImageId": 8
   },
   {
+    "Pictures": [
+      18
+    ],
     "Id": 9,
     "Description": "Reggae Sunset Vibes",
-    "Pictures": [ 18 ],
     "MusicalGenreId": 4,
     "ProfileImageId": 9
   },
   {
+    "Pictures": [
+      19,
+      20
+    ],
     "Id": 10,
     "Description": "Country Roads and Heartaches",
-    "Pictures": [ 19, 20 ],
     "MusicalGenreId": 5,
     "ProfileImageId": 10
   },
   {
+    "Pictures": [
+      21,
+      22,
+      23
+    ],
     "Id": 11,
     "Description": "Electronic Odyssey in Space",
-    "Pictures": [ 21, 22, 23 ],
     "MusicalGenreId": 1,
     "ProfileImageId": 11
   },
   {
+    "Pictures": [
+      24
+    ],
     "Id": 12,
     "Description": "R&B Soulful Serenade",
-    "Pictures": [ 24 ],
     "MusicalGenreId": 2,
     "ProfileImageId": 12
   },
   {
+    "Pictures": [
+      25,
+      26
+    ],
     "Id": 13,
     "Description": "Indie Folk Whispering Winds",
-    "Pictures": [ 25, 26 ],
     "MusicalGenreId": 3,
     "ProfileImageId": 13
   },
   {
+    "Pictures": [
+      27,
+      28,
+      29
+    ],
     "Id": 14,
     "Description": "Rock Legends of Tomorrow",
-    "Pictures": [ 27, 28, 29 ],
     "MusicalGenreId": 4,
     "ProfileImageId": 14
   },
   {
+    "Pictures": [
+      30
+    ],
     "Id": 15,
     "Description": "Punk Rebellion in the Streets",
-    "Pictures": [ 30 ],
     "MusicalGenreId": 5,
     "ProfileImageId": 15
   },
   {
+    "Pictures": [
+      31,
+      32
+    ],
     "Id": 16,
     "Description": "Hip Hop Beats from the Underground",
-    "Pictures": [ 31, 32 ],
     "MusicalGenreId": 1,
     "ProfileImageId": 16
   },
   {
+    "Pictures": [
+      33,
+      34,
+      35
+    ],
     "Id": 17,
     "Description": "Latin Dance Fiesta",
-    "Pictures": [ 33, 34, 35 ],
     "MusicalGenreId": 2,
     "ProfileImageId": 17
   },
   {
+    "Pictures": [
+      36
+    ],
     "Id": 18,
     "Description": "Gospel Choir Heavenly Voices",
-    "Pictures": [ 36 ],
     "MusicalGenreId": 3,
     "ProfileImageId": 18
   },
   {
+    "Pictures": [
+      37,
+      38
+    ],
     "Id": 19,
     "Description": "Techno Beats in Neon City",
-    "Pictures": [ 37, 38 ],
     "MusicalGenreId": 4,
     "ProfileImageId": 19
   },
   {
+    "Pictures": [
+      39,
+      40,
+      41
+    ],
     "Id": 20,
     "Description": "World Music Journey Across Continents",
-    "Pictures": [ 39, 40, 41 ],
     "MusicalGenreId": 5,
     "ProfileImageId": 20
   }

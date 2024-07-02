@@ -28,7 +28,9 @@ namespace App.Front.Views
         {
             var window = new CreatePlayList(ViewModel.Account);
             window.ShowDialog();
+            
             OpenLibrary(sender, e);
+            
         }
     }
 }

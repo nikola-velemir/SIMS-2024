@@ -14,21 +14,5 @@
     "Description": "A renowned jazz band.",
     "MusicalGenreId": 2,
     "ProfileImageId": 302
-  },
-  {
-    "Name": "The Mighty Rockers",
-    "Biography": {
-      "Id": 101,
-      "Text": "Formed in the late 70s, The Rockers have been a staple in the rock genre.",
-      "Pictures": [
-        201,
-        202,
-        203
-      ]
-    },
-    "Id": 1,
-    "Description": "A classic rock band.",
-    "MusicalGenreId": 1,
-    "ProfileImageId": 301
   }
 ]

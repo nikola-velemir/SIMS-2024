@@ -1,14 +1,15 @@
 ﻿using App.Back.Domain;
 using App.Back.Service;
+using App.Front.ViewModels.DTO;
 
 namespace App.Front.ViewModels.ViewControllers
 {
-    public class MusicalPerformanceViewModel
+    public class MusicalPieceViewModel
     {
         private MusicalPieceService _musicalPerformanceService;
         private PictureService _pictureService;
         private MusicalGenreService _musicalGenreService;
-        public MusicalPerformanceViewModel() 
+        public MusicalPieceViewModel() 
         {
             _musicalPerformanceService = new MusicalPieceService();
             _pictureService = new PictureService();
@@ -20,24 +21,25 @@ namespace App.Front.ViewModels.ViewControllers
             return _pictureService.Create(newPicture);
         }
 
-        public MusicalPiece? CreateMusicalPerformance(MusicalPiece newMusicalPerformance)
+        public MusicPieceDTO? CreateMusicPiece(MusicPieceDTO newMusicPiece)
         {
-            return _musicalPerformanceService.Create(newMusicalPerformance);
+            newMusicPiece.ProfilePicture = _pictureService.GetDefaultProfilePicture();
+            return _musicalPerformanceService.Create(newMusicPiece);
         }
 
-        public List<MusicalGenre> GetAllMusicalGenre()
+        public List<MusicalGenreDTO> GetAllMusicalGenre()
         {
             return _musicalGenreService.GetAll();
         }
 
-        public int GetIdByGenreName(string name)
+        public MusicalGenreDTO GetByGenreName(string name)
         {
             var genre = _musicalGenreService.GetByName(name);
             if (genre != null)
             {
-                return genre.Id;
+                return genre;
             }
-            return -1;
+            return null;
         }
 
 

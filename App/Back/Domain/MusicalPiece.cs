@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-
+﻿
 namespace App.Back.Domain
 {
     public class MusicalPiece : MusicalNotion
@@ -25,29 +24,16 @@ namespace App.Back.Domain
         {
             Pictures.Add(picture.Id);
         }
+
         public override bool Equals(object? obj)
         {
-            if (obj == null || GetType() != obj.GetType())
-            {
-                return false;
-            }
-
-            MusicalPiece other = (MusicalPiece)obj;
-            return base.Equals(obj) &&
-                   Pictures.SequenceEqual(other.Pictures);
+            return obj is MusicalPiece piece &&
+                   Id == piece.Id;
         }
 
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = base.GetHashCode();
-                foreach (var picture in Pictures)
-                {
-                    hash = hash * 23 + picture.GetHashCode();
-                }
-                return hash;
-            }
+            return HashCode.Combine(Id);
         }
     }
 }

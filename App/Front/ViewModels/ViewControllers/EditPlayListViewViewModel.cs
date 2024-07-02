@@ -4,6 +4,7 @@ using App.Front.ViewModels.Presentation;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using App.Front.ViewModels.DTO;
 
 public class EditPlayListViewViewModel : INotifyPropertyChanged
 {
@@ -50,7 +51,7 @@ public class EditPlayListViewViewModel : INotifyPropertyChanged
             var piece = _musicalPieceService.GetById(id);
             if (piece == null) { continue; }
 
-            AddedPieces.Add(new MusicalPieceWrapperViewModel(new MusicalPieceViewModel(piece)));
+            AddedPieces.Add(new MusicalPieceWrapperViewModel(piece));
         }
     }
 
@@ -71,7 +72,7 @@ public class EditPlayListViewViewModel : INotifyPropertyChanged
         Pieces.Clear();
         foreach (var p in _musicalPieceService.GetAll())
         {
-            var vm = new MusicalPieceWrapperViewModel(new MusicalPieceViewModel(p));
+            var vm = new MusicalPieceWrapperViewModel(p);
             if (!ExistsInAddedPieces(vm)) { Pieces.Add(vm); }
         }
 
@@ -89,7 +90,7 @@ public class EditPlayListViewViewModel : INotifyPropertyChanged
         {
             var filteredPieces = _musicalPieceService.GetAll()
                 .Where(p => p.Description.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase))
-                .Select(p => new MusicalPieceWrapperViewModel(new MusicalPieceViewModel(p)))
+                .Select(p => new MusicalPieceWrapperViewModel(p))
                 .ToList();
 
             Pieces.Clear();

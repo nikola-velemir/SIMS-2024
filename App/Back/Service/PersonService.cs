@@ -54,5 +54,16 @@ namespace App.Back.Service
 
         }
 
+        public Person? GetByAccountId(int id)
+        {
+            foreach(Person person in _repository.GetAll())
+            {
+                if(person.AccountId == id)
+                {
+                    return person;
+                }
+            }
+            return null;
+        }
     }
 }

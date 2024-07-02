@@ -4,7 +4,7 @@
     "Password": "milos123",
     "UserName": "milos",
     "Active": true,
-    "Type": 0,
+    "Type": 1,
     "PersonId": 1
   },
   {
@@ -12,7 +12,7 @@
     "Password": "asdasd",
     "UserName": "milorad",
     "Active": true,
-    "Type": 0,
+    "Type": 2,
     "PersonId": 2
   },
   {
@@ -21,7 +21,7 @@
     "UserName": "marko",
     "Active": true,
     "Type": 0,
-    "PersonId": 3
+    "PersonId": 0
   },
   {
     "Id": 4,

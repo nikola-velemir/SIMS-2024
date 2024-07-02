@@ -1,23 +1,25 @@
 ﻿using App.Back.Service;
+using App.Front.ViewModels.DTO;
+using App.Front.ViewModels.ViewControllers;
 using System.Collections.ObjectModel;
 
 namespace App.Front.ViewModels.Presentation.Wrappers
 {
     public class MusicalPieceWrapperViewModel
     {
-        public MusicalPieceViewModel Piece { get; set; }
+        public MusicPieceDTO Piece { get; set; }
         public PictureViewModel Picture { get; set; }
         public ObservableCollection<PerformerViewModel> Performers { get; set; }
-        public MusicalGenreViewModel Genre { get; set; }
+        public MusicalGenreDTO Genre { get; set; }
         public MusicalPieceWrapperViewModel() { }
-        public MusicalPieceWrapperViewModel(MusicalPieceViewModel piece, PictureViewModel picture, ObservableCollection<PerformerViewModel> performer, MusicalGenreViewModel genre)
+        public MusicalPieceWrapperViewModel(MusicPieceDTO piece, PictureViewModel picture, ObservableCollection<PerformerViewModel> performer, MusicalGenreDTO genre)
         {
             Piece = piece;
             Picture = picture;
             Performers = performer;
             Genre = genre;
         }
-        public MusicalPieceWrapperViewModel(MusicalPieceViewModel piece)
+        public MusicalPieceWrapperViewModel(MusicPieceDTO piece)
         {
             Piece = piece;
             Performers = new();
@@ -26,8 +28,8 @@ namespace App.Front.ViewModels.Presentation.Wrappers
             var participationService = new ParticipationService();
             var genreService = new MusicalGenreService();
 
-            Picture = new PictureViewModel(pictureService.GetById(Piece.ProfilePictureId) ?? new Back.Domain.Picture());
-            Genre = new MusicalGenreViewModel(genreService.GetById(Piece.MusicalGenreId) ?? new Back.Domain.MusicalGenre());
+            Picture = new PictureViewModel(pictureService.GetById(Piece.ProfilePicture.Id) ?? new Back.Domain.Picture());
+            Genre = genreService.GetById(Piece.MusicalGenre.Id) ?? new MusicalGenreDTO();
             foreach (var p in participationService.GetPerformersByPieceId(Piece.Id))
             {
                 Performers.Add(new PerformerViewModel(p));

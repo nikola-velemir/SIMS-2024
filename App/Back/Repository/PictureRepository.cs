@@ -36,11 +36,11 @@ namespace App.Back.Repository
 
         public Picture? Get(Picture instance)
         {
-            foreach (var izvodjac in GetAll())
+            foreach (var picture in GetAll())
             {
-                if (izvodjac.Id == instance.Id)
+                if (picture.Id == instance.Id)
                 {
-                    return izvodjac;
+                    return picture;
                 }
             }
             return null;
@@ -63,6 +63,18 @@ namespace App.Back.Repository
             Save(instances);
 
             return instance;
+        }
+
+        public Picture GetById(int id)
+        {
+            foreach (var izvodjac in GetAll())
+            {
+                if (izvodjac.Id == id)
+                {
+                    return izvodjac;
+                }
+            }
+            return null;
         }
     }
 }

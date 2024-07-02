@@ -5,13 +5,13 @@ using App.Back.Utilities;
 
 namespace App.Back.Repository
 {
-    public class MusicalGenreRepository : Repository<MusicalGenre>, IRepository<MusicalGenre>
+    public class MusicalGenreRepository : Repository<MusicGenre>, IRepository<MusicGenre>
     {
         public MusicalGenreRepository()
         {
             SetFileName("MusicalGenreData.json");
         }
-        public MusicalGenre? Create(MusicalGenre newMusicalGenre)
+        public MusicGenre? Create(MusicGenre newMusicalGenre)
         {
             var instances = Load();
             newMusicalGenre.Id = Utils.GenerateId();
@@ -21,7 +21,7 @@ namespace App.Back.Repository
             return newMusicalGenre;
         }
 
-        public MusicalGenre? Delete(MusicalGenre instance)
+        public MusicGenre? Delete(MusicGenre instance)
         {
             var fetchedInstance = Get(instance);
 
@@ -34,7 +34,7 @@ namespace App.Back.Repository
             return instance;
         }
 
-        public MusicalGenre? Get(MusicalGenre instance)
+        public MusicGenre? Get(MusicGenre instance)
         {
             foreach (var izvodjac in GetAll())
             {
@@ -46,12 +46,12 @@ namespace App.Back.Repository
             return null;
         }
 
-        public List<MusicalGenre> GetAll()
+        public List<MusicGenre> GetAll()
         {
             return Load();
         }
 
-        public MusicalGenre? Update(MusicalGenre instance)
+        public MusicGenre? Update(MusicGenre instance)
         {
             var fetchedInstance = Get(instance);
 

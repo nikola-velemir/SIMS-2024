@@ -23,12 +23,27 @@ namespace App.Back.Repository
 
         public MusicalPiece? Delete(MusicalPiece instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(instance);
+            Save(instances);
+
+            return instance;
         }
 
         public MusicalPiece? Get(MusicalPiece instance)
         {
-            throw new NotImplementedException();
+            foreach (var musicalPiece in GetAll())
+            {
+                if (musicalPiece.Id == instance.Id)
+                {
+                    return musicalPiece;
+                }
+            }
+            return null;
         }
 
         public List<MusicalPiece> GetAll()

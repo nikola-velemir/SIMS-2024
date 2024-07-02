@@ -20,8 +20,8 @@ namespace App
         }
         private void KreiranjeDelaClick(object sender, RoutedEventArgs e)
         {
-            MusicalPerformanceView musicalPerformanceView = new MusicalPerformanceView();
-            musicalPerformanceView.Show();
+            MusicalPieceView musicalPieceView  = new MusicalPieceView();
+            musicalPieceView.Show();
         }
         private void LoginClick(object sender, RoutedEventArgs e)
         {

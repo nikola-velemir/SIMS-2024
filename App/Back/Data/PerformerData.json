@@ -18,15 +18,5 @@
     "Gender": 0,
     "AccountId": null,
     "Role": 1
-  },
-  {
-    "Id": 79792,
-    "FirstName": "ajmoo3422",
-    "LastName": "sakteri12",
-    "JMBG": "1234567898765",
-    "BirthDate": "2024-06-25",
-    "Gender": 0,
-    "AccountId": null,
-    "Role": 1
   }
 ]
