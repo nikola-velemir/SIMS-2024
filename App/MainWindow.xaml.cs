@@ -24,10 +24,11 @@ namespace App
             MusicalPerformanceView musicalPerformanceView = new MusicalPerformanceView();
             musicalPerformanceView.Show();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoginClick(object sender, RoutedEventArgs e)
         {
             var window = new Login();
-            window.Show();
+            var a = window.ShowDialog();
+            if (a != null && a == true) { Close(); }
         }
     }
 }

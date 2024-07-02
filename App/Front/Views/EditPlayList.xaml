@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="Create PlayList" Height="450" Width="800">
+        Title="Create PlayList" Height="600" Width="900" ResizeMode="NoResize">
     <Window.Resources>
         <!-- Styles -->
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
@@ -45,7 +45,6 @@
         </Style>
 
         <!-- Updated Save Button Style -->
-        <!-- Updated Save Button Style -->
         <Style x:Key="SaveButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#1DB954" />
             <Setter Property="Foreground" Value="White" />
@@ -53,7 +52,6 @@
             <Setter Property="Padding" Value="8 5" />
             <Setter Property="Height" Value="25"/>
             <Setter Property="Width" Value="50"/>
-            <!-- Adjusted padding -->
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -62,7 +60,6 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="5" Padding="{TemplateBinding Padding}">
-                            <!-- Rounded corners and padding -->
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -97,7 +94,6 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="5" Padding="5">
-                            <!-- Rounded corners and padding -->
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -119,7 +115,6 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="5" Padding="5">
-                            <!-- Rounded corners and padding -->
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -159,7 +154,9 @@
     <Grid>
         <!-- Main layout with 2 columns -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="175" />
+
+            <!-- Adjusted sidebar width -->
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -181,13 +178,11 @@
 
             <!-- Save Button -->
             <StackPanel Orientation="Horizontal" Grid.Row="0">
-                <StackPanel Width="506">
+                <StackPanel Width="652">
                     <TextBlock Text="Edit Playlist" FontSize="24" FontWeight="Bold" Margin="10" />
                 </StackPanel>
-                <StackPanel>
                 <Button Content="Save" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Height="30" Style="{StaticResource SaveButtonStyle}" Click="SaveClick"/>
-                </StackPanel>
-                </StackPanel>
+            </StackPanel>
 
             <!-- Input Field for Playlist Name -->
             <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
@@ -198,7 +193,7 @@
             <!-- Input Field for Search -->
             <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
                 <TextBlock Text="Search:" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                <TextBox Width="300" Text="{Binding SearchQuery}" />
+                <TextBox Width="300" Text="{Binding ViewModel.SearchQuery, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <!-- Split ListViews for Pieces and AddedPieces -->

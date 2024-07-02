@@ -19,10 +19,9 @@ namespace App.Front.Views
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            if (ViewModel.LogIn(LozinkaPasswordBox.Password.Trim()))
-            {
-                Close();
-            }
+            var result = ViewModel.LogIn(LozinkaPasswordBox.Password.Trim());
+            if (result) { DialogResult = result; }
+            
         }
     }
 }
