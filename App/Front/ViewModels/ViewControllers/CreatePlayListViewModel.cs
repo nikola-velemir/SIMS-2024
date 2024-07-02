@@ -16,6 +16,7 @@ namespace App.Front.ViewModels.ViewControllers
         }
         public bool Create()
         {
+            if (string.IsNullOrEmpty(PlayList.Name)) { return false; }  
             PlayList.Pieces = new List<int>();
             PlayList.AccountId = Account.Id;
             PlayList.DateCreated = DateOnly.FromDateTime(DateTime.Now);
