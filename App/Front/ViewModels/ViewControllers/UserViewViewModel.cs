@@ -38,6 +38,12 @@ namespace App.Front.ViewModels.ViewControllers
             Account = account;
             Fill();
         }
+        public UserViewViewModel()
+        {
+            Notions = new();
+            _notionService = new MusicalNotionService();
+            Fill();
+        }
 
         public void Fill()
         {

@@ -29,6 +29,37 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Background" Value="#403183" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#403183" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#403183" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid Margin="0,0,0,72">
         <TextBox HorizontalAlignment="Left" Height="34" Margin="146,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"
@@ -41,25 +72,25 @@ Validation.ErrorTemplate="{StaticResource ValidationTemplate}"></TextBox>
                  RenderTransformOrigin="-2.456,2.462"
                                  Text="{Binding Path=SelectedPerson.JMBG, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
 Validation.ErrorTemplate="{StaticResource ValidationTemplate}"></TextBox>
-        <DatePicker Name="BirthDateTimePicker" HorizontalAlignment="Left" Margin="452,0,0,0" VerticalAlignment="Center" Height="40" Width="114"
+        <DatePicker Name="BirthDateTimePicker" HorizontalAlignment="Left" Margin="452,158,0,0" VerticalAlignment="Top" Height="40" Width="114"
                                     Text="{Binding Path=SelectedPerson.BirthDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
 Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
-        <ComboBox HorizontalAlignment="Left" Height="40" Name="GendersComboBox" VerticalAlignment="Center" Width="116" SelectedIndex="0"
+        <ComboBox HorizontalAlignment="Left" Height="40" Name="GendersComboBox" VerticalAlignment="Top" Width="116" SelectedIndex="0"
                   Text="{Binding Path=SelectedExam.Gender, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
-Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="627,0,0,0"/>
+Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="627,158,0,0"/>
         <Label Content="Firstname" HorizontalAlignment="Left" Height="32" Margin="146,19,0,0" VerticalAlignment="Top" Width="116" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
         <Label Content="Lastname" HorizontalAlignment="Center" Height="32" Margin="0,19,0,0" VerticalAlignment="Top" Width="116" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
         <Label Content="JMBG" HorizontalAlignment="Left" Height="32" Margin="541,19,0,0" VerticalAlignment="Top" Width="115" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
-        <Label Content="Birth date" HorizontalAlignment="Left" Height="32" Margin="452,111,0,0" VerticalAlignment="Top" Width="114" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
-        <Label Content="Gender" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="116" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Margin="627,111,0,0"/>
+        <Label Content="Birth date" HorizontalAlignment="Left" Height="32" Margin="452,115,0,0" VerticalAlignment="Top" Width="114" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="116" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Margin="627,115,0,0"/>
         <Button Content="Registrate" HorizontalAlignment="Left" Margin="464,259,0,0" VerticalAlignment="Top" Height="46" Width="154" FontSize="18" Click="Registrate"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="186,259,0,0" VerticalAlignment="Top" Height="46" Width="156" FontSize="18" Click="Cancel"/>
-        <Label Content="User name" HorizontalAlignment="Left" Height="32" Margin="89,110,0,0" VerticalAlignment="Top" Width="115" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
-        <Label Content="Password" HorizontalAlignment="Left" Height="32" Margin="266,110,0,0" VerticalAlignment="Top" Width="115" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Name="UserNameTextBox" Height="41" Margin="89,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="115"
+        <Label Content="User name" HorizontalAlignment="Left" Height="32" Margin="89,114,0,0" VerticalAlignment="Top" Width="115" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label Content="Password" HorizontalAlignment="Left" Height="32" Margin="266,114,0,0" VerticalAlignment="Top" Width="115" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Name="UserNameTextBox" Height="41" Margin="89,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"
             Text="{Binding SelectedUserAccount.UserName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
             Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
-        <TextBox HorizontalAlignment="Left" Name="PasswordtextBox" Height="41" Margin="266,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="115"
+        <TextBox HorizontalAlignment="Left" Name="PasswordtextBox" Height="41" Margin="266,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"
             Text="{Binding SelectedUserAccount.Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
             Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
 

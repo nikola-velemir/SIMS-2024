@@ -6,45 +6,75 @@
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
         Title="MusicalEditorView" Height="450" Width="800">
-    <Grid Margin="15" HorizontalAlignment="Center">
+    <Window.Resources>
+        <!-- Style for Sidebar Buttons -->
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True"/>
+                            </Border>
+                            <Border x:Name="overlayBorder"
+                                Background="White"
+                                Opacity="0"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="overlayBorder" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="132*" />
+            <ColumnDefinition Width="493*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="0.8*" />
-        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Background="#403183">
+            <Button Content="Home" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Songs of the year playlist" Style="{StaticResource SidebarButtonStyle}" Click="SongsOfTheYearClick"/>
+            <Button Content="Performers toplist" Style="{StaticResource SidebarButtonStyle}"  Click="PerformersToplistClick"/>
+            <Button Content="Musical Pieces" Style="{StaticResource SidebarButtonStyle}" Click="CrudMusicalPieceClick"/>
+            <Button Content="Bands" Style="{StaticResource SidebarButtonStyle}" Click="CrudBandClick"/>
+            <Button Content="Musicians" Style="{StaticResource SidebarButtonStyle}" Click="CrudMusicianClick"/>
 
-        <!--first-->
-        <Label Grid.Row="0" Grid.Column="0" Content="Lists:" VerticalAlignment="Center" />
-        <Button Grid.Column="1" Content="Songs of the year playlist" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="180" Height="30" Click="SongsOfTheYearClick"/>
-        <Button Grid.Column="1" Content="Performers toplist" HorizontalAlignment="Left" Margin="281,0,0,0" VerticalAlignment="Center" Width="180" Height="30" Click="PerformersToplistClick"/>
+            <Button Content="Approve comments" Click="ApproveCommentsClick"/>
+            <Button Content="Edit comments" Click="EditCommentsClick"/>
 
-
-        <!--second-->
-        <Label Grid.Row="1" Grid.Column="0" Content="CRUDs:" VerticalAlignment="Center"/>
-        <Button Grid.Column="1" Content="CRUD Musical Piece" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="120" Height="30" Click="CrudMusicalPieceClick" Grid.Row="1"/>
-        <Button Grid.Column="1" Content="CRUD Band" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="120" Height="30" Click="CrudBandClick"/>
-        <Button Grid.Column="1" Content="CRUD Musician" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" Width="120" Height="30" Click="CrudMusicianClick" Grid.Row="1"/>
-
-        <!--third-->
-        <Label Grid.Row="2" Grid.Column="0" Content="Comments:" VerticalAlignment="Center" />
-        <Button Grid.Column="1" Content="Approve comments" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="180" Height="30" Click="ApproveCommentsClick"/>
-        <Button Grid.Column="1" Content="Edit comments" HorizontalAlignment="Left" Margin="281,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="180" Height="30" Click="EditCommentsClick"/>
-
-        <!--fourth-->
-        <Label Grid.Row="3" Grid.Column="0" Content="Reviews:" VerticalAlignment="Center" />
-        <Button Grid.Column="1" Content="Make a review" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="180" Height="30" Click="MakeReviewClick"/>
-        <Button Grid.Column="1" Content="Approve user's reviews" HorizontalAlignment="Left" Margin="281,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="180" Height="30" Click="ApproveReviewClick"/>
+            <Button Content="Make a review" Click="MakeReviewClick" />
+            <Button Content="Approve user's reviews" Click="ApproveReviewClick"/>
 
 
-       
-        <Button Content="Logout" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="280" Height="30" Click="LogoutClick"/>
+        </StackPanel>
+
+
+
+        <Button Content="Logout" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="280" Height="30" Click="LogoutClick"/>
 
 
 

@@ -3,11 +3,94 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="clr-namespace:App.Front.ViewModels.Presentation.Wrappers"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <!-- Style for Sidebar Buttons -->
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  RecognizesAccessKey="True"/>
+                            </Border>
+                            <Border x:Name="overlayBorder"
+                                    Background="White"
+                                    Opacity="0"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="overlayBorder" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Button Content="Sign up/sign in" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,127,0,0" Width="164" Click="LoginClick" Height="51"/>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="kreiraj izvodjaca" Click="KreiraIzvodjacaClick"></Button>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Content="kreiraj dela" Click="KreiranjeDelaClick" Margin="0,232,0,0"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Background="#403183">
+            <Button Content="Home" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Log in / sign up" Style="{StaticResource SidebarButtonStyle}" Click="LoginClick" />
+        </StackPanel>
+        
+
+        <!-- Main Content Area -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10" Width="390">
+                <TextBlock Text="Search" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <StackPanel Width="349">
+                    <TextBox Grid.Row="0" Margin="10" FontSize="12" Text="{Binding UserWindowViewModel.SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <ListBox ItemsSource="{Binding UserWindowViewModel.Notions}">
+                    <ListBox.Resources>
+                        <DataTemplate DataType="{x:Type ext:MusicalNotionWrapperViewModel}">
+                            <StackPanel Orientation="Horizontal" Margin="10">
+                                <Image Source="{Binding Picture.Path}" Width="50" Height="50" Margin="5"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Notion.Description}" FontWeight="Bold" Margin="10"/>
+                                    <TextBlock Text="{Binding Genre.Name}" Margin="10"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.Resources>
+                </ListBox>
+            </ScrollViewer>
+
+        </Grid>
     </Grid>
 </Window>
