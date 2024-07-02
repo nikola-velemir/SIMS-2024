@@ -26,7 +26,7 @@ namespace App.Front.Views
             if(user == null) { MessageBox.Show("You do not have an account"); }
             else if (user.Type == AccountType.User) { var UserWindow = new UserView(new UserAccountDTO(user)); UserWindow.Show(); Close(); }
             else if (user.Type == AccountType.Admin) { MessageBox.Show("Welcome admin"); }
-            else if (user.Type == AccountType.Editor) { MessageBox.Show("Welcome editor"); }
+            else if (user.Type == AccountType.Editor) { var MusicalEditorWindow = new MusicalEditorView(); MusicalEditorWindow.Show(); Close(); }
 
         }
 
