@@ -52,17 +52,17 @@
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type wrp:MusicalNotionWrapperViewModel}">
+        <DataTemplate DataType="{x:Type dto:MusicPieceDTO}">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <StackPanel Orientation="Horizontal" IsEnabled="False">
-                    <Image Source="{Binding Picture.Path}" Width="50" Height="50" Margin="5"/>
+                    <Image Source="{Binding ProfilePicture.Path}" Width="50" Height="50" Margin="5"/>
                     <TextBlock  FontWeight="Bold" Margin="10">
                         <Run Text="Genre: "></Run>
-                        <Run Text="{Binding Genre.Name}"></Run>
+                        <Run Text="{Binding MusicalGenre.Name}"></Run>
                     </TextBlock>
                     <TextBlock  FontWeight="Bold" Margin="10">
                         <Run Text="Description: "></Run>
-                        <Run Text="{Binding Notion.Description}"></Run>
+                        <Run Text="{Binding Description}"></Run>
                     </TextBlock>
                 </StackPanel>
             </StackPanel>
@@ -134,8 +134,8 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,10" Width="390" Background="#403183">
 
                 <Button Content="Add" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}"  Width="130" Command="{Binding CurrentAdminItems.AddMusicItemCommand}"/>
-                <Button Content="Update" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130"/>
-                <Button  Content="Delete" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130"/>
+                <Button Content="Update" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130" />
+                <Button  Content="Delete" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130" Command="{Binding CurrentAdminItems.DeleteMusicItemCommand}"/>
             </StackPanel>
 
             <!-- Scrollable ListView -->

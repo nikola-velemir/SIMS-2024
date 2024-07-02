@@ -44,5 +44,10 @@ namespace App.Back.Service
         {
             return _pictureRepository.Update(instance);
         }
+
+        public Picture GetDefaultProfilePicture()
+        {
+            return _pictureRepository.GetById(75484);
+        }
     }
 }

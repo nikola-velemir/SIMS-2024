@@ -11,5 +11,11 @@
         }
         public MusicGenre() { }
 
+        public override bool Equals(object? obj)
+        {
+            return obj is MusicGenre genre &&
+                   Id == genre.Id &&
+                   Name == genre.Name;
+        }
     }
 }

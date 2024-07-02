@@ -1,27 +1,37 @@
 ﻿using App.Back.Domain;
 using App.Back.Repository;
 using App.Front.ViewModels.DTO;
-using App.Front.ViewModels.Presentation;
 
 namespace App.Back.Service
 {
 
     public class MusicalPieceService
     {
-        private MusicalPieceRepository _musicalPerformanceRepository;
+        private MusicalPieceRepository _musicalPieceRepository;
         private PictureService _pictureService;
+        private MusicalGenreService _musicalGenreService;
         public MusicalPieceService()
         {
-            _musicalPerformanceRepository = new MusicalPieceRepository();
+            _musicalPieceRepository = new MusicalPieceRepository();
             _pictureService = new PictureService();
+            _musicalGenreService = new MusicalGenreService();
         }
         public MusicPieceDTO? Create(MusicPieceDTO newMusicalPerformance)
         {
-            return new MusicPieceDTO(_musicalPerformanceRepository.Create(newMusicalPerformance.ToMusicPiece()));
+            var musicPiece = _musicalPieceRepository.Create(newMusicalPerformance.ToMusicPiece());
+            var musicPieceDTO = new MusicPieceDTO();
+            musicPieceDTO.MusicalGenre = _musicalGenreService.GetById(musicPiece.MusicalGenreId).ToMusicGenre();
+            var pictures = new List<Picture>();
+            foreach (var pictureId in musicPiece.Pictures)
+            {
+                pictures.Add(_pictureService.GetById(pictureId));
+            }
+            musicPieceDTO.Pictures = pictures;
+            return musicPieceDTO;
         }
         public List<MusicPieceDTO> GetAll()
         {
-            var musicPieces = _musicalPerformanceRepository.GetAll();
+            var musicPieces = _musicalPieceRepository.GetAll();
             var musicalPieceDTOs = new List<MusicPieceDTO>();
             foreach(var musicPiece in musicPieces)
             {
@@ -32,9 +42,16 @@ namespace App.Back.Service
                     pictures.Add(_pictureService.GetById(pictureId));
                 }
                 musicalPieceDTO.Pictures = pictures;
+                musicalPieceDTO.ProfilePicture = _pictureService.GetById(musicPiece.ProfileImageId);
+                musicalPieceDTO.MusicalGenre = _musicalGenreService.GetById(musicPiece.MusicalGenreId).ToMusicGenre();
                 musicalPieceDTOs.Add(musicalPieceDTO);
             }
             return musicalPieceDTOs;
+        }
+
+        public void Delete(MusicPieceDTO musicPieceDTO)
+        {
+            _musicalPieceRepository.Delete(musicPieceDTO.ToMusicPiece());
         }
     }
 }

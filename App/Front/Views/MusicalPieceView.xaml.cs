@@ -1,4 +1,5 @@
 ﻿using App.Back.Domain;
+using App.Front.ViewModels.DTO;
 using App.Front.ViewModels.Presentation;
 using App.Front.ViewModels.ViewControllers;
 using System;
@@ -67,12 +68,11 @@ namespace App.Front.Views
                 MessageBox.Show("Musical performance must hava a genre!");
                 return;
             }
-            var genreId = _musicalPerformanceViewModel.GetIdByGenreName(GenreComboBox.SelectedValue.ToString());
-            CurrentMusicalPiece.MusicalGenreId = genreId;
-            CurrentMusicalPiece.ProfilePictureId = 75484;
+            var genre = _musicalPerformanceViewModel.GetByGenreName(GenreComboBox.SelectedValue.ToString());
+            CurrentMusicalPiece.MusicalGenre = genre.ToMusicGenre();
             if (CurrentMusicalPiece.IsValid)
             {
-                MusicPieceDTO? musicalPerformance = _musicalPerformanceViewModel.CreateMusicalPerformance(CurrentMusicalPiece);
+                MusicPieceDTO? musicalPerformance = _musicalPerformanceViewModel.CreateMusicPiece(CurrentMusicalPiece);
                 if(musicalPerformance != null)
                 {
                     MessageBox.Show("You successfuly add new musical performance!");

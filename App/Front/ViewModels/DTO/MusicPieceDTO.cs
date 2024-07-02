@@ -1,11 +1,11 @@
 ﻿using App.Back.Domain;
 using System.ComponentModel;
 
-namespace App.Front.ViewModels.Presentation
+namespace App.Front.ViewModels.DTO
 {
     public class MusicPieceDTO : INotifyPropertyChanged, IDataErrorInfo
     {
-        public int Id {  get; set; }
+        public int Id { get; set; }
         private string description;
         public string Description
         {
@@ -20,15 +20,15 @@ namespace App.Front.ViewModels.Presentation
             }
         }
 
-        private int musicalGenreId;
-        public int MusicalGenreId
+        private MusicGenre musicalGenre;
+        public MusicGenre MusicalGenre
         {
-            get { return musicalGenreId; }
+            get { return musicalGenre; }
             set
             {
-                if(value != null)
+                if (value != null)
                 {
-                    musicalGenreId = value;
+                    musicalGenre = value;
                     OnPropertyChanged("MusicalGenreId");
                 }
             }
@@ -36,41 +36,56 @@ namespace App.Front.ViewModels.Presentation
         private List<Picture> pictures;
         public List<Picture> Pictures
         {
-            get {return pictures;}
+            get { return pictures; }
             set
             {
-                if(value != null)
+                if (value != null)
                 {
                     pictures = value;
                     OnPropertyChanged("Pictures");
                 }
             }
         }
-        private int profilePictureId;
-        public int ProfilePictureId
+        private Picture profilePicture;
+        public Picture ProfilePicture
         {
-            get { return profilePictureId; }
+            get { return profilePicture; }
             set
             {
-                if (value != profilePictureId)
+                if (value != profilePicture)
                 {
-                    profilePictureId = value;
+                    profilePicture = value;
                     OnPropertyChanged("ProfilePictureId");
                 }
             }
         }
-        public MusicPieceDTO() 
+        public MusicPieceDTO()
         {
             Pictures = new List<Picture>();
         }
 
-        public MusicPieceDTO(MusicalPiece musicalPiece) 
+        public MusicPieceDTO(MusicPieceDTO musicalPiece)
         {
             Id = musicalPiece.Id;
             Description = musicalPiece.Description;
-            MusicalGenreId = musicalPiece.MusicalGenreId;
-            ProfilePictureId = musicalPiece.ProfileImageId;
+            MusicalGenre = musicalPiece.MusicalGenre;
         }
+
+        public MusicPieceDTO(MusicalPiece musicalPiece)
+        {
+            Id = musicalPiece.Id;
+            Description = musicalPiece.Description;
+        }
+
+        public MusicPieceDTO(int id, string description, MusicGenre musicalGenre, List<Picture> pictures, Picture profilePicture)
+        {
+            Id = id;
+            Description = description;
+            MusicalGenre = musicalGenre;
+            Pictures = pictures;
+            ProfilePicture = profilePicture;
+        }
+
         public void AddPicture(Picture picture)
         {
             Pictures.Add(picture);
@@ -106,14 +121,14 @@ namespace App.Front.ViewModels.Presentation
                 }
                 else if (columnName == "MusicalGenreId")
                 {
-                    if (MusicalGenreId <= 0)
+                    if (MusicalGenre == null)
                     {
                         return "Musical performance must have a genre";
                     }
                 }
-                else if (columnName == "Pictures") 
+                else if (columnName == "Pictures")
                 {
-                    if(Pictures.Count == 0)
+                    if (Pictures.Count == 0)
                     {
                         return "Musical performance must have at least one picture";
                     }
@@ -132,7 +147,7 @@ namespace App.Front.ViewModels.Presentation
         public List<int> GetPicturesId()
         {
             var ids = new List<int>();
-            foreach(var picture in Pictures)
+            foreach (var picture in Pictures)
             {
                 ids.Add(picture.Id);
             }
@@ -141,7 +156,7 @@ namespace App.Front.ViewModels.Presentation
         public MusicalPiece ToMusicPiece()
         {
             var ids = GetPicturesId();
-            return new MusicalPiece(Id, Description, ids, MusicalGenreId,ProfilePictureId);
+            return new MusicalPiece(Id, Description, ids, MusicalGenre.Id, ProfilePicture.Id);
         }
     }
 }

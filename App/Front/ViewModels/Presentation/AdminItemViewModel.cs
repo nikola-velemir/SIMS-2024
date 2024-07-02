@@ -20,7 +20,6 @@ namespace App.Front.ViewModels.Presentation
         private MusicalGenreService _genreService;
         private PersonService _personService;
         private UserAccountService _userAccountService;
-
         private ObservableCollection<object> _currentItems;
         public ObservableCollection<object> CurrentItems
         {
@@ -101,6 +100,7 @@ namespace App.Front.ViewModels.Presentation
                 CurrentItems.Add(genre);
             }
             AddMusicItemCommand = new RelayCommand(i => AddMusicGenre());
+            DeleteMusicItemCommand = new RelayCommand(d => DeleteMusicGenre((MusicalGenreDTO)SelectedItem));
         }
         private void ShowMusicPiece()
         {
@@ -108,27 +108,79 @@ namespace App.Front.ViewModels.Presentation
             CurrentItems.Clear();
             foreach (var musicalPiece in musicalPieces)
             {
-                CurrentItems.Add(new MusicalNotionWrapperViewModel(new MusicalNotionViewModel(musicalPiece.ToMusicPiece())));
+                CurrentItems.Add(musicalPiece);
             }
             AddMusicItemCommand = new RelayCommand(o => AddMusicPiece());
+            DeleteMusicItemCommand = new RelayCommand(d => DeleteMusicPiece((MusicPieceDTO)SelectedItem));
         }
-
-
         private void AddMusicPiece()
         {
             MusicalPieceView musicalPieceView = new MusicalPieceView();
+            musicalPieceView.Closed += CreateMusicPieceView_Closed;
             musicalPieceView.Show();
+        }
+        private void CreateMusicPieceView_Closed(object? sender, EventArgs e)
+        {
+            ShowMusicPiece();
         }
 
         private void AddMusicGenre()
         {
             CreateMusicGenreView createMusicGenreView = new CreateMusicGenreView(null);
+            createMusicGenreView.Closed += CreateMusicGenreView_Closed;
             createMusicGenreView.Show();
         }
-
+        private void CreateMusicGenreView_Closed(object? sender, EventArgs e)
+        {
+            ShowMusicGenre();
+        }
         private void AddMusicEditor()
         {
             
+        }
+
+        private void DeleteMusicPiece(MusicPieceDTO musicPieceDTO)
+        {
+            if(musicPieceDTO != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete selected music piece?", "Delete", MessageBoxButton.YesNoCancel);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        _pieceService.Delete(musicPieceDTO);
+                        ShowMusicPiece();
+                        MessageBox.Show("You successfuly delete music piece");
+                        break;
+                    default:
+                        break;
+                }
+                
+            }
+            
+            
+        }
+
+        private void DeleteMusicGenre(MusicalGenreDTO musicalGenreDTO)
+        {
+            if(musicalGenreDTO != null)
+            {
+
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete selected music genre?", "Delete", MessageBoxButton.YesNoCancel);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        _genreService.Delete(musicalGenreDTO);
+                        ShowMusicGenre();
+                        MessageBox.Show("You successfuly delete music genre");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        private void DeleteMusicEditor()
+        {
+
         }
 
         public AdminItemViewModel()
@@ -143,7 +195,5 @@ namespace App.Front.ViewModels.Presentation
             CurrentItems = new ObservableCollection<object>();
             AddMusicItemCommand = new RelayCommand(o => AddMusicPiece());
         }
-
-
     }
 }

@@ -20,5 +20,11 @@
         {
             Pictures.Add(picture.Id);
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is MusicalPiece piece &&
+                   Id == piece.Id;
+        }
     }
 }
