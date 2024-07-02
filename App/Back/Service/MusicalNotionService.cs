@@ -18,7 +18,7 @@ namespace App.Back.Service
             var instances = new List<MusicalNotion>();
             foreach (var n in _pieceService.GetAll())
             {
-                instances.Add(n);
+                instances.Add(n.ToMusicPiece());
             }
             foreach (var n in _performanceService.GetAll())
             {

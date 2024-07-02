@@ -1,5 +1,6 @@
 ﻿using App.Back.Domain;
 using App.Back.Service;
+using App.Front.ViewModels.DTO;
 using System.IO;
 using System.Windows;
 
@@ -9,9 +10,9 @@ namespace App.Front.ViewModels.Presentation.Wrappers
     {
         public MusicalNotionViewModel Notion { get; set; }
         public PictureViewModel Picture { get; set; }
-        public MusicalGenreViewModel Genre { get; set; }
+        public MusicalGenreDTO Genre { get; set; }
 
-        public MusicalNotionWrapperViewModel(MusicalNotionViewModel notion, PictureViewModel picture, MusicalGenreViewModel genre)
+        public MusicalNotionWrapperViewModel(MusicalNotionViewModel notion, PictureViewModel picture, MusicalGenreDTO genre)
         {
             Notion = notion;
             Picture = picture;
@@ -27,7 +28,7 @@ namespace App.Front.ViewModels.Presentation.Wrappers
 
             Picture = new PictureViewModel(pictureService.GetById(notion.ProfileImageId) ?? new Picture());
             
-            Genre = new MusicalGenreViewModel(genreService.GetById(notion.MusicalGenreId) ?? new MusicGenre());
+            Genre = genreService.GetById(notion.MusicalGenreId) ?? new MusicalGenreDTO();
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using App.Back.Domain;
 using App.Back.Repository;
+using App.Front.ViewModels.DTO;
 
 namespace App.Back.Service
 {
@@ -11,34 +12,50 @@ namespace App.Back.Service
             _musicalGenreRepository = new MusicalGenreRepository();
         }
 
-        public List<MusicGenre> GetAll()
+        public List<MusicalGenreDTO> GetAll()
         {
-            return _musicalGenreRepository.GetAll();
+            var genres = _musicalGenreRepository.GetAll();
+            var genreDTOs = new List<MusicalGenreDTO>();
+            foreach (var genre in genres)
+            {
+                genreDTOs.Add(new MusicalGenreDTO(genre));
+            }
+            return genreDTOs;
         }
-        public MusicGenre? GetById(int id)
+        public MusicalGenreDTO? GetById(int id)
         {
             foreach (var g in _musicalGenreRepository.GetAll())
             {
-                if (g.Id == id) return g;
+                if (g.Id == id) return new MusicalGenreDTO(g);
             }
             return null;
 
         }
-        public MusicGenre? Create(MusicGenre newGenre)
+        public MusicalGenreDTO? Create(MusicGenre newGenre)
         {
-            return _musicalGenreRepository.Create(newGenre);
+            return new MusicalGenreDTO(_musicalGenreRepository.Create(newGenre));
         }
 
-        public MusicGenre? GetByName(string name)
+        public MusicalGenreDTO? GetByName(string name)
         {
             foreach (MusicGenre musicalGenre in _musicalGenreRepository.GetAll())
             {
                 if (musicalGenre.Name == name)
                 {
-                    return musicalGenre;
+                    return new MusicalGenreDTO(musicalGenre);
                 }
             }
             return null;
+        }
+
+        public MusicalGenreDTO? Update(MusicalGenreDTO newMusicalGenre)
+        {
+            return new MusicalGenreDTO(_musicalGenreRepository.Update(newMusicalGenre.ToMusicGenre()));
+        }
+
+        public void Delete(MusicalGenreDTO oldMusicalGenre)
+        {
+            _musicalGenreRepository.Delete(oldMusicalGenre.ToMusicGenre());
         }
     }
 }

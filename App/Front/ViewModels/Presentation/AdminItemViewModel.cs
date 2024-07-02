@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using App.Front.ViewModels.DTO;
 using App.Front.ViewModels.Presentation.Wrappers;
+using App.Back.Domain;
+using App.Front.Views;
+using System.Windows;
 
 namespace App.Front.ViewModels.Presentation
 {
@@ -29,6 +32,16 @@ namespace App.Front.ViewModels.Presentation
                 
             }
         }
+        private object _selectedItem;
+        public object SelectedItem
+        {
+            get { return _selectedItem; }
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged(nameof(SelectedItem));
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -39,6 +52,33 @@ namespace App.Front.ViewModels.Presentation
         public ICommand ShowMusicEditorCommand { get; }
         public ICommand ShowMusicGenreCommand { get; }
         public ICommand ShowMusicPieceCommand { get; }
+
+        private ICommand _addMusicItemCommand;
+        public ICommand AddMusicItemCommand 
+        {
+            get { return _addMusicItemCommand; }
+            set
+            {
+                if(value != null)
+                {
+                    _addMusicItemCommand = value;
+                    OnPropertyChanged(nameof(AddMusicItemCommand));
+                }
+            }
+        }
+        private ICommand _deleteMusicItemCommand;
+        public ICommand DeleteMusicItemCommand 
+        {
+            get { return _deleteMusicItemCommand; }
+            set
+            {
+                if(value != null)
+                {
+                    _deleteMusicItemCommand = value;
+                    OnPropertyChanged(nameof(DeleteMusicItemCommand));
+                }
+            }
+        }
 
         private void ShowMusicEditor()
         {
@@ -58,8 +98,9 @@ namespace App.Front.ViewModels.Presentation
             CurrentItems.Clear();
             foreach(var genre in genres)
             {
-                CurrentItems.Add(new MusicalGenreViewModel(genre));
+                CurrentItems.Add(genre);
             }
+            AddMusicItemCommand = new RelayCommand(i => AddMusicGenre());
         }
         private void ShowMusicPiece()
         {
@@ -67,8 +108,27 @@ namespace App.Front.ViewModels.Presentation
             CurrentItems.Clear();
             foreach (var musicalPiece in musicalPieces)
             {
-                CurrentItems.Add(new MusicalNotionWrapperViewModel(new MusicalNotionViewModel(musicalPiece)));
+                CurrentItems.Add(new MusicalNotionWrapperViewModel(new MusicalNotionViewModel(musicalPiece.ToMusicPiece())));
             }
+            AddMusicItemCommand = new RelayCommand(o => AddMusicPiece());
+        }
+
+
+        private void AddMusicPiece()
+        {
+            MusicalPieceView musicalPieceView = new MusicalPieceView();
+            musicalPieceView.Show();
+        }
+
+        private void AddMusicGenre()
+        {
+            CreateMusicGenreView createMusicGenreView = new CreateMusicGenreView(null);
+            createMusicGenreView.Show();
+        }
+
+        private void AddMusicEditor()
+        {
+            
         }
 
         public AdminItemViewModel()
@@ -81,6 +141,7 @@ namespace App.Front.ViewModels.Presentation
             _personService = new PersonService();
             _userAccountService = new UserAccountService();
             CurrentItems = new ObservableCollection<object>();
+            AddMusicItemCommand = new RelayCommand(o => AddMusicPiece());
         }
 
 

@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace App.Front.ViewModels.Presentation
 {
-    public class MusicalPieceViewModel : INotifyPropertyChanged, IDataErrorInfo
+    public class MusicPieceDTO : INotifyPropertyChanged, IDataErrorInfo
     {
         public int Id {  get; set; }
         private string description;
@@ -59,18 +59,18 @@ namespace App.Front.ViewModels.Presentation
                 }
             }
         }
-        public MusicalPieceViewModel() 
+        public MusicPieceDTO() 
         {
             Pictures = new List<Picture>();
         }
 
-        public MusicalPieceViewModel(MusicalPiece musicalPerformance) 
+        public MusicPieceDTO(MusicalPiece musicalPiece) 
         {
-            Id = musicalPerformance.Id;
-            Description = musicalPerformance.Description;
-            MusicalGenreId = musicalPerformance.MusicalGenreId;
+            Id = musicalPiece.Id;
+            Description = musicalPiece.Description;
+            MusicalGenreId = musicalPiece.MusicalGenreId;
+            ProfilePictureId = musicalPiece.ProfileImageId;
         }
-
         public void AddPicture(Picture picture)
         {
             Pictures.Add(picture);
@@ -138,7 +138,7 @@ namespace App.Front.ViewModels.Presentation
             }
             return ids;
         }
-        public MusicalPiece ToMusicalPerformance()
+        public MusicalPiece ToMusicPiece()
         {
             var ids = GetPicturesId();
             return new MusicalPiece(Id, Description, ids, MusicalGenreId,ProfilePictureId);

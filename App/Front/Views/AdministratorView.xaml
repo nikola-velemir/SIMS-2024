@@ -3,13 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dto="clr-namespace:App.Front.ViewModels.DTO"
         xmlns:ext="clr-namespace:App.Front.ViewModels.Presentation"
         xmlns:wrp="clr-namespace:App.Front.ViewModels.Presentation.Wrappers"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
-        Title="Administrator" Height="450" Width="1000">
+        Title="Administrator" Height="450" Width="1050">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type ext:MusicalGenreViewModel}">
+        <DataTemplate DataType="{x:Type dto:MusicalGenreDTO}">
             <StackPanel Orientation="Horizontal" Margin="10" >
                 <StackPanel Orientation="Horizontal" IsEnabled="False">
                     <TextBlock  FontWeight="Bold" Margin="10">
@@ -130,16 +131,18 @@
             </Grid.RowDefinitions>
 
             <!-- Search Box -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,10" Width="390" >
-                <Button>Add</Button>
-                <Button>Update</Button>
-                <Button>Delete</Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,10" Width="390" Background="#403183">
+
+                <Button Content="Add" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}"  Width="130" Command="{Binding CurrentAdminItems.AddMusicItemCommand}"/>
+                <Button Content="Update" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130"/>
+                <Button  Content="Delete" HorizontalContentAlignment="Center" Style="{StaticResource SidebarButtonStyle}" Width="130"/>
             </StackPanel>
 
             <!-- Scrollable ListView -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                <ListBox ItemsSource="{Binding CurrentAdminItems.CurrentItems,UpdateSourceTrigger=PropertyChanged}">
-                   
+                <ListBox ItemsSource="{Binding CurrentAdminItems.CurrentItems,UpdateSourceTrigger=PropertyChanged}"
+                         SelectedItem="{Binding CurrentAdminItems.SelectedItem, UpdateSourceTrigger=PropertyChanged}">
+
                 </ListBox>
             </ScrollViewer>
         </Grid>

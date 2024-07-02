@@ -21,11 +21,11 @@ namespace App.Front.Views
     /// <summary>
     /// Interaction logic for MusicalPerformanceView.xaml
     /// </summary>
-    public partial class MusicalPerformanceView : Window
+    public partial class MusicalPieceView : Window
     {
         public PictureViewModel CurrentPicture {  get; set; }        
-        public MusicalPieceViewModel CurrentMusicalPerformance {  get; set; }
-        private MusicalPerformanceViewModel _musicalPerformanceViewModel { get; set; }
+        public MusicPieceDTO CurrentMusicalPiece {  get; set; }
+        private MusicalPieceViewModel _musicalPerformanceViewModel { get; set; }
 
         private void SetComboBoxOptions()
         {
@@ -35,12 +35,12 @@ namespace App.Front.Views
                 GenreComboBox.Items.Add(musicalGenre.Name);
             }
         }
-        public MusicalPerformanceView()
+        public MusicalPieceView()
         {
             InitializeComponent();
             CurrentPicture = new PictureViewModel();
-            CurrentMusicalPerformance = new MusicalPieceViewModel();
-            _musicalPerformanceViewModel = new MusicalPerformanceViewModel();
+            CurrentMusicalPiece = new MusicPieceDTO();
+            _musicalPerformanceViewModel = new MusicalPieceViewModel();
             SetComboBoxOptions();
             DataContext = this;
         }
@@ -52,7 +52,7 @@ namespace App.Front.Views
                 Picture? picture = _musicalPerformanceViewModel.CreatePicture(CurrentPicture.ToPicture());
                 if(picture != null)
                 {
-                    CurrentMusicalPerformance.AddPicture(picture);
+                    CurrentMusicalPiece.AddPicture(picture);
                 }
             }
             PicturesDataGrid.Items.Refresh();
@@ -68,10 +68,11 @@ namespace App.Front.Views
                 return;
             }
             var genreId = _musicalPerformanceViewModel.GetIdByGenreName(GenreComboBox.SelectedValue.ToString());
-            CurrentMusicalPerformance.MusicalGenreId = genreId;
-            if (CurrentMusicalPerformance.IsValid)
+            CurrentMusicalPiece.MusicalGenreId = genreId;
+            CurrentMusicalPiece.ProfilePictureId = 75484;
+            if (CurrentMusicalPiece.IsValid)
             {
-                MusicalPiece? musicalPerformance = _musicalPerformanceViewModel.CreateMusicalPerformance(CurrentMusicalPerformance.ToMusicalPerformance());
+                MusicPieceDTO? musicalPerformance = _musicalPerformanceViewModel.CreateMusicalPerformance(CurrentMusicalPiece);
                 if(musicalPerformance != null)
                 {
                     MessageBox.Show("You successfuly add new musical performance!");

@@ -7,5 +7,23 @@
     "Description": "dasdasdasdas",
     "MusicalGenreId": 3,
     "ProfileImageId": 75484
+  },
+  {
+    "Pictures": [
+      27313
+    ],
+    "Id": 41327,
+    "Description": "wdaaaa",
+    "MusicalGenreId": 2,
+    "ProfileImageId": 75484
+  },
+  {
+    "Pictures": [
+      33450
+    ],
+    "Id": 28234,
+    "Description": "NEsto",
+    "MusicalGenreId": 1,
+    "ProfileImageId": 75484
   }
 ]
