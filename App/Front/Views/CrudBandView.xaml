@@ -14,7 +14,9 @@
         <DataGrid x:Name="dataBands" Grid.Row="0" AutoGenerateColumns="False" ItemsSource="{Binding}" SelectionChanged="dataBands_SelectionChanged">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Name" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
                 <DataGridTextColumn Header="Biography Id" Binding="{Binding Biography.Id}" />
                 <DataGridTextColumn Header="Biography Text" Binding="{Binding Biography.Text}" />
                 <DataGridTextColumn Header="Biography Pictures" Binding="{Binding Biography.Pictures}" />
@@ -22,10 +24,14 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Margin="15,50,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="15,12,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Width="200" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="txtBoxBiographyText" HorizontalAlignment="Left" Margin="254,51,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="522" Height="101"/>
-        <Label Content="Biography Text:" HorizontalAlignment="Left" Margin="254,14,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Width="200" HorizontalContentAlignment="Center"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="15,12,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Width="200" HorizontalContentAlignment="Left"/>
 
+        <TextBox x:Name="txtBoxDescription" HorizontalAlignment="Left" Margin="15,121,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="339" Height="30"/>
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="15,83,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Width="339" HorizontalContentAlignment="Left"/>
+
+
+        <TextBox x:Name="txtBoxBiographyText" HorizontalAlignment="Left" Margin="437,51,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="339" Height="101"/>
+        <Label Content="Biography Text:" HorizontalAlignment="Left" Margin="437,14,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Width="160" HorizontalContentAlignment="Center"/>
 
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="15,170,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="339" FontSize="18" FontWeight="Bold" Click="UpdateClick"/>
         <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="437,170,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="339" FontSize="18" FontWeight="Bold" Click="DeleteClick"/>

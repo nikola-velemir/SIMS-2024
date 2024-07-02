@@ -6,6 +6,13 @@
         public string Text { get; set; }
         public List<int> Pictures { get; set; }
 
+        public Biography()
+        {
+            Text = "";
+            Pictures = new List<int>();
+            Id = -1;
+        }
+
         public Biography(int id, string tekst, List<Picture> slike)
         {
             Text = tekst;

@@ -22,24 +22,74 @@ namespace App.Front.Views
     /// </summary>
     public partial class CrudBandView : Window
     {
+        BandViewModel bandViewModel = new BandViewModel();
         public CrudBandView()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+
+            dataBands.ItemsSource = bandViewModel.GetAllBands();
+        }
+
+
+
+        private void Reset()
+        {
+
+            txtBoxName.Text = null;
+            txtBoxDescription.Text = null;
+            txtBoxBiographyText.Text = null;
+            LoadData();
         }
 
         private void UpdateClick(object sender, RoutedEventArgs e)
         {
-            
+            if (dataBands.SelectedItem != null)
+            {
+                Band band = (Band)dataBands.SelectedItem;
+                band.Name = txtBoxName.Text;
+                band.Description = txtBoxDescription.Text;
+                band.Biography.Text = txtBoxBiographyText.Text;
+
+                bandViewModel.UpdateBand((Band)dataBands.SelectedItem);
+                MessageBox.Show("Band updated successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                Reset();
+            }
+            else
+            {
+                MessageBox.Show("You must select a band!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
-            
+            if (dataBands.SelectedItem != null)
+            {
+                bandViewModel.DeleteBand((Band)dataBands.SelectedItem);
+                MessageBox.Show("Band deleted successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                Reset();
+            }
+            else
+            {
+                MessageBox.Show("You must select a band!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void dataBands_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            if (dataBands.SelectedItem != null)
+            {
+                Band selectedBand = (Band)dataBands.SelectedValue;
+                txtBoxName.Text = selectedBand.Name ?? "";
+                txtBoxDescription.Text = selectedBand.Description ?? "";
+                txtBoxBiographyText.Text = selectedBand.Biography.Text ?? "";
+                
+            }
+
         }
 
     }

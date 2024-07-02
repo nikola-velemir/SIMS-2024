@@ -25,5 +25,21 @@ namespace App.Back.Domain
             ProfileImageId = other.ProfileImageId;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Band other = (Band)obj;
+            return Id == other.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+
     }
 }

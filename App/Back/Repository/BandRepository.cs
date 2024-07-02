@@ -28,7 +28,7 @@ namespace App.Back.Repository
             if (fetchedInstance == null) { return null; }
 
             var instances = Load();
-            instances.Remove(instance);
+            instances.Remove(fetchedInstance);
             Save(instances);
 
             return instance;
