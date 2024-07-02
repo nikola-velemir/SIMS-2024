@@ -38,5 +38,15 @@
     "Gender": 0,
     "AccountId": 4,
     "Role": 2
+  },
+  {
+    "Id": 5,
+    "FirstName": "Nikola",
+    "LastName": "Velemir",
+    "JMBG": "1212000212121",
+    "BirthDate": "2000-12-12",
+    "Gender": 1,
+    "AccountId": 5,
+    "Role": 0
   }
 ]

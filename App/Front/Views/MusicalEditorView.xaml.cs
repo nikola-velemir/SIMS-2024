@@ -19,9 +19,13 @@ namespace App.Front.Views
     /// </summary>
     public partial class MusicalEditorView : Window
     {
-        public MusicalEditorView()
+        public UserAccountDTO UserAccount;
+        public MusicalEditorView(UserAccountDTO userAccountDTO)
         {
             InitializeComponent();
+            UserAccount = userAccountDTO;
+            WelcomeLabel.Content = "Welcome " + UserAccount.UserName + "!";
+            DataContext = this;
         }
 
         private void SongsOfTheYearClick(object sender, RoutedEventArgs e)
@@ -74,6 +78,47 @@ namespace App.Front.Views
         private void LogoutClick(object sender, RoutedEventArgs e)
         {
             Close();
+            
         }
+
+        private void ShowCommentsOption(object sender, RoutedEventArgs e)
+        {
+            RefreshVisibility();
+            CommentButtonsPanel.Visibility = Visibility.Visible;
+        }
+
+        private void ShowReviewsOption(object sender, RoutedEventArgs e)
+        {
+            RefreshVisibility();
+            ReviewButtonsPanel.Visibility = Visibility.Visible;
+        }
+
+        private void ShowToplistOption(object sender, RoutedEventArgs e)
+        {
+            RefreshVisibility();
+            ToplistButtonsPanel.Visibility = Visibility.Visible;
+        }
+
+        private void ShowEditorInfo(object sender, RoutedEventArgs e)
+        {
+            RefreshVisibility();
+            EditorInfoButtonsPanel.Visibility = Visibility.Visible;
+            WelcomeLabel.Content = "Welcome " + UserAccount.UserName + "!";
+        }
+        private void ShowMusicalNotionOption(object sender, RoutedEventArgs e)
+        {
+            RefreshVisibility();
+            MusicalNotionInfoButtonsPanel.Visibility = Visibility.Visible;
+        }
+        private void RefreshVisibility()
+        {
+            CommentButtonsPanel.Visibility = Visibility.Hidden;
+            ReviewButtonsPanel.Visibility = Visibility.Hidden;
+            ToplistButtonsPanel.Visibility = Visibility.Hidden;
+            EditorInfoButtonsPanel.Visibility = Visibility.Hidden;
+            MusicalNotionInfoButtonsPanel.Visibility = Visibility.Hidden;
+        }
+
+
     }
 }

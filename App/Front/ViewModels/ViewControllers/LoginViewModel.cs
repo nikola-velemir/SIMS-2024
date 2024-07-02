@@ -23,7 +23,7 @@ namespace App.Front.ViewModels.ViewControllers
         }
 
         
-        public UserAccount? Login(string password)
+        public UserAccountDTO? Login(string password)
         {
             Account.Password = password;
             if (!IsValid()) { return null; }
@@ -32,9 +32,10 @@ namespace App.Front.ViewModels.ViewControllers
             if (found == null)
             {
                 Error = "Username or password are incorrect!";
+                return null;
             }
 
-            return found;
+            return new UserAccountDTO(found);
 
         }
         public string Error
@@ -73,11 +74,11 @@ namespace App.Front.ViewModels.ViewControllers
         public bool LogIn(string password)
         {
             Account.Password = password;
-            var nalog = Login(Account.Password);
-            if (nalog != null)
+            var account = Login(Account.Password);
+            if (account != null)
             {
                 MessageBox.Show("Welcome " + Account.UserName + "!");
-                var window = new UserView(new UserAccountDTO(nalog));
+                var window = new UserView(account);
                 window.Show();
                 return true;
             }
