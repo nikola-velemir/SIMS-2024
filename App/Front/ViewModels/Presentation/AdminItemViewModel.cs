@@ -100,7 +100,7 @@ namespace App.Front.ViewModels.Presentation
             foreach (var account in editorAccounts)
             {
                 var person = _personService.GetByAccountId(account.Id);
-                var currentEditor = new EditorViewModel(new PersonDTO(person), new UserAccountDTO(account));
+                var currentEditor = new MusicEditorDTO(new PersonDTO(person), new UserAccountDTO(account), null);
                 CurrentItems.Add(currentEditor);
             }
         }

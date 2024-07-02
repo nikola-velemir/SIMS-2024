@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:dto="clr-namespace:App.Front.ViewModels.DTO"
-        xmlns:ext="clr-namespace:App.Front.ViewModels.Presentation"
         xmlns:wrp="clr-namespace:App.Front.ViewModels.Presentation.Wrappers"
         xmlns:local="clr-namespace:App.Front.Views"
         mc:Ignorable="d"
@@ -25,7 +24,7 @@
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type ext:EditorViewModel}">
+        <DataTemplate DataType="{x:Type dto:MusicEditorDTO}">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <StackPanel Orientation="Horizontal" IsEnabled="False">
                     <TextBlock  FontWeight="Bold" Margin="10">
