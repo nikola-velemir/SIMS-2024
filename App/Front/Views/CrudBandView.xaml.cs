@@ -60,7 +60,10 @@ namespace App.Front.Views
 
         private void UpdateClick(object sender, RoutedEventArgs e)
         {
-            if (dataBands.SelectedItem != null)
+            if (dataBands.SelectedItem != null && !string.IsNullOrWhiteSpace(txtBoxName.Text) &&
+                !string.IsNullOrWhiteSpace(txtBoxDescription.Text) &&
+                !string.IsNullOrWhiteSpace(txtBoxBiographyText.Text) &&
+                comboBoxGenre.SelectedItem != null)
             {
                 Band band = (Band)dataBands.SelectedItem;
                 band.Name = txtBoxName.Text;
@@ -71,7 +74,7 @@ namespace App.Front.Views
 
                 bandViewModel.UpdateBand((Band)dataBands.SelectedItem);
                 MessageBox.Show("Band updated successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                Reset();
+                LoadData();
             }
             else
             {

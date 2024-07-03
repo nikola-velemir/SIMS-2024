@@ -88,7 +88,6 @@
                 <DataGridTextColumn Header="JMBG" Binding="{Binding JMBG}" />
                 <DataGridTextColumn Header="BirthDate" Binding="{Binding BirthDate}" />
                 <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" />
-                <DataGridTextColumn Header="AccountId" Binding="{Binding AccountId}" />
 
             </DataGrid.Columns>
         </DataGrid>
