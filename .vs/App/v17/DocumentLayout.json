@@ -1,0 +1,975 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\obj\\Debug\\net8.0-windows\\App.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\obj\\Debug\\net8.0-windows\\App.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\editplaylist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\editplaylist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\viewcontrollers\\editplaylistviewviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\viewcontrollers\\editplaylistviewviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\presentation\\playlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\presentation\\playlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\editplaylist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\editplaylist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\createplaylist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\createplaylist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\viewcontrollers\\createplaylistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\viewcontrollers\\createplaylistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\useraccountdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\useraccountdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\service\\performerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\service\\performerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\viewcontrollers\\musicianviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\viewcontrollers\\musicianviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\userlibrary.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\userlibrary.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\userlibrary.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\userlibrary.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\crudbandview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\crudbandview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\viewcontrollers\\userviewviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\viewcontrollers\\userviewviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\dto\\useraccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\dto\\useraccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\viewcontrollers\\performercreationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\viewcontrollers\\performercreationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\viewcontrollers\\userlibraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\viewcontrollers\\userlibraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\createplaylist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\createplaylist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\playlista.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\playlista.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\musicalpiecedata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\musicalpiecedata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\musicalgenredata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\musicalgenredata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\musicalpiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\musicalpiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\picturedata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\picturedata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\performerdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\performerdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\performancedata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\performancedata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\participationdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\participationdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\picture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\picture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.WinFX.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\views\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\views\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\service\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\service\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\performertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\performertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\performance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\performance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\participation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\participation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\musicalnotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\musicalnotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\biography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\biography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\domain\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\domain\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\presentation\\wrappers\\musicalpiecewrapperviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\presentation\\wrappers\\musicalpiecewrapperviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\service\\musicalpieceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\service\\musicalpieceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\repository\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\repository\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\pictures\\song.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\pictures\\song.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\pictures\\album.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\pictures\\album.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\data\\pictures\\band.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\data\\pictures\\band.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\repository\\musicalpiecerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\repository\\musicalpiecerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\presentation\\wrappers\\musicalnotionwrapperviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\presentation\\wrappers\\musicalnotionwrapperviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\front\\viewmodels\\presentation\\musicalnotionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\front\\viewmodels\\presentation\\musicalnotionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\service\\participationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\service\\participationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|d:\\dropbox\\dropbox\\faks\\iv\\sims\\sims\\sims-2024\\app\\back\\service\\performanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5350482-F0D6-4F14-8157-54B182170F51}|App\\App.csproj|solutionrelative:app\\back\\service\\performanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalGenreViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\Front\\ViewModels\\Presentation\\MusicalGenreViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\MusicalGenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\Back\\Domain\\MusicalGenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalPieceViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App\\Front\\ViewModels\\Presentation\\MusicalPieceViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditPlayListViewViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\EditPlayListViewViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\ViewControllers\\EditPlayListViewViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\EditPlayListViewViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\ViewControllers\\EditPlayListViewViewModel.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAtwHcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T15:18:27.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreatePlayList.xaml.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\CreatePlayList.xaml.cs",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\CreatePlayList.xaml.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\CreatePlayList.xaml.cs",
+              "RelativeToolTip": "App\\Front\\Views\\CreatePlayList.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAgwCsAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T21:48:21.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditPlayList.xaml.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\EditPlayList.xaml.cs",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\EditPlayList.xaml.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\EditPlayList.xaml.cs",
+              "RelativeToolTip": "App\\Front\\Views\\EditPlayList.xaml.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAEsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T15:08:51.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PerformerService.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\PerformerService.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Service\\PerformerService.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\PerformerService.cs",
+              "RelativeToolTip": "App\\Back\\Service\\PerformerService.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAtwCkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:01:45.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\Login.xaml.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\Login.xaml.cs",
+              "RelativeToolTip": "App\\Front\\Views\\Login.xaml.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAB4AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T22:47:26.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreatePlayListViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\CreatePlayListViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\ViewControllers\\CreatePlayListViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\CreatePlayListViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\ViewControllers\\CreatePlayListViewModel.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAawBAAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T21:48:56.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayListViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\PlayListViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\Presentation\\PlayListViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\PlayListViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\Presentation\\PlayListViewModel.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAowI0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T21:49:06.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EditPlayList.xaml",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\EditPlayList.xaml",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\EditPlayList.xaml",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\EditPlayList.xaml",
+              "RelativeToolTip": "App\\Front\\Views\\EditPlayList.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-01T15:07:23.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.g.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\obj\\Debug\\net8.0-windows\\App.g.cs",
+              "RelativeDocumentMoniker": "App\\obj\\Debug\\net8.0-windows\\App.g.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\obj\\Debug\\net8.0-windows\\App.g.cs",
+              "RelativeToolTip": "App\\obj\\Debug\\net8.0-windows\\App.g.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAADwv0AAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:57:15.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "App\\MainWindow.xaml",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\MainWindow.xaml",
+              "RelativeToolTip": "App\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-02T14:36:30.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "App\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\MainWindow.xaml.cs",
+              "RelativeToolTip": "App\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBsAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T14:36:33.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserAccountData.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\UserAccountData.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\UserAccountData.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\UserAccountData.json",
+              "RelativeToolTip": "App\\Back\\Data\\UserAccountData.json",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAQwB0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-02T14:56:36.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MusicianViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\MusicianViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\ViewControllers\\MusicianViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\MusicianViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\ViewControllers\\MusicianViewModel.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwCIAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T14:54:46.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserLibrary.xaml",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserLibrary.xaml",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\UserLibrary.xaml",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserLibrary.xaml",
+              "RelativeToolTip": "App\\Front\\Views\\UserLibrary.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-30T22:20:01.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserLibrary.xaml.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserLibrary.xaml.cs",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\UserLibrary.xaml.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserLibrary.xaml.cs",
+              "RelativeToolTip": "App\\Front\\Views\\UserLibrary.xaml.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAABkAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:23:31.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CrudBandView.xaml.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\CrudBandView.xaml.cs",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\CrudBandView.xaml.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\CrudBandView.xaml.cs",
+              "RelativeToolTip": "App\\Front\\Views\\CrudBandView.xaml.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T14:52:22.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserViewViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\UserViewViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\ViewControllers\\UserViewViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\UserViewViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\ViewControllers\\UserViewViewModel.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T12:03:39.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserAccountDTO.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\DTO\\UserAccountDTO.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\DTO\\UserAccountDTO.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\DTO\\UserAccountDTO.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\DTO\\UserAccountDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T14:50:38.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PerformerCreationViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\PerformerCreationViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\ViewControllers\\PerformerCreationViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\PerformerCreationViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\ViewControllers\\PerformerCreationViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAASwBQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:56:38.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserLibraryViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\UserLibraryViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\ViewControllers\\UserLibraryViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\ViewControllers\\UserLibraryViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\ViewControllers\\UserLibraryViewModel.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T14:50:11.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PerformerData.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PerformerData.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\PerformerData.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PerformerData.json",
+              "RelativeToolTip": "App\\Back\\Data\\PerformerData.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-02T14:17:34.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PlayLista.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PlayLista.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\PlayLista.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PlayLista.json",
+              "RelativeToolTip": "App\\Back\\Data\\PlayLista.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-01T15:35:21.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CreatePlayList.xaml",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\CreatePlayList.xaml",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\CreatePlayList.xaml",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\CreatePlayList.xaml",
+              "RelativeToolTip": "App\\Front\\Views\\CreatePlayList.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-01T21:46:27.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserView.xaml",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserView.xaml",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\UserView.xaml",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserView.xaml",
+              "RelativeToolTip": "App\\Front\\Views\\UserView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-01T14:23:15.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MusicalPiece.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\MusicalPiece.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\MusicalPiece.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\MusicalPiece.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\MusicalPiece.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAcwC0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:43:42.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "PictureData.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PictureData.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\PictureData.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PictureData.json",
+              "RelativeToolTip": "App\\Back\\Data\\PictureData.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOoAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-01T15:35:28.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MusicalPieceData.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\MusicalPieceData.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\MusicalPieceData.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\MusicalPieceData.json",
+              "RelativeToolTip": "App\\Back\\Data\\MusicalPieceData.json",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAQwI4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-01T15:16:00.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "MusicalGenreViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalGenreViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\Presentation\\MusicalGenreViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalGenreViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\Presentation\\MusicalGenreViewModel.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAADYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T12:50:57.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MusicalGenreData.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\MusicalGenreData.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\MusicalGenreData.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\MusicalGenreData.json",
+              "RelativeToolTip": "App\\Back\\Data\\MusicalGenreData.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-02T14:17:31.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "PerformanceData.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PerformanceData.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\PerformanceData.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\PerformanceData.json",
+              "RelativeToolTip": "App\\Back\\Data\\PerformanceData.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-02T14:17:33.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Rating.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Rating.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Rating.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Rating.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAmwCAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:48:30.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Picture.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Picture.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Picture.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Picture.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Picture.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAACoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:47:20.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ParticipationData.json",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\ParticipationData.json",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\ParticipationData.json",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\ParticipationData.json",
+              "RelativeToolTip": "App\\Back\\Data\\ParticipationData.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-01T15:35:19.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "PlayListService.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\PlayListService.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Service\\PlayListService.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\PlayListService.cs",
+              "RelativeToolTip": "App\\Back\\Service\\PlayListService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T21:56:49.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Microsoft.WinFX.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.WinFX.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.WinFX.targets",
+              "ViewState": "AQIAAL8BAAAAAAAAAAAcwNIBAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-07-01T22:34:30.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UserView.xaml.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserView.xaml.cs",
+              "RelativeDocumentMoniker": "App\\Front\\Views\\UserView.xaml.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\Views\\UserView.xaml.cs",
+              "RelativeToolTip": "App\\Front\\Views\\UserView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:23:34.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Participation.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Participation.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Participation.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Participation.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Participation.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA8wB0AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:44:37.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "PerformerType.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\PerformerType.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\PerformerType.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\PerformerType.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\PerformerType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:45:31.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Performance.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Performance.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Performance.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Performance.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Performance.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:45:57.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Review.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Review.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Review.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Review.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:48:58.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Role.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Role.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Role.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:50:37.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UserAccount.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\UserAccount.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\UserAccount.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\UserAccount.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\UserAccount.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAuwCIAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:50:38.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "MusicalGenre.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\MusicalGenre.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\MusicalGenre.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\MusicalGenre.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\MusicalGenre.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAwwA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:37:06.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "MusicalNotion.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\MusicalNotion.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\MusicalNotion.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\MusicalNotion.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\MusicalNotion.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAuwBgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:40:04.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Comment.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Comment.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Comment.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Comment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:37:03.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Biography.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Biography.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\Biography.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\Biography.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\Biography.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAuwCMAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:36:11.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "AccountType.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\AccountType.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\AccountType.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\AccountType.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\AccountType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:36:10.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "PlayList.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\PlayList.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Domain\\PlayList.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Domain\\PlayList.cs",
+              "RelativeToolTip": "App\\Back\\Domain\\PlayList.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAwC8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T22:17:56.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "MusicalPieceWrapperViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalPieceWrapperViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalPieceWrapperViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalPieceWrapperViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalPieceWrapperViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAMwBwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T13:43:21.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "MusicalPieceService.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\MusicalPieceService.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Service\\MusicalPieceService.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\MusicalPieceService.cs",
+              "RelativeToolTip": "App\\Back\\Service\\MusicalPieceService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAlwBcAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:06:13.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "PlayListRepository.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Repository\\PlayListRepository.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Repository\\PlayListRepository.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Repository\\PlayListRepository.cs",
+              "RelativeToolTip": "App\\Back\\Repository\\PlayListRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T22:18:34.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "band.png -  [English (United States)] - PNG [512x512, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\Pictures\\band.png",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\Pictures\\band.png",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\Pictures\\band.png -  [English (United States)] - PNG [512x512, 32 bit, PNG]",
+              "RelativeToolTip": "App\\Back\\Data\\Pictures\\band.png -  [English (United States)] - PNG [512x512, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-07-01T22:27:47.433Z",
+              "EditorCaption": " -  [English (United States)] - PNG [512x512, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "album.png -  [English (United States)] - PNG [512x512, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\Pictures\\album.png",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\Pictures\\album.png",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\Pictures\\album.png -  [English (United States)] - PNG [512x512, 32 bit, PNG]",
+              "RelativeToolTip": "App\\Back\\Data\\Pictures\\album.png -  [English (United States)] - PNG [512x512, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-07-01T22:27:48.25Z",
+              "EditorCaption": " -  [English (United States)] - PNG [512x512, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "song.png -  [English (United States)] - PNG [1000x1000, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\Pictures\\song.png",
+              "RelativeDocumentMoniker": "App\\Back\\Data\\Pictures\\song.png",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Data\\Pictures\\song.png -  [English (United States)] - PNG [1000x1000, 32 bit, PNG]",
+              "RelativeToolTip": "App\\Back\\Data\\Pictures\\song.png -  [English (United States)] - PNG [1000x1000, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-07-01T22:34:18.481Z",
+              "EditorCaption": " -  [English (United States)] - PNG [1000x1000, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "MusicalPieceViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalPieceViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\Presentation\\MusicalPieceViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalPieceViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\Presentation\\MusicalPieceViewModel.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAAAEcAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T15:36:07.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "MusicalPieceRepository.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Repository\\MusicalPieceRepository.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Repository\\MusicalPieceRepository.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Repository\\MusicalPieceRepository.cs",
+              "RelativeToolTip": "App\\Back\\Repository\\MusicalPieceRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T15:36:00.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "MusicalNotionWrapperViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalNotionWrapperViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalNotionWrapperViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalNotionWrapperViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\Presentation\\Wrappers\\MusicalNotionWrapperViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:43:41.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "MusicalNotionViewModel.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalNotionViewModel.cs",
+              "RelativeDocumentMoniker": "App\\Front\\ViewModels\\Presentation\\MusicalNotionViewModel.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Front\\ViewModels\\Presentation\\MusicalNotionViewModel.cs",
+              "RelativeToolTip": "App\\Front\\ViewModels\\Presentation\\MusicalNotionViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:43:31.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ParticipationService.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\ParticipationService.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Service\\ParticipationService.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\ParticipationService.cs",
+              "RelativeToolTip": "App\\Back\\Service\\ParticipationService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T13:55:00.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "PerformanceService.cs",
+              "DocumentMoniker": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\PerformanceService.cs",
+              "RelativeDocumentMoniker": "App\\Back\\Service\\PerformanceService.cs",
+              "ToolTip": "D:\\DropBox\\Dropbox\\faks\\IV\\SIMS\\SIMS\\SIMS-2024\\App\\Back\\Service\\PerformanceService.cs",
+              "RelativeToolTip": "App\\Back\\Service\\PerformanceService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T14:01:35.33Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
