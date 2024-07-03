@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Jazz Masters",
+    "Biography": {
+      "Id": 102,
+      "Text": "Known for their improvisational skills, Jazz Masters have captivated audiences worldwide.",
+      "Pictures": [
+        204,
+        205,
+        206
+      ]
+    },
+    "Id": 2,
+    "Description": "A renowned jazz band.",
+    "MusicalGenreId": 2,
+    "ProfileImageId": 302
+  },
+  {
+    "Name": "test band",
+    "Biography": {
+      "Id": 495,
+      "Text": "test bio8",
+      "Pictures": []
+    },
+    "Id": 57895,
+    "Description": "test description",
+    "MusicalGenreId": 5,
+    "ProfileImageId": -1
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 27015,
+    "FirstName": "dasdasdasdas",
+    "LastName": "dasdasdasdas",
+    "JMBG": "dasdasdasdasdas",
+    "BirthDate": "0003-10-18",
+    "Gender": 0,
+    "AccountId": null,
+    "Role": 1
+  },
+  {
+    "Id": 79795,
+    "FirstName": "asdasdasdasdasdas",
+    "LastName": "dasdasdasd",
+    "JMBG": "dsadasdasdas",
+    "BirthDate": "2024-06-24",
+    "Gender": 0,
+    "AccountId": null,
+    "Role": 1
+  },
+  {
+    "Id": 72182,
+    "FirstName": "Velemir",
+    "LastName": "Temerin",
+    "JMBG": "1803998715004",
+    "BirthDate": "1998-03-18",
+    "Gender": 2,
+    "AccountId": null,
+    "Role": 1
+  }
+]
