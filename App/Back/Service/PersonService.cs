@@ -1,5 +1,6 @@
 ﻿using App.Back.Domain.Osobe;
 using App.Back.Repository;
+using App.Front.ViewModels.DTO;
 
 namespace App.Back.Service
 {
@@ -64,6 +65,18 @@ namespace App.Back.Service
                 }
             }
             return null;
+        }
+
+        public Person GetById(int id)
+        {
+            foreach( Person person in GetAll())
+            {
+                if(person.Id == id)
+                {
+                    return person;
+                }
+            }
+            return new Person();
         }
     }
 }

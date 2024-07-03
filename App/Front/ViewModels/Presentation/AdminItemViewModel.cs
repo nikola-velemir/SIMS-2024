@@ -20,6 +20,7 @@ namespace App.Front.ViewModels.Presentation
         private MusicalGenreService _genreService;
         private PersonService _personService;
         private UserAccountService _userAccountService;
+        private MusicEditorService _musicEditorService;
         private ObservableCollection<object> _currentItems;
         public ObservableCollection<object> CurrentItems
         {
@@ -99,10 +100,14 @@ namespace App.Front.ViewModels.Presentation
             CurrentItems.Clear();
             foreach (var account in editorAccounts)
             {
-                var person = _personService.GetByAccountId(account.Id);
-                var currentEditor = new EditorViewModel(new PersonDTO(person), new UserAccountDTO(account));
+                var person = _personService.GetById(account.PersonId);
+                var genres = _musicEditorService.GetGenres(account.PersonId, account.Id);
+                var currentEditor = new MusicEditorDTO(new PersonDTO(person), new UserAccountDTO(account), genres);
                 CurrentItems.Add(currentEditor);
             }
+            AddMusicItemCommand = new RelayCommand(a => AddMusicEditor());
+            DeleteMusicItemCommand = new RelayCommand(d => DeleteMusicEditor((MusicEditorDTO)SelectedItem));
+            UpdateMusicItemCommand = new RelayCommand(d => UpdateMusicEditor((MusicEditorDTO)SelectedItem));
         }
 
         private void ShowMusicGenre()
@@ -127,10 +132,11 @@ namespace App.Front.ViewModels.Presentation
             }
             AddMusicItemCommand = new RelayCommand(o => AddMusicPiece());
             DeleteMusicItemCommand = new RelayCommand(d => DeleteMusicPiece((MusicPieceDTO)SelectedItem));
+            UpdateMusicItemCommand = new RelayCommand(u => UpdateMusicPiece((MusicPieceDTO)SelectedItem));
         }
         private void AddMusicPiece()
         {
-            MusicalPieceView musicalPieceView = new MusicalPieceView();
+            MusicalPieceView musicalPieceView = new MusicalPieceView(null);
             musicalPieceView.Closed += CreateMusicPieceView_Closed;
             musicalPieceView.Show();
         }
@@ -149,9 +155,16 @@ namespace App.Front.ViewModels.Presentation
         {
             ShowMusicGenre();
         }
+
+        private void CreateMusicEditorView_Closed(object? sender, EventArgs e)
+        {
+            ShowMusicEditor();
+        }
         private void AddMusicEditor()
         {
-            
+            CreateMusicEditorView createMusicEditorView = new CreateMusicEditorView(null);
+            createMusicEditorView.Closed += CreateMusicEditorView_Closed;
+            createMusicEditorView.Show();
         }
 
         private void UpdateMusicGenre(MusicalGenreDTO musicalGenreDTO)
@@ -165,6 +178,28 @@ namespace App.Front.ViewModels.Presentation
 
         }
 
+        private void UpdateMusicPiece(MusicPieceDTO musicPieceDTO)
+        {
+            if (musicPieceDTO != null)
+            {
+                MusicalPieceView musicalPieceView = new MusicalPieceView(musicPieceDTO);
+                musicalPieceView.Closed += CreateMusicPieceView_Closed;
+                musicalPieceView.Show();
+            }
+
+        }
+
+        private void UpdateMusicEditor(MusicEditorDTO musicEditor)
+        {
+            if(musicEditor != null)
+            {
+                CreateMusicEditorView createMusicEditorView = new CreateMusicEditorView(musicEditor);
+                createMusicEditorView.Closed += CreateMusicEditorView_Closed;
+                createMusicEditorView.Show();
+            }
+            
+        }
+
         private void DeleteMusicPiece(MusicPieceDTO musicPieceDTO)
         {
             if(musicPieceDTO != null)
@@ -175,15 +210,12 @@ namespace App.Front.ViewModels.Presentation
                     case MessageBoxResult.Yes:
                         _pieceService.Delete(musicPieceDTO);
                         ShowMusicPiece();
-                        MessageBox.Show("You successfuly delete music piece");
+                        MessageBox.Show("You successfully delete music piece");
                         break;
                     default:
                         break;
                 }
-                
             }
-            
-            
         }
 
         private void DeleteMusicGenre(MusicalGenreDTO musicalGenreDTO)
@@ -197,16 +229,30 @@ namespace App.Front.ViewModels.Presentation
                     case MessageBoxResult.Yes:
                         _genreService.Delete(musicalGenreDTO);
                         ShowMusicGenre();
-                        MessageBox.Show("You successfuly delete music genre");
+                        MessageBox.Show("You successfully delete music genre");
                         break;
                     default:
                         break;
                 }
             }
         }
-        private void DeleteMusicEditor()
+        private void DeleteMusicEditor(MusicEditorDTO musicEditor)
         {
+            if (musicEditor != null)
+            {
 
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete selected music editor?", "Delete", MessageBoxButton.YesNoCancel);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        _musicEditorService.Delete(musicEditor);    
+                        ShowMusicEditor();
+                        MessageBox.Show("You successfully delete music genre");
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         public AdminItemViewModel()
@@ -216,6 +262,7 @@ namespace App.Front.ViewModels.Presentation
             ShowMusicPieceCommand = new RelayCommand(o => ShowMusicPiece());
             _genreService = new MusicalGenreService();
             _pieceService = new MusicalPieceService();
+            _musicEditorService = new MusicEditorService();
             _personService = new PersonService();
             _userAccountService = new UserAccountService();
             CurrentItems = new ObservableCollection<object>();

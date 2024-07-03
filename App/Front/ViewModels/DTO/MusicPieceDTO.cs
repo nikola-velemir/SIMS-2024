@@ -70,6 +70,8 @@ namespace App.Front.ViewModels.DTO
             Id = musicalPiece.Id;
             Description = musicalPiece.Description;
             MusicalGenre = musicalPiece.MusicalGenre;
+            Pictures = musicalPiece.Pictures;
+            ProfilePicture = musicalPiece.ProfilePicture;
         }
 
         public MusicPieceDTO(MusicalPiece musicalPiece)

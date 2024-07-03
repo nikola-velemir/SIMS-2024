@@ -50,7 +50,7 @@ namespace App.Front.Views
                     var updateGenre = _musicalGenreViewModel.Update(CurrentMusicalGenre);
                     if (updateGenre != null)
                     {
-                        MessageBox.Show("You successfuly update music genre");
+                        MessageBox.Show("You successfully update music genre");
                         Close();
                     }
                 }
@@ -59,7 +59,7 @@ namespace App.Front.Views
                     var genre = _musicalGenreViewModel.Create(CurrentMusicalGenre);
                     if (genre != null)
                     {
-                        MessageBox.Show("You successfuly create new music genre");
+                        MessageBox.Show("You successfully create new music genre");
                         Close();
                     }
                 }

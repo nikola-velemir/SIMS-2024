@@ -20,24 +20,6 @@
   },
   {
     "Pictures": [
-      27313
-    ],
-    "Id": 41327,
-    "Description": "wdaaaa",
-    "MusicalGenreId": 2,
-    "ProfileImageId": 3
-  },
-  {
-    "Pictures": [
-      33450
-    ],
-    "Id": 28234,
-    "Description": "NEsto",
-    "MusicalGenreId": 1,
-    "ProfileImageId": 4
-  },
-  {
-    "Pictures": [
       7,
       8
     ],
@@ -206,5 +188,24 @@
     "Description": "World Music Journey Across Continents",
     "MusicalGenreId": 5,
     "ProfileImageId": 20
+  },
+  {
+    "Pictures": [
+      27313
+    ],
+    "Id": 41327,
+    "Description": "wdaaaa nesto drugo",
+    "MusicalGenreId": 3,
+    "ProfileImageId": 3
+  },
+  {
+    "Pictures": [
+      33450,
+      35934
+    ],
+    "Id": 28234,
+    "Description": "NEsto drugo",
+    "MusicalGenreId": 1,
+    "ProfileImageId": 4
   }
 ]

@@ -57,5 +57,20 @@ namespace App.Back.Service
         {
             _musicalGenreRepository.Delete(oldMusicalGenre.ToMusicGenre());
         }
+
+        public List<MusicalGenreDTO> GetByIds(List<int> genres)
+        {
+            var musicGenres = new List<MusicalGenreDTO>();
+            var allGenres = GetAll();
+            foreach(var id in genres)
+            {
+                var currentGenre = allGenres.Find(g => g.Id == id);
+                if (currentGenre != null)
+                {
+                    musicGenres.Add(currentGenre);
+                }
+            }
+            return musicGenres;
+        }
     }
 }

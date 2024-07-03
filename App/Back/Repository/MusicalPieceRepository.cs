@@ -53,7 +53,16 @@ namespace App.Back.Repository
 
         public MusicalPiece? Update(MusicalPiece instance)
         {
-            throw new NotImplementedException();
+            var fetchedInstance = Get(instance);
+
+            if (fetchedInstance == null) { return null; }
+
+            var instances = Load();
+            instances.Remove(fetchedInstance);
+            instances.Add(instance);
+            Save(instances);
+
+            return instance;
         }
     }
 }

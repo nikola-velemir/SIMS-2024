@@ -8,35 +8,59 @@
     "PersonId": 1
   },
   {
-    "Id": 2,
-    "Password": "asdasd",
-    "UserName": "milorad",
-    "Active": true,
-    "Type": 2,
-    "PersonId": 2
-  },
-  {
     "Id": 3,
     "Password": "marko123",
     "UserName": "marko",
     "Active": true,
     "Type": 0,
-    "PersonId": 0
+    "PersonId": 1
   },
   {
     "Id": 4,
     "Password": "test123",
     "UserName": "aleksa",
     "Active": true,
-    "Type": 2,
+    "Type": 0,
     "PersonId": 4
   },
   {
     "Id": 5,
-    "Password": "nnn123",
-    "UserName": "nnnnn",
+    "Password": "dawdawd",
+    "UserName": "dwadawdaw",
     "Active": true,
     "Type": 0,
-    "PersonId": 5
+    "PersonId": 1
+  },
+  {
+    "Id": 2,
+    "Password": "asdasd",
+    "UserName": "milorad",
+    "Active": false,
+    "Type": 0,
+    "PersonId": 2
+  },
+  {
+    "Id": 6,
+    "Password": "stefan123",
+    "UserName": "stefan",
+    "Active": false,
+    "Type": 0,
+    "PersonId": 6
+  },
+  {
+    "Id": 7,
+    "Password": "acwccw",
+    "UserName": "cascasc",
+    "Active": false,
+    "Type": 2,
+    "PersonId": 7
+  },
+  {
+    "Id": 8,
+    "Password": "mmika123",
+    "UserName": "mmika",
+    "Active": true,
+    "Type": 2,
+    "PersonId": 8
   }
 ]

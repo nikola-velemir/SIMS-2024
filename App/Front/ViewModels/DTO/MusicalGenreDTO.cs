@@ -84,5 +84,12 @@ namespace App.Front.ViewModels.DTO
         {
             return new MusicGenre(Id, Name);
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is MusicalGenreDTO dTO &&
+                   Id == dTO.Id &&
+                   Name == dTO.Name;
+        }
     }
 }
