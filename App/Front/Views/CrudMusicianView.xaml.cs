@@ -54,7 +54,11 @@ namespace App.Front.Views
 
         private void UpdateClick(object sender, RoutedEventArgs e)
         {
-            if (dataMusicians.SelectedItem != null)
+            if (dataMusicians.SelectedItem != null && !string.IsNullOrWhiteSpace(txtBoxFirstName.Text) &&
+                !string.IsNullOrWhiteSpace(txtBoxLastName.Text) &&
+                !string.IsNullOrWhiteSpace(txtBoxJMBG.Text) &&
+                birthDatePicker.SelectedDate.HasValue &&
+                comboBoxGender.SelectedItem != null)
             {
                 Performer performer = (Performer)dataMusicians.SelectedItem;
                 performer.FirstName = txtBoxFirstName.Text;
@@ -65,7 +69,7 @@ namespace App.Front.Views
 
                 musicianViewModel.UpdateMusician(performer);
                 MessageBox.Show("Performer updated successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                Reset();
+                LoadData();
             }
             else
             {
