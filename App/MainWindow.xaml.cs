@@ -21,7 +21,10 @@ namespace App
         {
             var window = new Login();
             var a = window.ShowDialog();
-            if (a != null && a == true) { Close(); }
+            if (a != null && a == true) 
+            { 
+                Close(); 
+            }
         }
     }
 }

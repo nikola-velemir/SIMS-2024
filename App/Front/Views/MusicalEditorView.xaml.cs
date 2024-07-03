@@ -40,7 +40,7 @@ namespace App.Front.Views
 
         private void CrudMusicalPieceClick(object sender, RoutedEventArgs e)
         {
-            MusicalPieceView musicalPieceView = new MusicalPieceView();
+            MusicalPieceView musicalPieceView = new MusicalPieceView(null);
             musicalPieceView.Show();
         }
 
