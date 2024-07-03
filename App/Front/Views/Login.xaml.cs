@@ -26,7 +26,7 @@ namespace App.Front.Views
             var loginSuccessful = false;
             if(user == null) { MessageBox.Show("You do not have an account"); }
             else if (user.AccountType == AccountType.User) { var UserWindow = new UserView(user); UserWindow.Show(); loginSuccessful = true; }
-            else if (user.AccountType == AccountType.Admin) { var AdminWindow = new AdministratorView(); AdminWindow.Show(); Close();}
+            else if (user.AccountType == AccountType.Admin) { var AdminWindow = new AdministratorView(); AdminWindow.Show(); loginSuccessful = true; }
             else if (user.AccountType == AccountType.Editor) { var MusicalEditorWindow = new MusicalEditorView(user); MusicalEditorWindow.Show(); loginSuccessful = true; }
             if(loginSuccessful) { DialogResult = true; }
         }
