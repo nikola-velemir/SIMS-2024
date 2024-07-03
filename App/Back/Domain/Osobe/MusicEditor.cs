@@ -1,31 +1,43 @@
-﻿namespace App.Back.Domain.Osobe
+﻿
+namespace App.Back.Domain.Osobe
 {
-    public class MusicEditor : Person
+    public class MusicEditor
     {
         public List<int> Genres {  get; set; }
+        public int PersonId {  get; set; }
+        public int AccountId {  get; set; }
+        public int Id {  get; set; }
 
         public MusicEditor() { }
-        public MusicEditor(int id, string ime, string prezime, string jmbg, DateOnly datumRodjenja, Genders pol) 
-            : base(id, ime, prezime, jmbg, datumRodjenja, pol,Role.Editor) { }
-        public MusicEditor(int id, string ime, string prezime, string jmbg, DateOnly datumRodjenja, Genders pol, int idNaloga) 
-            : base(id, ime, prezime, jmbg, datumRodjenja, pol, idNaloga, Role.Editor) { }
-        public MusicEditor(int id, string ime, string prezime, string jmbg, DateOnly datumRodjenja, Genders pol, int idNaloga, List<int> genres)
-            : base(id, ime, prezime, jmbg, datumRodjenja, pol, idNaloga, Role.Editor)
+        public MusicEditor(List<int> genres, int personId, int accountId)
         {
             Genres = genres;
+            PersonId = personId;
+            AccountId = accountId;
         }
+
+
         public MusicEditor(MusicEditor other)
         {
-            FirstName = other.FirstName;
-            LastName = other.LastName;
-            JMBG = other.JMBG;
-            BirthDate = other.BirthDate;
-            Gender = other.Gender;
+            Genres = other.Genres;
+            PersonId = other.PersonId;
             AccountId = other.AccountId;
-            Role = other.Role;
         }
         public void dodajMuzickoDelo(MusicalPiece delo)
         {
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is MusicEditor editor &&
+                   PersonId == editor.PersonId &&
+                   AccountId == editor.AccountId &&
+                   Id == editor.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(PersonId, AccountId, Id);
         }
     }
 }

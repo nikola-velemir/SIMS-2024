@@ -38,5 +38,45 @@
     "Gender": 0,
     "AccountId": 4,
     "Role": 2
+  },
+  {
+    "Id": 5,
+    "FirstName": "WDad",
+    "LastName": "WDad",
+    "JMBG": "0325825855586",
+    "BirthDate": "1990-06-20",
+    "Gender": 0,
+    "AccountId": 0,
+    "Role": 2
+  },
+  {
+    "Id": 6,
+    "FirstName": "Stefan",
+    "LastName": "Stjepic",
+    "JMBG": "1202585256536",
+    "BirthDate": "1989-06-26",
+    "Gender": 0,
+    "AccountId": 0,
+    "Role": 2
+  },
+  {
+    "Id": 7,
+    "FirstName": "Wdwad",
+    "LastName": "AWD",
+    "JMBG": "0648484484584",
+    "BirthDate": "2003-05-20",
+    "Gender": 0,
+    "AccountId": 0,
+    "Role": 2
+  },
+  {
+    "Id": 8,
+    "FirstName": "Mika",
+    "LastName": "Mikic",
+    "JMBG": "0358558852585",
+    "BirthDate": "1990-05-15",
+    "Gender": 0,
+    "AccountId": 0,
+    "Role": 2
   }
 ]

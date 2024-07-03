@@ -53,7 +53,7 @@ namespace App.Back.Service
         {
             foreach(var account in _repository.GetAll())
             {
-                if(account.UserName == userAccount.UserName)
+                if(account.UserName == userAccount.UserName && account.Id != userAccount.Id)
                 {
                     return false;
                 }
@@ -66,12 +66,24 @@ namespace App.Back.Service
             var editors = new List<UserAccount>();
             foreach(var account in GetAll())
             {
-                if(account.Type == AccountType.Editor)
+                if(account.Type == AccountType.Editor && account.Active == true)
                 {
                     editors.Add(account);
                 }
             }
             return editors;
+        }
+
+        public UserAccount GetById(int? accountId)
+        {
+            foreach(var account in GetAll())
+            {
+                if(account.Id == accountId)
+                {
+                    return account;
+                }
+            }
+            return new UserAccount();
         }
     }
 }

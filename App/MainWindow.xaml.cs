@@ -29,5 +29,11 @@ namespace App
             var a = window.ShowDialog();
             if (a != null && a == true) { Close(); }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CreateMusicEditorView createMusicEditorView = new CreateMusicEditorView(null);
+            createMusicEditorView.Show();
+        }
     }
 }

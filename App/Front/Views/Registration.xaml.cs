@@ -23,6 +23,7 @@ namespace App.Front.Views
         public PersonDTO SelectedPerson { get; set; }
         public UserAccountDTO SelectedUserAccount { get; set; }
         private RegistrationViewModel _personViewModel { get; set; }
+
         public Registration()
         {
             InitializeComponent();

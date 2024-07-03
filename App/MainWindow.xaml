@@ -9,5 +9,6 @@
         <Button Content="Sign up/sign in" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,127,0,0" Width="164" Click="LoginClick" Height="51"/>
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="kreiraj izvodjaca" Click="KreiraIzvodjacaClick"></Button>
         <Button HorizontalAlignment="Center" VerticalAlignment="Top" Content="kreiraj dela" Click="KreiranjeDelaClick" Margin="0,232,0,0"></Button>
+        <Button Content="Button" HorizontalAlignment="Left" Height="24" Margin="264,315,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
     </Grid>
 </Window>
