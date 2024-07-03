@@ -14,5 +14,17 @@
     "Description": "A renowned jazz band.",
     "MusicalGenreId": 2,
     "ProfileImageId": 302
+  },
+  {
+    "Name": "test band",
+    "Biography": {
+      "Id": 495,
+      "Text": "test bio",
+      "Pictures": []
+    },
+    "Id": 57895,
+    "Description": "test description",
+    "MusicalGenreId": 5,
+    "ProfileImageId": -1
   }
 ]
