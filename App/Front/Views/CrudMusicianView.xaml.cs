@@ -107,5 +107,30 @@ namespace App.Front.Views
                 }
             }
         }
+
+        private void CreateClick(object sender, RoutedEventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtBoxFirstName.Text) ||
+                string.IsNullOrWhiteSpace(txtBoxLastName.Text) ||
+                string.IsNullOrWhiteSpace(txtBoxJMBG.Text) ||
+                !birthDatePicker.SelectedDate.HasValue ||
+                comboBoxGender.SelectedItem == null)
+            {
+                MessageBox.Show("You must fill all fields!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                Performer newPerformer = new Performer();
+                newPerformer.FirstName = txtBoxFirstName.Text;
+                newPerformer.LastName = txtBoxLastName.Text;
+                newPerformer.JMBG = txtBoxJMBG.Text;
+                newPerformer.Gender = (Genders)comboBoxGender.SelectedItem;
+                newPerformer.BirthDate = DateOnly.FromDateTime((DateTime)birthDatePicker.SelectedDate);
+                newPerformer.Role = Role.Performer;
+                musicianViewModel.CreateMusician(newPerformer);
+                MessageBox.Show("Performer created successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                Reset();
+            }
+        }
     }
 }

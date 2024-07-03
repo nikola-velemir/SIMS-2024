@@ -30,5 +30,10 @@ namespace App.Front.ViewModels.ViewControllers
         {
             _bandService.Update(band);
         }
+
+        public void CreateBand(Band band)
+        {
+            _bandService.Create(band);
+        }
     }
 }

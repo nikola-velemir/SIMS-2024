@@ -30,5 +30,10 @@ namespace App.Front.ViewModels.ViewControllers
         {
             _musicalPerformerService.Update(performer);
         }
+
+        public void CreateMusician(Performer performer)
+        {
+            _musicalPerformerService.Create(performer);
+        }
     }
 }
