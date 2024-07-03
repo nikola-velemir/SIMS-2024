@@ -40,7 +40,8 @@ namespace App.Front.Views
 
         private void CrudMusicalPieceClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Feature is not yet implemented", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            MusicalPieceView musicalPieceView = new MusicalPieceView();
+            musicalPieceView.Show();
         }
 
         private void CrudBandClick(object sender, RoutedEventArgs e)
