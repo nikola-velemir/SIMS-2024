@@ -25,7 +25,6 @@ namespace App.Front.Views
         {
             InitializeComponent();
             DataContext = this;
-
             ViewModel = new(account);
         }
 
@@ -34,13 +33,9 @@ namespace App.Front.Views
             if (ViewModel.Create())
             {
                 MessageBox.Show("Play list " + ViewModel.PlayList.Name + " created!");
-
-                var library = new UserLibrary(ViewModel.Account);
-                library.Show();
                 Close();
                 return;
             }
-            
             MessageBox.Show("Failed to create a playlist!");
             Close();
         }

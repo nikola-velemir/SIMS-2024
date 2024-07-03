@@ -1,5 +1,7 @@
 ﻿using App.Back.Service;
+using App.Front.ViewModels.ViewControllers;
 using App.Front.Views;
+using System.Security.Principal;
 using System.Windows;
 namespace App
 {
@@ -8,9 +10,12 @@ namespace App
     /// </summary>
     public partial class MainWindow : Window
     {
+        public UserViewViewModel UserWindowViewModel { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            UserWindowViewModel = new UserViewViewModel();
+            DataContext = this;
         }
         private void LoginClick(object sender, RoutedEventArgs e)
         {

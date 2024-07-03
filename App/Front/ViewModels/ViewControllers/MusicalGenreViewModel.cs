@@ -30,5 +30,10 @@ namespace App.Front.ViewModels.ViewControllers
         {
             _musicalGenreService.Delete(oldMusicalGenre); 
         }
+
+        public List<MusicalGenreDTO> GetAllGenres()
+        {
+            return _musicalGenreService.GetAll();
+        }
     }
 }
